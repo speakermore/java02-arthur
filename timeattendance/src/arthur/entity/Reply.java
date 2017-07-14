@@ -1,5 +1,6 @@
 package arthur.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -7,7 +8,11 @@ import java.sql.Timestamp;
  * 
  * @auther 代益铨 2017年7月14日上午9:04:41
  */
-public class Reply {
+public class Reply implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6239655557553344306L;
 	private Integer id;// 主键id
 	private String answer;// 回答问题
 	private String help;// 提问问题或求助

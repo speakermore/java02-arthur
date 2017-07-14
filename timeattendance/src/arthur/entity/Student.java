@@ -1,11 +1,17 @@
 package arthur.entity;
 
+import java.io.Serializable;
+
 /**
  * 学生表
  * 
  * @auther 代益铨 2017年7月14日上午9:10:54
  */
-public class Student {
+public class Student implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8438279057656017575L;
 	private Integer id;// 主键id
 	private String studentPwd;// 学生密码
 	private String studentName;// 学生姓名

@@ -1,5 +1,6 @@
 package arthur.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -7,7 +8,11 @@ import java.sql.Timestamp;
  * 
  * @auther 代益铨 2017年7月14日上午9:06:17
  */
-public class Journal {
+public class Journal implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4577994980165302051L;
 	private Integer id;// 主键id
 	private String journalContent;// 日志内容
 	private Timestamp journalTime;// 发表日志时间

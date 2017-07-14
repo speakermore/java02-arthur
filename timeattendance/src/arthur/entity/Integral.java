@@ -1,11 +1,17 @@
 package arthur.entity;
 
+import java.io.Serializable;
+
 /**
  * 积分表
  * 
  * @auther 代益铨 2017年7月14日上午9:03:25
  */
-public class Integral {
+public class Integral implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 364976714924682970L;
 	private Integer id;// 主键id
 	private Integer integralNum;// 积分总数
 	private Integer studentId;// 学生表外键id
