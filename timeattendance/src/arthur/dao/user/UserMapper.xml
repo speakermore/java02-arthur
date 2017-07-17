@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="arthur.dao.user.userMapper">
+	<!-- 登录 :用户名和用户密码 -->
+	<select id="findByTeacherNameAndTeacherPwd"  resultType="User">
+        select * from  user where (teacherName=#{teacherName} and teacherPwd=#{teacherPwd}
+    </select>
+	<select id="findByStudentNameAndStudentPwd"  resultType="User">
+        select * from  user where (studentName=#{studentName} and studentPwd=#{studentPwd}
+    </select>
+	<!-- 修改学生密码  -->
+	<update id="updateUser" parameterType="User">
+		 update user set studentName=#{studentName} where studentPwd=#{studentPwd}
+	</update>
+	<!-- 修改老师密码  -->
+	<update id="updateUser" parameterType="User">
+		 update user set teacherName=#{teacherName} where teacherPwd=#{teacherPwd}
+	</update>
+	<!-- 注册  -->
+	<insert id="addUser" parameterType="User">
+		insert into user(studentPwd,studentName,studentSex,studentNo,classId)
+		values(#{studentPwd},#{studentName},#{studentSex},#{studentNo},#{classId})
+	</insert>
+	<!-- 根据id查询学生（显示学生信息） -->
+	<select id="selectUserById" resultType="User" parameterType="Integer">
+	    select * from user where id=#{id}
+	</select>
+	
+	
+</mapper>
