@@ -5,10 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.attendance.AttendanceMapper">
 	<insert id="addAttendance" parameterType="Attendance">
-		insert into attendance(studentSign,studentName) values(#{studentSign},#{studentName})
+		insert into attendance(studentSign) a values(#{studentSign}) where a.#{studentName}=student.studentName
 	</insert>
 	<update id="updateAttendance" parameterType="Attendance">
-		insert into attendance(studentOut,studentName) values(#{studentOut},#{studentName})
+		update attendance a set studentOut=#{studentOut} where a.#{studentName}=student.studentName
 	</update>
 	<select id="findbyStudentNameAndStuClass" resultType="Attendance">
 		select * from attendance a inner join student s on a.studentName=s.#{name} and a.class=s.#{stuclass}

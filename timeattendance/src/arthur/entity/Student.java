@@ -18,18 +18,29 @@ public class Student implements Serializable {
 	private String studentSex;// 学生性别
 	private String studentNo;// 学生学号
 	private Integer classId;// 班级表外键id
+	private String stuClass;// 班级名称
 
 	public Student() {
 
 	}
 
-	public Student(String studentPwd, String studentName, String studentSex, String studentNo, Integer classId) {
+	public Student(String studentPwd, String studentName, String studentSex, String studentNo, Integer classId,
+			String stuClass) {
 		super();
 		this.studentPwd = studentPwd;
 		this.studentName = studentName;
 		this.studentSex = studentSex;
 		this.studentNo = studentNo;
 		this.classId = classId;
+		this.stuClass = stuClass;
+	}
+
+	public String getStuClass() {
+		return stuClass;
+	}
+
+	public void setStuClass(String stuClass) {
+		this.stuClass = stuClass;
 	}
 
 	public Integer getId() {
@@ -83,7 +94,7 @@ public class Student implements Serializable {
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", studentPwd=" + studentPwd + ", studentName=" + studentName + ", studentSex="
-				+ studentSex + ", studentNo=" + studentNo + ", classId=" + classId + "]";
+				+ studentSex + ", studentNo=" + studentNo + ", classId=" + classId + ", stuClass=" + stuClass + "]";
 	}
 
 }

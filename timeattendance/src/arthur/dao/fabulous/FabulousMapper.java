@@ -1,6 +1,7 @@
 package arthur.dao.fabulous;
 
 import arthur.entity.Fabulous;
+import arthur.entity.Student;
 
 /**
  * 点赞
@@ -9,6 +10,6 @@ import arthur.entity.Fabulous;
  */
 public interface FabulousMapper {
 	// 根据学生id给学生点赞
-	public Integer addFabulous(Fabulous fabulous);
+	public Integer addFabulous(Fabulous fabulous, Student studentId);
 
 }
