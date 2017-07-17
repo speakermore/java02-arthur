@@ -17,16 +17,37 @@ public class Attendance implements Serializable {
 	private Timestamp studentSign;// 学生签到
 	private Timestamp studentOut;// 学生签退
 	private Integer studentId;// 学生表外键id
+	private String studentName;// 学生名字
+	private String stuClass;// 班级
 
 	public Attendance() {
 
 	}
 
-	public Attendance(Timestamp studentSign, Timestamp studentOut, Integer studentId) {
+	public Attendance(Integer id, Timestamp studentSign, Timestamp studentOut, Integer studentId, String studentName,
+			String stuClass) {
 		super();
 		this.studentSign = studentSign;
 		this.studentOut = studentOut;
 		this.studentId = studentId;
+		this.studentName = studentName;
+		this.stuClass = stuClass;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getStuClass() {
+		return stuClass;
+	}
+
+	public void setStuClass(String stuClass) {
+		this.stuClass = stuClass;
 	}
 
 	public Integer getId() {
@@ -64,7 +85,7 @@ public class Attendance implements Serializable {
 	@Override
 	public String toString() {
 		return "Attendance [id=" + id + ", studentSign=" + studentSign + ", studentOut=" + studentOut + ", studentId="
-				+ studentId + "]";
+				+ studentId + ", studentName=" + studentName + ", stuClass=" + stuClass + "]";
 	}
 
 }
