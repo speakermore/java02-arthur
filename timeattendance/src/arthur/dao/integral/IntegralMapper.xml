@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.integral.IntegralMapper">
 	<insert id="addIntegral" parameterType="Integral">
-		insert into integral(integralNum,giftPoints) i values(#{integralNum},#{giftPoints}) where i.#{studentId}=student.studentId
+		insert into integral(integralNum,giftPoints) i values(#{integralNum},#{giftPoints}) where i.#{studentId}=student.id
 	</insert>
 	<update id="updateIntegral" parameterType="Integral">
-		update integral i set i.giftPoints=#{giftPoints} where i.#{studentId}=student.studentId
+		update integral i set i.giftPoints=#{giftPoints} where i.#{studentId}=student.id
 	</update>
 </mapper>

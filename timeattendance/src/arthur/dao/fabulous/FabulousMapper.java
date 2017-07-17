@@ -1,5 +1,7 @@
 package arthur.dao.fabulous;
 
+import org.apache.ibatis.annotations.Param;
+
 import arthur.entity.Fabulous;
 import arthur.entity.Student;
 
@@ -10,6 +12,6 @@ import arthur.entity.Student;
  */
 public interface FabulousMapper {
 	// 根据学生id给学生点赞
-	public Integer addFabulous(Fabulous fabulous, Student studentId);
+	public Integer addFabulous(@Param("fabulous") Fabulous fabulous, @Param("studentId") Student studentId);
 
 }
