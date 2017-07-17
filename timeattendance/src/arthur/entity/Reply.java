@@ -18,19 +18,31 @@ public class Reply implements Serializable {
 	private String help;// 提问问题或求助
 	private Timestamp answerTime;// 回答问题时间
 	private Timestamp helpTime;// 提问问题或求助时间
-	private Integer helpId;// 提问者的id
+	private String helpName;// 提问者的id
+	private String studentName;//回答问题的学生名字
+	private String teacherName;//回答问题的老师名字
 
 	public Reply() {
 
 	}
 
-	public Reply(String answer, String help, Timestamp answerTime, Timestamp helpTime, Integer helpId) {
+	public Reply(String answer, String help, Timestamp answerTime, Timestamp helpTime, String helpName,
+			String studentName, String teacherName) {
 		super();
 		this.answer = answer;
 		this.help = help;
 		this.answerTime = answerTime;
 		this.helpTime = helpTime;
-		this.helpId = helpId;
+		this.helpName = helpName;
+		this.studentName = studentName;
+		this.teacherName = teacherName;
+	}
+
+	@Override
+	public String toString() {
+		return "Reply [id=" + id + ", answer=" + answer + ", help=" + help + ", answerTime=" + answerTime
+				+ ", helpTime=" + helpTime + ", helpName=" + helpName + ", studentName=" + studentName
+				+ ", teacherName=" + teacherName + "]";
 	}
 
 	public Integer getId() {
@@ -73,18 +85,28 @@ public class Reply implements Serializable {
 		this.helpTime = helpTime;
 	}
 
-	public Integer getHelpId() {
-		return helpId;
+	public String getHelpName() {
+		return helpName;
 	}
 
-	public void setHelpId(Integer helpId) {
-		this.helpId = helpId;
+	public void setHelpName(String helpName) {
+		this.helpName = helpName;
 	}
 
-	@Override
-	public String toString() {
-		return "Reply [id=" + id + ", answer=" + answer + ", help=" + help + ", answerTime=" + answerTime
-				+ ", helpTime=" + helpTime + ", helpId=" + helpId + "]";
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getTeacherName() {
+		return teacherName;
+	}
+
+	public void setTeacherName(String teacherName) {
+		this.teacherName = teacherName;
 	}
 
 }
