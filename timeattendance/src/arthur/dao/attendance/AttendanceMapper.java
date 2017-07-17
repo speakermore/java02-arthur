@@ -1,4 +1,4 @@
-package arthur.dao.Attendance;
+package arthur.dao.attendance;
 
 import arthur.entity.Attendance;
 

@@ -1,4 +1,4 @@
-package arthur.dao.Class;
+package arthur.dao.stuclass;
 
 import arthur.entity.StuClass;
 

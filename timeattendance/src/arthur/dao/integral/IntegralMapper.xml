@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="arthur.dao.AttendanceMapper">
-	<insert id="addAttendance" parameterType="Attendance">
+<mapper namespace="arthur.dao.integral.IntegralMapper">
+	<insert id="addIntegral" parameterType="Integral">
 		<!-- insert into 表名（列名列表）values（值列表）
 		1.列名列表与值列表必须一一对应
 		2.如果表字段全填充，则可省略，此时值列表必须与数据库字段列表一一对应
 		3.#{属性名}是OGNL表达式，它自动匹配实体对象的属性 -->
-		insert into attendance(studentSign,studentOut,studentId) values(#{studentSign},#{studentOut},#{studentId})
+		insert into integral(integralNum,giftPoints,studentId) values(#{integralNum},#{giftPoints},#{studentId})
 	</insert>
 </mapper>

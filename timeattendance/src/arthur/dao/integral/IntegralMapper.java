@@ -1,4 +1,4 @@
-package arthur.dao.Integral;
+package arthur.dao.integral;
 
 import arthur.entity.Integral;
 

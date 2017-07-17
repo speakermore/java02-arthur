@@ -9,6 +9,6 @@ import arthur.entity.Fabulous;
  */
 public interface FabulousMapper {
 	// 根据学生id给学生点赞
-	public Integer addFabulousName(Fabulous fabulous);
+	public Integer addFabulous(Fabulous fabulous);
 
 }
