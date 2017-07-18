@@ -1,6 +1,5 @@
 package arthur.service.user;
 
-import org.apache.catalina.User;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserService {

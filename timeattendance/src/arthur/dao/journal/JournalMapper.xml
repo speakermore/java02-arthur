@@ -4,11 +4,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="arthur.dao.journal.JournalMapper">
-	<!-- 添加日志 -->
+	<!-- 学生根据自己的id添加日志 -->
+	<insert id="addJournal" parameterType="Integer">
+		insert into journal(journalContent,journalTime,studentName,stuClass) values (#{journalContent},#{journalTime},#{studentName},#{stuClass},)
+	</insert>
 	
+	<!-- 学生根据自己的id修改日志 -->
+	<update id="updateJournal" parameterType="Integer">
+		update journal set (journalcontent=#{journalcontent}) where studentId=#{studentId}
+	</update>
 	
-	<!-- 查询日志 -->
-	<select id="addJournal" parameterType="String">
-		select * from journal student where studentName=#{studentName}
+	<!-- 老师根据学生id去查看该学生的日志 -->
+	<select id="selectJournal" resultType="Journal">
+		select * from journal where studentId=#{studentId}
 	</select>
 </mapper>

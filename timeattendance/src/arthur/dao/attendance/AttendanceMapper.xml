@@ -4,16 +4,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="arthur.dao.attendance.AttendanceMapper">
-	<!-- 根据学生姓名签到 -->
+	<!-- 根据学生id签到 -->
 	<insert id="addstudentSign" parameterType="Integer">
-		insert into student(studentSign) values (#{studentSign})
+		insert into attendance(studentSign) values (#{studentSign})
 	</insert>
-	<!-- 根据学生姓名签退 -->
+	<!-- 根据学生id签退 -->
 	<update id="updatestudentOut" parameterType="Integer">
-		 update attendance set studentOut=#{studentOut} where studentName=#{studentName}
+		 update attendance set studentOut=#{studentOut} where studentId=#{studentId}
 	</update>
-	<!-- 老师通过输入学生姓名查询该学生的考勤信息 -->
+	<!-- 老师通过输入学生id查询该学生的考勤信息 -->
 	<select id="findbyStudentNameAndStuClass" resultType="Attendance">
-		select * from attendance where studentName=#{studentName}
+		select * from attendance where studentId=#{studentId}
 	</select>
 </mapper>

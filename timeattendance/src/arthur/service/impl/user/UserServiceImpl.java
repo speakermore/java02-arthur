@@ -1,9 +1,5 @@
 package arthur.service.impl.user;
 
-import javax.annotation.Resource;
-
-import org.apache.catalina.User;
-
 import arthur.dao.user.UserMapper;
 import arthur.service.user.UserService;
 
@@ -29,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
 	public Integer updateUserByStudentName(String studentName, String studentPwd) {
 		// TODO Auto-generated method stub
-		return userMapper.updateUserByStudentName(studentName, studentPwd);
+		return ((UserService) userMapper).updateUserByStudentName(studentName, studentPwd);
 	}
 
 	public Integer updateUserByTeacherName(String teacherName, String teacherPwd) {

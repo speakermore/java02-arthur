@@ -5,6 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.stuclass.StuClassMapper">
 	<insert id="addClass" parameterType="StuClass">
-		insert into stuclass(className) values(#{className})
+		insert into stuclass(className) value(#{className})
 	</insert>
 </mapper>
