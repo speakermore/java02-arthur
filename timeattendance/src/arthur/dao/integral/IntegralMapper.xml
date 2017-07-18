@@ -4,10 +4,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="arthur.dao.integral.IntegralMapper">
-	<insert id="addIntegral" parameterType="Integral">
-		insert into integral(integralNum,giftPoints) i values(#{integralNum},#{giftPoints}) where i.#{studentId}=student.id
+	<insert id="addIntegral" parameterType="Integer">
+		insert into integral(integralNum,giftPoints) values(#{integralNum},#{giftPoints})
 	</insert>
-	<update id="updateIntegral" parameterType="Integral">
-		update integral i set i.giftPoints=#{giftPoints} where i.#{studentId}=student.id
+	<update id="updateIntegral" parameterType="Integer">
+		update integral set giftPoints=#{giftPoints} where studentName=#{studentName}
 	</update>
 </mapper>
