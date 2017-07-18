@@ -3,9 +3,11 @@ package arthur.entity;
 import java.io.Serializable;
 
 /**
- * 学生表
+ * 学生实体类
  * 
- * @auther 代益铨 2017年7月14日上午9:10:54
+ * @author QWF
+ *
+ *         2017年7月13日
  */
 public class Student implements Serializable {
 	/**
@@ -21,13 +23,13 @@ public class Student implements Serializable {
 	private String stuClass;// 班级名称
 
 	public Student() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Student(String studentPwd, String studentName, String studentSex, String studentNo, Integer classId,
 			String stuClass) {
 		super();
-		this.studentPwd = studentPwd;
 		this.studentName = studentName;
 		this.studentSex = studentSex;
 		this.studentNo = studentNo;
@@ -43,20 +45,12 @@ public class Student implements Serializable {
 		this.stuClass = stuClass;
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getStudentPwd() {
-		return studentPwd;
-	}
-
-	public void setStudentPwd(String studentPwd) {
-		this.studentPwd = studentPwd;
 	}
 
 	public String getStudentName() {

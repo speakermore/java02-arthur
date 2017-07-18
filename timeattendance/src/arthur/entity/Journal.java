@@ -3,11 +3,6 @@ package arthur.entity;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-/**
- * 日志表
- * 
- * @auther 代益铨 2017年7月14日上午9:06:17
- */
 public class Journal implements Serializable {
 	/**
 	 * 
@@ -21,7 +16,8 @@ public class Journal implements Serializable {
 	private String stuClass;// 班级
 
 	public Journal() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Journal(String journalContent, Timestamp journalTime, Integer studentId, String studentName,

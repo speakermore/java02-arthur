@@ -4,9 +4,10 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * 答复表
  * 
- * @auther 代益铨 2017年7月14日上午9:04:41
+ * @author QWF 答复表实体类
+ *
+ *         2017年7月13日
  */
 public class Reply implements Serializable {
 	/**
@@ -19,11 +20,12 @@ public class Reply implements Serializable {
 	private Timestamp answerTime;// 回答问题时间
 	private Timestamp helpTime;// 提问问题或求助时间
 	private String helpName;// 提问者的id
-	private String studentName;//回答问题的学生名字
-	private String teacherName;//回答问题的老师名字
+	private String studentName;// 回答问题的学生名字
+	private String teacherName;// 回答问题的老师名字
 
 	public Reply() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Reply(String answer, String help, Timestamp answerTime, Timestamp helpTime, String helpName,
@@ -31,7 +33,6 @@ public class Reply implements Serializable {
 		super();
 		this.answer = answer;
 		this.help = help;
-		this.answerTime = answerTime;
 		this.helpTime = helpTime;
 		this.helpName = helpName;
 		this.studentName = studentName;
@@ -67,14 +68,6 @@ public class Reply implements Serializable {
 
 	public void setHelp(String help) {
 		this.help = help;
-	}
-
-	public Timestamp getAnswerTime() {
-		return answerTime;
-	}
-
-	public void setAnswerTime(Timestamp answerTime) {
-		this.answerTime = answerTime;
 	}
 
 	public Timestamp getHelpTime() {

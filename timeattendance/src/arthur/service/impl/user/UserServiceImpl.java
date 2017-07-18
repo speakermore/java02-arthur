@@ -1,9 +1,5 @@
 package arthur.service.impl.user;
 
-import javax.annotation.Resource;
-
-import org.apache.catalina.User;
-
 import arthur.dao.user.UserMapper;
 import arthur.service.user.UserService;
 

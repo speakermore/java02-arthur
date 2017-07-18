@@ -1,6 +1,5 @@
 package arthur.dao.user;
 
-
 import org.apache.ibatis.annotations.Param;
 
 import arthur.entity.Student;
@@ -11,7 +10,6 @@ public interface UserMapper {
 	 * 老师登录
 	 */
 	public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId);
-		
 
 	/**
 	 * 学生登录

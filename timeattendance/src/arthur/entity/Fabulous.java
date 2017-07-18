@@ -4,9 +4,10 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * 点赞表
  * 
- * @auther 代益铨 2017年7月14日上午9:02:12
+ * @author QWF点赞表实体类
+ *
+ *         2017年7月13日
  */
 public class Fabulous implements Serializable {
 	/**
@@ -20,7 +21,8 @@ public class Fabulous implements Serializable {
 	private String fabulousName;// 点赞学生
 
 	public Fabulous() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Fabulous(Integer id, Integer studentId, String studentName, Timestamp fabulousTime, String fabulousName) {
