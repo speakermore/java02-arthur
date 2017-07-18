@@ -6,16 +6,13 @@ import org.apache.ibatis.annotations.Param;
 
 import arthur.entity.Attendance;
 
-import arthur.entity.Student;
-
 public interface AttendanceMapper {
-	// 根据学生姓名，签到
+	// 根据学生id，签到
 	public Integer addStudentSign(Integer studentId);
 
 	// 根据学生ID签退
 	public Integer updatestudentOutByStudentName(@Param("studentId") Integer studentId);
 
 	// 老师通过输入学生ID查询该学生的考勤信息
-	public List<Attendance> findbyStudentNameAndStuClass(@Param("studentId") Integer studentId);
-;
+	public List<Attendance> findbyStudentNameAndStuClass(@Param("studentId") Integer studentId);;
 }
