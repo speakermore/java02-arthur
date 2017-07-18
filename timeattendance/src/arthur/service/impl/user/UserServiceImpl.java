@@ -1,7 +1,7 @@
 package arthur.service.impl.user;
 
 import arthur.dao.user.UserMapper;
-import arthur.service.user.UserService;
+import arthur.service.UserService;
 
 public class UserServiceImpl implements UserService {
 	// @Resource为自动注入的注解，表明此类要通过Spring容器完成注入
