@@ -1,20 +1,25 @@
 package arthur.entity;
-
-import java.sql.Timestamp;
-
 /**
- * 日志表
- * 
- * @auther 代益铨 2017年7月14日上午9:06:17
+ * 日志实体类
+ * @author QWF
+ *
+ * 2017年7月13日
  */
-public class Journal {
-	private Integer id;// 主键id
+
+import java.io.Serializable;
+import java.security.Timestamp;
+
+public class Journal implements Serializable {
+
+	private static final long serialVersionUID = 6797434549304546485L;
+	private Integer id;// 日志id
 	private String journalContent;// 日志内容
 	private Timestamp journalTime;// 发表日志时间
-	private Integer studentId;// 学生表外键id
+	private Integer studentId;// 学生id
 
 	public Journal() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Journal(String journalContent, Timestamp journalTime, Integer studentId) {
@@ -22,6 +27,7 @@ public class Journal {
 		this.journalContent = journalContent;
 		this.journalTime = journalTime;
 		this.studentId = studentId;
+
 	}
 
 	public Integer getId() {

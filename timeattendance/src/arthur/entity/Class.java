@@ -1,16 +1,22 @@
 package arthur.entity;
 
+import java.io.Serializable;
+
 /**
- * 班级表
+ * 班级实体类
  * 
- * @auther 代益铨 2017年7月14日上午9:07:18
+ * @author QWF
+ *
+ *         2017年7月13日
  */
-public class Class {
-	private Integer id;// 主键id
+public class Class implements Serializable {
+	private static final long serialVersionUID = -6343630458043674687L;
+	private Integer id;// 班级id
 	private String className;// 班级名称
 
 	public Class() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Class(String className) {

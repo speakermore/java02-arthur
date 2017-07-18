@@ -1,25 +1,30 @@
 package arthur.entity;
 
+import java.io.Serializable;
+
 /**
- * 积分表
  * 
- * @auther 代益铨 2017年7月14日上午9:03:25
+ * @author QWF积分表实体类
+ *
+ *         2017年7月13日
  */
-public class Integral {
-	private Integer id;// 主键id
+public class Integral implements Serializable {
+	private static final long serialVersionUID = -5464635993891265888L;
+	private Integer id;// 积分表id
 	private Integer integralNum;// 积分总数
-	private Integer studentId;// 学生表外键id
-	private Integer giftPoints;// 赠送积分
+	private Integer giftPoints;// 积分赠送
+	private Integer studentid;// 学生id
 
 	public Integral() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Integral(Integer integralNum, Integer studentId, Integer giftPoints) {
+	public Integral(Integer integralNum, Integer giftPoints, Integer studentid) {
 		super();
 		this.integralNum = integralNum;
-		this.studentId = studentId;
 		this.giftPoints = giftPoints;
+		this.studentid = studentid;
 	}
 
 	public Integer getId() {
@@ -38,14 +43,6 @@ public class Integral {
 		this.integralNum = integralNum;
 	}
 
-	public Integer getStudentId() {
-		return studentId;
-	}
-
-	public void setStudentId(Integer studentId) {
-		this.studentId = studentId;
-	}
-
 	public Integer getGiftPoints() {
 		return giftPoints;
 	}
@@ -54,10 +51,18 @@ public class Integral {
 		this.giftPoints = giftPoints;
 	}
 
+	public Integer getStudentid() {
+		return studentid;
+	}
+
+	public void setStudentid(Integer studentid) {
+		this.studentid = studentid;
+	}
+
 	@Override
 	public String toString() {
-		return "Integral [id=" + id + ", integralNum=" + integralNum + ", studentId=" + studentId + ", giftPoints="
-				+ giftPoints + "]";
+		return "Integral [id=" + id + ", integralNum=" + integralNum + ", giftPoints=" + giftPoints + ", studentid="
+				+ studentid + "]";
 	}
 
 }

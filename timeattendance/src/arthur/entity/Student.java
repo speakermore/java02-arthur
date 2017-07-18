@@ -1,45 +1,42 @@
 package arthur.entity;
 
+import java.io.Serializable;
+
 /**
- * 学生表
+ * 学生实体类
  * 
- * @auther 代益铨 2017年7月14日上午9:10:54
+ * @author QWF
+ *
+ *         2017年7月13日
  */
-public class Student {
-	private Integer id;// 主键id
-	private String studentPwd;// 学生密码
+public class Student implements Serializable {
+
+	private static final long serialVersionUID = -3138961070916355740L;
+	private Integer id;// 学生密码
 	private String studentName;// 学生姓名
 	private String studentSex;// 学生性别
 	private String studentNo;// 学生学号
-	private Integer classId;// 班级表外键id
+	private String ClassId;// 班级id
 
 	public Student() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Student(String studentPwd, String studentName, String studentSex, String studentNo, Integer classId) {
+	public Student(String studentName, String studentSex, String studentNo, String classId) {
 		super();
-		this.studentPwd = studentPwd;
 		this.studentName = studentName;
 		this.studentSex = studentSex;
 		this.studentNo = studentNo;
-		this.classId = classId;
+		ClassId = classId;
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getStudentPwd() {
-		return studentPwd;
-	}
-
-	public void setStudentPwd(String studentPwd) {
-		this.studentPwd = studentPwd;
 	}
 
 	public String getStudentName() {
@@ -66,18 +63,18 @@ public class Student {
 		this.studentNo = studentNo;
 	}
 
-	public Integer getClassId() {
-		return classId;
+	public String getClassId() {
+		return ClassId;
 	}
 
-	public void setClassId(Integer classId) {
-		this.classId = classId;
+	public void setClassId(String classId) {
+		ClassId = classId;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", studentPwd=" + studentPwd + ", studentName=" + studentName + ", studentSex="
-				+ studentSex + ", studentNo=" + studentNo + ", classId=" + classId + "]";
+		return "Student [id=" + id + ", studentName=" + studentName + ", studentSex=" + studentSex + ", studentNo="
+				+ studentNo + ", ClassId=" + ClassId + "]";
 	}
 
 }

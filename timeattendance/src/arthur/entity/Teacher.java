@@ -1,24 +1,19 @@
 package arthur.entity;
 
+import java.io.Serializable;
+
 /**
- * 老师表
+ * 老师实体类
  * 
- * @auther 代益铨 2017年7月14日上午9:10:03
+ * @author QWF
+ *
+ *         2017年7月13日
  */
-public class Teacher {
-	private Integer id;// 主键id
+public class Teacher implements Serializable {
+	private static final long serialVersionUID = 1957666182227796573L;
+	private Integer id;// 老师id
 	private String teacherName;// 老师姓名
-	private String teacherPwd;// 老师密码
-
-	public Teacher() {
-
-	}
-
-	public Teacher(String teacherName, String teacherPwd) {
-		super();
-		this.teacherName = teacherName;
-		this.teacherPwd = teacherPwd;
-	}
+	private String teacherPwd;// 老师登录密码
 
 	public Integer getId() {
 		return id;
@@ -42,6 +37,17 @@ public class Teacher {
 
 	public void setTeacherPwd(String teacherPwd) {
 		this.teacherPwd = teacherPwd;
+	}
+
+	public Teacher(String teacherName, String teacherPwd) {
+		super();
+		this.teacherName = teacherName;
+		this.teacherPwd = teacherPwd;
+	}
+
+	public Teacher() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override

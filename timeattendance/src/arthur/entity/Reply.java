@@ -1,31 +1,34 @@
 package arthur.entity;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
+import java.security.Timestamp;
 
 /**
- * 答复表
  * 
- * @auther 代益铨 2017年7月14日上午9:04:41
+ * @author QWF 答复表实体类
+ *
+ *         2017年7月13日
  */
-public class Reply {
-	private Integer id;// 主键id
-	private String answer;// 回答问题
-	private String help;// 提问问题或求助
-	private Timestamp answerTime;// 回答问题时间
-	private Timestamp helpTime;// 提问问题或求助时间
-	private Integer helpId;// 提问者的id
+public class Reply implements Serializable {
+
+	private static final long serialVersionUID = -3054483775839243054L;
+	private Integer id;// 答复表id
+	private String answer;// 问题的答案
+	private String help;// 问题
+	private Timestamp helpTime;// 提问的时间
+	private Timestamp answerTimes;// 回答问题的时间
 
 	public Reply() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Reply(String answer, String help, Timestamp answerTime, Timestamp helpTime, Integer helpId) {
+	public Reply(String answer, String help, Timestamp helpTime, Timestamp answerTimes) {
 		super();
 		this.answer = answer;
 		this.help = help;
-		this.answerTime = answerTime;
 		this.helpTime = helpTime;
-		this.helpId = helpId;
+		this.answerTimes = answerTimes;
 	}
 
 	public Integer getId() {
@@ -52,14 +55,6 @@ public class Reply {
 		this.help = help;
 	}
 
-	public Timestamp getAnswerTime() {
-		return answerTime;
-	}
-
-	public void setAnswerTime(Timestamp answerTime) {
-		this.answerTime = answerTime;
-	}
-
 	public Timestamp getHelpTime() {
 		return helpTime;
 	}
@@ -68,18 +63,18 @@ public class Reply {
 		this.helpTime = helpTime;
 	}
 
-	public Integer getHelpId() {
-		return helpId;
+	public Timestamp getAnswerTimes() {
+		return answerTimes;
 	}
 
-	public void setHelpId(Integer helpId) {
-		this.helpId = helpId;
+	public void setAnswerTimes(Timestamp answerTimes) {
+		this.answerTimes = answerTimes;
 	}
 
 	@Override
 	public String toString() {
-		return "Reply [id=" + id + ", answer=" + answer + ", help=" + help + ", answerTime=" + answerTime
-				+ ", helpTime=" + helpTime + ", helpId=" + helpId + "]";
+		return "Reply [id=" + id + ", answer=" + answer + ", help=" + help + ", helpTime=" + helpTime + ", answerTimes="
+				+ answerTimes + "]";
 	}
 
 }

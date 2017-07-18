@@ -1,20 +1,24 @@
 package arthur.entity;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
+import java.security.Timestamp;
 
 /**
- * 考勤表
  * 
- * @auther 代益铨 2017年7月14日上午9:07:59
+ * @author QWF考勤实体类
+ *
+ *         2017年7月13日
  */
-public class Attendance {
-	private Integer id;// 主键id
+public class Attendance implements Serializable {
+	private static final long serialVersionUID = -5049372448283749663L;
+	private Integer id;// 考勤id
 	private Timestamp studentSign;// 学生签到
 	private Timestamp studentOut;// 学生签退
-	private Integer studentId;// 学生表外键id
+	private Integer studentId;// 学生id
 
 	public Attendance() {
-
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Attendance(Timestamp studentSign, Timestamp studentOut, Integer studentId) {
