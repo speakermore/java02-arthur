@@ -1,12 +1,20 @@
 package arthur.service.impl.fabulous;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import arthur.dao.fabulous.FabulousMapper;
 import arthur.service.FabulousService;
 
+@Service
 public class FabulousServiceImpl implements FabulousService {
+	@Resource
+	public FabulousMapper fabulousMapper;
 
+	@Override
 	public Integer addFabulousIdAndFabulousTime(Integer studentId) {
-		// TODO Auto-generated method stub
-		return null;
+		return fabulousMapper.addFabulousIdAndFabulousTime(studentId);
 	}
 
 }

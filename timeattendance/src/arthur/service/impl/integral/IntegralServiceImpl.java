@@ -1,17 +1,25 @@
 package arthur.service.impl.integral;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import arthur.dao.integral.IntegralMapper;
 import arthur.service.IntegralService;
 
+@Service
 public class IntegralServiceImpl implements IntegralService {
+	@Resource
+	public IntegralMapper integralMapper;
 
+	@Override
 	public Integer addIntegral(Integer studentId) {
-		// TODO Auto-generated method stub
-		return null;
+		return integralMapper.addIntegral(studentId);
 	}
 
+	@Override
 	public Integer updateIntegral(Integer studentId) {
-		// TODO Auto-generated method stub
-		return null;
+		return integralMapper.updateIntegral(studentId);
 	}
 
 }
