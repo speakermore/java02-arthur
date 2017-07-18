@@ -1,41 +1,41 @@
 package arthur.dao.user;
 
-import org.apache.catalina.User;
+
 import org.apache.ibatis.annotations.Param;
+
+import arthur.entity.Student;
+import arthur.entity.Teacher;
 
 public interface UserMapper {
 	/*
 	 * 老师登录
 	 */
-	public User findByTeacherNameAndTeacherPwd(@Param("teacherName") String teacherName,
-			@Param("teacherPwd") String teacherPwd);
+	public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId);
+		
 
 	/**
 	 * 学生登录
 	 */
-	public User findByStudentNameAndStudentPwd(@Param("studentName") String studentName,
-			@Param("studentPwd") String studentPwd);
+	public Student findByStudentNameAndStudentPwd(Integer studentId);
 
 	/**
 	 * 学生注册
 	 */
-	public Integer addUser(User user);
+	public Integer addStudent(Integer studentId);
 
 	/**
 	 * 修改学生密码
 	 */
-	public Integer updateUserByStudentName(@Param("studentName") String studentName,
-			@Param("studentPwd") String studentPwd);
+	public Integer updateStudentByStudentName(Integer studentId);
 
 	/**
 	 * 修改老师密码
 	 */
-	public Integer updateUserByTeacherName(@Param("teacherName") String teacherName,
-			@Param("teacherPwd") String teacherPwd);
+	public Integer updateTeacherByTeacherName(Integer teacherId);
 
 	/**
 	 * 根据studentId查询用户（显示学生信息）
 	 */
-	public User selectUserByStudentName(@Param("studentName") Integer studentName);
+	public Student selectUserByStudentName(@Param("studentId") Integer studentId);
 
 }

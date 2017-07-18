@@ -1,17 +1,13 @@
 package arthur.dao.fabulous;
 
-import org.apache.ibatis.annotations.Param;
-
-import arthur.entity.Fabulous;
-import arthur.entity.Student;
-
 /**
  * 点赞
  * 
  * @auther 代益铨 2017年7月14日下午3:05:11
  */
 public interface FabulousMapper {
-	// 根据学生id给学生点赞
-	public Integer addFabulous(@Param("fabulous") Fabulous fabulous, @Param("studentId") Student studentId);
+	// 根据被点赞学生名字点赞,点赞时间
+	public Integer addFabulousNameAndFabulousTime(Integer studentId);
 
+	
 }
