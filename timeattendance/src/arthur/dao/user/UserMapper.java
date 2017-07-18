@@ -1,6 +1,5 @@
 package arthur.dao.user;
 
-import org.apache.catalina.User;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
