@@ -4,8 +4,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="arthur.dao.fabulous.AttendanceMapper">
+	<!-- 根据被点赞学生点赞,点赞时间取系统时间-->
 	<insert id="addFabulousNameAndFabulousTime" parameterType="Integer">
-		insert into student(fabulousName,fabulousTime)
+		insert into fabulous(fabulousName,fabulousTime)
 		values(#{fabulousName},#{fabulousTime})
 	</insert>
 </mapper>

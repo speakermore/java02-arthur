@@ -6,14 +6,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="arthur.dao.attendance.AttendanceMapper">
 	<!-- 根据学生id签到 -->
 	<insert id="addstudentSign" parameterType="Integer">
-		insert into student(studentSign) values (#{studentSign})
+		insert into attendance(studentSign) values (#{studentSign})
 	</insert>
 	<!-- 根据学生id签退 -->
 	<update id="updatestudentOut" parameterType="Integer">
-		 update attendance a,student s set a.studentOut=#{studentOut} where a.studentId=#{s.id}
+		 update attendance set studentOut=#{studentOut} where studentId=#{studentId}
 	</update>
 	<!-- 老师通过输入学生id查询该学生的考勤信息 -->
 	<select id="findbyStudentNameAndStuClass" resultType="Attendance">
-		select * from attendance a,student s where a.studentid=#{s.id}
+		select * from attendance where studentId=#{studentId}
 	</select>
 </mapper>
