@@ -1,5 +1,7 @@
 package arthur.dao.fabulous;
 
+import org.apache.ibatis.annotations.Param;
+
 /**
  * 点赞
  * 
@@ -7,7 +9,6 @@ package arthur.dao.fabulous;
  */
 public interface FabulousMapper {
 	// 根据被点赞学生名字点赞,点赞时间
-	public Integer addFabulousNameAndFabulousTime(Integer studentId);
+	public Integer addFabulousNameAndFabulousTime(@Param("studentId") Integer studentId);
 
-	
 }

@@ -6,7 +6,7 @@ import arthur.entity.Student;
 import arthur.entity.Teacher;
 
 public interface UserMapper {
-	/*
+	/**
 	 * 老师登录
 	 */
 	public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId);
@@ -17,9 +17,9 @@ public interface UserMapper {
 	public Student findByStudentNameAndStudentPwd(Integer studentId);
 
 	/**
-	 * 学生注册
+	 * 老师给学生注册
 	 */
-	public Integer addStudent(Integer studentId);
+	public Integer addTeacher(Integer studentId);
 
 	/**
 	 * 修改学生密码

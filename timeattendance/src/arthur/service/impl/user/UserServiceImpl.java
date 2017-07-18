@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
 	public Integer updateUserByStudentName(String studentName, String studentPwd) {
 		// TODO Auto-generated method stub
-		return userMapper.updateUserByStudentName(studentName, studentPwd);
+		return ((UserService) userMapper).updateUserByStudentName(studentName, studentPwd);
 	}
 
 	public Integer updateUserByTeacherName(String teacherName, String teacherPwd) {
