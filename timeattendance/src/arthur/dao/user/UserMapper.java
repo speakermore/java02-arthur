@@ -36,6 +36,6 @@ public interface UserMapper {
 	/**
 	 * 根据studentId查询用户（显示学生信息）
 	 */
-	public Student selectUserByStudentName(@Param("studentId") Integer studentId);
+	public Student selectStudentById(@Param("studentId") Integer studentId);
 
 }
