@@ -9,6 +9,7 @@ public interface UserService {
 	/**
 	 * 老师登录
 	 */
+	
 	public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId);
 
 	/**
@@ -19,7 +20,7 @@ public interface UserService {
 	/**
 	 * 老师给学生注册
 	 */
-	public Integer addTeacher(Integer studentId);
+	public Integer addStudent(Integer studentId);
 
 	/**
 	 * 修改学生密码

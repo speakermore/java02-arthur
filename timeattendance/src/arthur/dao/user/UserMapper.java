@@ -9,7 +9,7 @@ public interface UserMapper {
 	/**
 	 * 老师登录
 	 */
-	public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId);
+	public Teacher findByTeacherNameAndTeacherPwd(@Param("techerId")Integer teacherId);
 
 	/**
 	 * 学生登录
@@ -17,9 +17,9 @@ public interface UserMapper {
 	public Student findByStudentNameAndStudentPwd(Integer studentId);
 
 	/**
-	 * 老师给学生注册
+	 * 学生注册
 	 */
-	public Integer addTeacher(Integer studentId);
+	public Integer addStudent(Integer studentId);
 
 	/**
 	 * 修改学生密码

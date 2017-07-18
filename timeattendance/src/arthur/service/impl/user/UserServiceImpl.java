@@ -1,41 +1,54 @@
 package arthur.service.impl.user;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import arthur.dao.user.UserMapper;
+import arthur.entity.Student;
+import arthur.entity.Teacher;
 import arthur.service.UserService;
 
+//@Service注解表明此类为业务层，写在现实类的前面
+@Service
 public class UserServiceImpl implements UserService {
-	// @Resource为自动注入的注解，表明此类要通过Spring容器完成注入
+	//@Resource为自动注入的注解，表明此类要通过Spring容器完成注入
 	@Resource
 	private UserMapper userMapper;
 
-	public User findByTeacherNameAndTeacherPwd(String teacherId, String teacherPwd) {
-		// TODO Auto-generated method stub
-		return userMapper.findByTeacherNameAndTeacherPwd(teacherId, teacherPwd);
+	@Override
+	public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId) {
+		return userMapper.findByTeacherNameAndTeacherPwd(teacherId);
 	}
 
-	public User findByStudentNameAndStudentPwd(String studentId, String studentPwd) {
-		// TODO Auto-generated method stub
-		return userMapper.findByStudentNameAndStudentPwd(studentId, studentPwd);
+	@Override
+	public Student findByStudentNameAndStudentPwd(Integer studentId) {
+		return userMapper.findByStudentNameAndStudentPwd(studentId);
 	}
 
-	public Integer addUser(User user) {
-		// TODO Auto-generated method stub
-		return userMapper.addUser(user);
+	@Override
+	public Integer addStudent(Integer studentId) {
+		return userMapper.addStudent(studentId);
 	}
 
-	public Integer updateUserByStudentName(String studentName, String studentPwd) {
-		// TODO Auto-generated method stub
-		return ((UserService) userMapper).updateUserByStudentName(studentName, studentPwd);
+	@Override
+	public Integer updateStudentByStudentName(Integer studentId) {
+		return userMapper.updateStudentByStudentName(studentId);
 	}
 
-	public Integer updateUserByTeacherName(String teacherName, String teacherPwd) {
-		// TODO Auto-generated method stub
-		return userMapper.updateUserByTeacherName(teacherName, teacherPwd);
+	@Override
+	public Integer updateTeacherByTeacherName(Integer teacherId) {
+		return userMapper.updateTeacherByTeacherName(teacherId);
 	}
 
-	public User selectUserByStudentName(Integer studentName) {
-		// TODO Auto-generated method stub
-		return userMapper.selectUserByStudentName(studentName);
+	@Override
+	public Student selectStudentById(Integer studentId) {
+		return userMapper.selectStudentById(studentId);
 	}
+	
 
+	
+
+	
+	
 }
