@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="arthur.dao.attendance.AttendanceMapper">
+	<!-- 根据学生姓名签到 -->
+	<insert id="addstudentSign" parameterType="Student">
+		insert into student(studentSign,studentName) values(#{studentSign},#{studentName})
+	</insert>
+	<!-- 根据学生姓名签退 -->
+	<update id="updatestudentOut" parameterType="studentName">
+		 update attendance set studentOut=#{studentOut} where studentName=#{studentName}
+	</update>
+	<!-- 老师通过输入学生姓名查询该学生的考勤信息 -->
+	<select id="findbyStudentNameAndStuClass" resultType="Attendance">
+		select * from attendance where studentName=#{studentName}
+	</select>
+</mapper>

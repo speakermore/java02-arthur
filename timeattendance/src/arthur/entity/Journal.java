@@ -1,33 +1,49 @@
 package arthur.entity;
-/**
- * 日志实体类
- * @author QWF
- *
- * 2017年7月13日
- */
 
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class Journal implements Serializable {
-
-	private static final long serialVersionUID = 6797434549304546485L;
-	private Integer id;// 日志id
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4577994980165302051L;
+	private Integer id;// 主键id
 	private String journalContent;// 日志内容
 	private Timestamp journalTime;// 发表日志时间
-	private Integer studentId;// 学生id
+	private Integer studentId;// 学生表外键id
+	private String studentName;// 学生姓名
+	private String stuClass;// 班级
 
 	public Journal() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Journal(String journalContent, Timestamp journalTime, Integer studentId) {
+	public Journal(String journalContent, Timestamp journalTime, Integer studentId, String studentName,
+			String stuClass) {
 		super();
 		this.journalContent = journalContent;
 		this.journalTime = journalTime;
 		this.studentId = studentId;
+		this.studentName = studentName;
+		this.stuClass = stuClass;
+	}
 
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getStuClass() {
+		return stuClass;
+	}
+
+	public void setStuClass(String stuClass) {
+		this.stuClass = stuClass;
 	}
 
 	public Integer getId() {
@@ -65,7 +81,7 @@ public class Journal implements Serializable {
 	@Override
 	public String toString() {
 		return "Journal [id=" + id + ", journalContent=" + journalContent + ", journalTime=" + journalTime
-				+ ", studentId=" + studentId + "]";
+				+ ", studentId=" + studentId + ", studentName=" + studentName + ", stuClass=" + stuClass + "]";
 	}
 
 }

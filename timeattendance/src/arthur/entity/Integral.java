@@ -9,8 +9,11 @@ import java.io.Serializable;
  *         2017年7月13日
  */
 public class Integral implements Serializable {
-	private static final long serialVersionUID = -5464635993891265888L;
-	private Integer id;// 积分表id
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 364976714924682970L;
+	private Integer id;// 主键id
 	private Integer integralNum;// 积分总数
 	private Integer giftPoints;// 积分赠送
 	private Integer studentid;// 学生id

@@ -10,25 +10,39 @@ import java.io.Serializable;
  *         2017年7月13日
  */
 public class Student implements Serializable {
-
-	private static final long serialVersionUID = -3138961070916355740L;
-	private Integer id;// 学生密码
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8438279057656017575L;
+	private Integer id;// 主键id
+	private String studentPwd;// 学生密码
 	private String studentName;// 学生姓名
 	private String studentSex;// 学生性别
 	private String studentNo;// 学生学号
-	private String ClassId;// 班级id
+	private Integer classId;// 班级表外键id
+	private String stuClass;// 班级名称
 
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(String studentName, String studentSex, String studentNo, String classId) {
+	public Student(String studentPwd, String studentName, String studentSex, String studentNo, Integer classId,
+			String stuClass) {
 		super();
 		this.studentName = studentName;
 		this.studentSex = studentSex;
 		this.studentNo = studentNo;
-		ClassId = classId;
+		this.classId = classId;
+		this.stuClass = stuClass;
+	}
+
+	public String getStuClass() {
+		return stuClass;
+	}
+
+	public void setStuClass(String stuClass) {
+		this.stuClass = stuClass;
 	}
 
 	public int getId() {
@@ -63,18 +77,18 @@ public class Student implements Serializable {
 		this.studentNo = studentNo;
 	}
 
-	public String getClassId() {
-		return ClassId;
+	public Integer getClassId() {
+		return classId;
 	}
 
-	public void setClassId(String classId) {
-		ClassId = classId;
+	public void setClassId(Integer classId) {
+		this.classId = classId;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", studentName=" + studentName + ", studentSex=" + studentSex + ", studentNo="
-				+ studentNo + ", ClassId=" + ClassId + "]";
+		return "Student [id=" + id + ", studentPwd=" + studentPwd + ", studentName=" + studentName + ", studentSex="
+				+ studentSex + ", studentNo=" + studentNo + ", classId=" + classId + ", stuClass=" + stuClass + "]";
 	}
 
 }

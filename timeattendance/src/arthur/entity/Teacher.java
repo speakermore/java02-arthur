@@ -10,8 +10,11 @@ import java.io.Serializable;
  *         2017年7月13日
  */
 public class Teacher implements Serializable {
-	private static final long serialVersionUID = 1957666182227796573L;
-	private Integer id;// 老师id
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6380880034347369203L;
+	private Integer id;// 主键id
 	private String teacherName;// 老师姓名
 	private String teacherPwd;// 老师登录密码
 

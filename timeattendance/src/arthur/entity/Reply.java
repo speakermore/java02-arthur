@@ -1,7 +1,7 @@
 package arthur.entity;
 
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 /**
  * 
@@ -10,25 +10,40 @@ import java.security.Timestamp;
  *         2017年7月13日
  */
 public class Reply implements Serializable {
-
-	private static final long serialVersionUID = -3054483775839243054L;
-	private Integer id;// 答复表id
-	private String answer;// 问题的答案
-	private String help;// 问题
-	private Timestamp helpTime;// 提问的时间
-	private Timestamp answerTimes;// 回答问题的时间
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6239655557553344306L;
+	private Integer id;// 主键id
+	private String answer;// 回答问题
+	private String help;// 提问问题或求助
+	private Timestamp answerTime;// 回答问题时间
+	private Timestamp helpTime;// 提问问题或求助时间
+	private String helpName;// 提问者的id
+	private String studentName;// 回答问题的学生名字
+	private String teacherName;// 回答问题的老师名字
 
 	public Reply() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Reply(String answer, String help, Timestamp helpTime, Timestamp answerTimes) {
+	public Reply(String answer, String help, Timestamp answerTime, Timestamp helpTime, String helpName,
+			String studentName, String teacherName) {
 		super();
 		this.answer = answer;
 		this.help = help;
 		this.helpTime = helpTime;
-		this.answerTimes = answerTimes;
+		this.helpName = helpName;
+		this.studentName = studentName;
+		this.teacherName = teacherName;
+	}
+
+	@Override
+	public String toString() {
+		return "Reply [id=" + id + ", answer=" + answer + ", help=" + help + ", answerTime=" + answerTime
+				+ ", helpTime=" + helpTime + ", helpName=" + helpName + ", studentName=" + studentName
+				+ ", teacherName=" + teacherName + "]";
 	}
 
 	public Integer getId() {
@@ -63,18 +78,28 @@ public class Reply implements Serializable {
 		this.helpTime = helpTime;
 	}
 
-	public Timestamp getAnswerTimes() {
-		return answerTimes;
+	public String getHelpName() {
+		return helpName;
 	}
 
-	public void setAnswerTimes(Timestamp answerTimes) {
-		this.answerTimes = answerTimes;
+	public void setHelpName(String helpName) {
+		this.helpName = helpName;
 	}
 
-	@Override
-	public String toString() {
-		return "Reply [id=" + id + ", answer=" + answer + ", help=" + help + ", helpTime=" + helpTime + ", answerTimes="
-				+ answerTimes + "]";
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getTeacherName() {
+		return teacherName;
+	}
+
+	public void setTeacherName(String teacherName) {
+		this.teacherName = teacherName;
 	}
 
 }

@@ -1,6 +1,7 @@
 package arthur.entity;
 
-import java.security.Timestamp;
+import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * 
@@ -8,24 +9,28 @@ import java.security.Timestamp;
  *
  *         2017年7月13日
  */
-public class Fabulous {
-	private Integer id;// 点赞表
-	private Integer studentId;// 学生外键id
-	private Timestamp fabulousTime;// 点赞时间
-	private String fabulousName;// 点赞学生
+public class Fabulous implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 82743286097076518L;
+	private Integer id;// 主键id
+	private Integer studentId;// 学生表外键id
 	private String studentName;// 被点赞的学生
+	private Timestamp fabulousTime;// 点赞的时间
+	private String fabulousName;// 点赞学生
 
 	public Fabulous() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Fabulous(Integer studentId, Timestamp fabulousTime, String fabulousName, String studentName) {
+	public Fabulous(Integer id, Integer studentId, String studentName, Timestamp fabulousTime, String fabulousName) {
 		super();
 		this.studentId = studentId;
+		this.studentName = studentName;
 		this.fabulousTime = fabulousTime;
 		this.fabulousName = fabulousName;
-		this.studentName = studentName;
 	}
 
 	public Integer getId() {
@@ -44,6 +49,14 @@ public class Fabulous {
 		this.studentId = studentId;
 	}
 
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
 	public Timestamp getFabulousTime() {
 		return fabulousTime;
 	}
@@ -60,18 +73,10 @@ public class Fabulous {
 		this.fabulousName = fabulousName;
 	}
 
-	public String getStudentName() {
-		return studentName;
-	}
-
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-
 	@Override
 	public String toString() {
-		return "Fabulous [id=" + id + ", studentId=" + studentId + ", fabulousTime=" + fabulousTime + ", fabulousName="
-				+ fabulousName + ", studentName=" + studentName + "]";
+		return "Fabulous [id=" + id + ", studentId=" + studentId + ", studentName=" + studentName + ", fabulousTime="
+				+ fabulousTime + ", fabulousName=" + fabulousName + "]";
 	}
 
 }
