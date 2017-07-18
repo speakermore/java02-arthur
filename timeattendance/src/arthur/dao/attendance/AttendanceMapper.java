@@ -8,7 +8,7 @@ import arthur.entity.Attendance;
 
 public interface AttendanceMapper {
 	// 根据学生id，签到
-	public Integer addStudentSign(Integer studentId);
+	public Integer addStudentSign(@Param("studentId") Integer studentId);
 
 	// 根据学生ID签退
 	public Integer updatestudentOutByStudentName(@Param("studentId") Integer studentId);
