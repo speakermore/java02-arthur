@@ -3,6 +3,12 @@ package arthur.service;
 import arthur.entity.Student;
 import arthur.entity.Teacher;
 
+/***
+ * 
+ * @author 谭夏男
+ *
+ * 2017年7月19日
+ */
 public interface UserService {
 	/**
 	 * 老师登录

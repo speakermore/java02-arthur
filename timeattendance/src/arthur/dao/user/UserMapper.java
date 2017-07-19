@@ -5,6 +5,12 @@ import org.apache.ibatis.annotations.Param;
 import arthur.entity.Student;
 import arthur.entity.Teacher;
 
+/***
+ * 
+ * @author 谭夏男
+ *
+ * 2017年7月19日
+ */
 public interface UserMapper {
 	/**
 	 * 老师登录
