@@ -1,7 +1,6 @@
 package arthur.service;
 
-import org.apache.ibatis.annotations.Param;
-
 public interface FabulousService {
-	public Integer addFabulousIdAndFabulousTime(@Param("studentId") Integer studentId);
+	// 根据被点赞学生id点赞,点赞时间
+	public Integer addFabulousIdAndFabulousTime(Integer studentId);
 }

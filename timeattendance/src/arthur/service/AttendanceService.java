@@ -1,15 +1,17 @@
 package arthur.service;
 
+import java.sql.Timestamp;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
 
 import arthur.entity.Attendance;
 
 public interface AttendanceService {
-	public Integer addStudentSign(@Param("studentId") Integer studentId);
+	// 根据学生id，签到
+	public Integer addStudentSign(Integer studentId);
 
-	public Integer updatestudentOutByStudentName(@Param("studentId") Integer studentId);
+	// 根据学生ID签退
+	public Timestamp updatestudentOutByStudentName(Integer studentId);
 
-	public List<Attendance> findbyStudentNameAndStuClass(@Param("studentId") Integer studentId);
+	// 老师通过输入学生ID查询该学生的考勤信息
+	public List<Attendance> findbyStudentNameAndStuClass(Integer studentId);
 }
