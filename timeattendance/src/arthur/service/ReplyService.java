@@ -5,6 +5,12 @@ import java.util.List;
 import arthur.entity.Reply;
 import arthur.entity.Student;
 
+/**
+ * 
+ * @author 钱文飞
+ *
+ *         2017年7月19日
+ */
 public interface ReplyService {
 	// 根据提问者Id显示他的姓名
 	public Student selectReplyHelpName(Integer studentId);

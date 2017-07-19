@@ -9,19 +9,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 import arthur.service.JournalService;
 
+/**
+ * 
+ * @author 钱文飞
+ *
+ *         2017年7月19日
+ */
 @Controller
-@RequestMapping("/arthur/journal") // 此控制其中的所有请求映射均要添加 前缀
+@RequestMapping("/arthur/journal")
 public class JournalController {
 	@Resource
 	JournalService journalService;
 
 	// 学生根据自己的id添加日志
-	// 取(就是取dao层里面的参数)
 	@RequestMapping(value = "/addJournal", method = RequestMethod.POST)
 	public ModelAndView addJournal(Integer studentId, String journalContent) {
-		// 调(就是调service服务层里面的方法)
 		journalService.addJournal(studentId, journalContent);
-		// 转(就是跳转到你的页面)
 		return null;
 	}
 

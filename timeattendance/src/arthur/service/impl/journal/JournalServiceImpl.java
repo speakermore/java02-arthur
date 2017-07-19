@@ -11,6 +11,12 @@ import arthur.dao.journal.JournalMapper;
 import arthur.entity.Journal;
 import arthur.service.JournalService;
 
+/**
+ * 
+ * @author 钱文飞
+ *
+ *         2017年7月19日
+ */
 @Service
 public class JournalServiceImpl implements JournalService {
 

@@ -7,6 +7,12 @@ import org.apache.ibatis.annotations.Param;
 
 import arthur.entity.Journal;
 
+/**
+ * 
+ * @author 钱文飞
+ *
+ *         2017年7月19日
+ */
 public interface JournalMapper {
 	// 学生根据自己的id添加日志
 	public Integer addJournal(@Param("studentId") Integer studentId, @Param("journalContent") String journalContent,

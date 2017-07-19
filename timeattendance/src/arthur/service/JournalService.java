@@ -4,6 +4,12 @@ import java.util.List;
 
 import arthur.entity.Journal;
 
+/**
+ * 
+ * @author 钱文飞
+ *
+ *         2017年7月19日
+ */
 public interface JournalService {
 	// 学生根据自己的id添加日志
 	public Integer addJournal(Integer studentId, String journalContent);

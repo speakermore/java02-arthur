@@ -7,6 +7,12 @@ import org.apache.ibatis.annotations.Param;
 import arthur.entity.Reply;
 import arthur.entity.Student;
 
+/**
+ * 
+ * @author 钱文飞
+ *
+ *         2017年7月19日
+ */
 public interface ReplyMapper {
 	// 根据提问者Id显示他的姓名
 	public Student selectReplyHelpName(@Param("studentId") Integer studentId);
