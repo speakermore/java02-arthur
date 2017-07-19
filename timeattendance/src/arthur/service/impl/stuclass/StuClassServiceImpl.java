@@ -6,6 +6,11 @@ import org.springframework.stereotype.Service;
 
 import arthur.dao.stuclass.StuClassMapper;
 import arthur.service.StuClassService;
+/***
+ * 
+ * @author 谭夏男
+ *
+ */
 @Service
 public class StuClassServiceImpl implements StuClassService {
 	
