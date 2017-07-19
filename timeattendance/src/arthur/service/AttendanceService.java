@@ -4,6 +4,10 @@ import java.util.List;
 
 import arthur.entity.Attendance;
 
+/**
+ * 
+ * @auther 代益铨 2017年7月19日下午5:19:45
+ */
 public interface AttendanceService {
 	// 根据学生id，签到
 	public Integer addStudentSign(Integer studentId);

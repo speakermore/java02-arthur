@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 import arthur.dao.integral.IntegralMapper;
 import arthur.service.IntegralService;
 
+/**
+ * 
+ * @auther 代益铨 2017年7月19日下午5:19:45
+ */
 @Service
 public class IntegralServiceImpl implements IntegralService {
 	@Resource
