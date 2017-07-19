@@ -22,13 +22,13 @@ public class AttendanceServiceImpl implements AttendanceService {
 	}
 
 	@Override
-	public Timestamp updatestudentOutByStudentName(Integer studentId) {
-		return attendanceMapper.updatestudentOutByStudentName(studentId);
+	public Integer updatestudentOut(Integer studentId) {
+		return attendanceMapper.updatestudentOut(studentId, new Timestamp(System.currentTimeMillis()));
 	}
 
 	@Override
-	public List<Attendance> findbyStudentNameAndStuClass(Integer studentId) {
-		return attendanceMapper.findbyStudentNameAndStuClass(studentId);
+	public List<Attendance> findbyStudentId(Integer studentId) {
+		return attendanceMapper.findbyStudentId(studentId);
 	}
 
 }

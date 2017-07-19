@@ -12,8 +12,8 @@ public interface AttendanceMapper {
 	public Integer addStudentSign(@Param("studentId") Integer studentId, @Param("studentSign") Timestamp studentSign);
 
 	// 根据学生ID签退
-	public Integer updatestudentOutByStudentName(@Param("studentId") Integer studentId);
+	public Integer updatestudentOut(@Param("studentId") Integer studentId, @Param("studentOut") Timestamp studentOut);
 
 	// 老师通过输入学生ID查询该学生的考勤信息
-	public List<Attendance> findbyStudentNameAndStuClass(@Param("studentId") Integer studentId);
+	public List<Attendance> findbyStudentId(@Param("studentId") Integer studentId);
 }
