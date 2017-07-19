@@ -5,8 +5,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.attendance.AttendanceMapper">
 	<!-- 根据学生id签到 -->
-	<insert id="addstudentSign" parameterType="Integer">
-		insert into attendance(studentSign) values (#{studentSign})
+	<insert id="addstudentSign" >
+		insert into attendance(studentSign,studentId) values (#{studentSign},#{studentId})
 	</insert>
 	<!-- 根据学生id签退 -->
 	<update id="updatestudentOut" parameterType="Integer">
