@@ -9,6 +9,13 @@ import arthur.entity.Student;
 import arthur.entity.Teacher;
 import arthur.service.UserService;
 
+
+/***
+ * 
+ * @author 谭夏男
+ *
+ * 2017年7月19日
+ */
 //@Service注解表明此类为业务层，写在现实类的前面
 @Service
 public class UserServiceImpl implements UserService {
