@@ -13,13 +13,13 @@ public class IntegralServiceImpl implements IntegralService {
 	public IntegralMapper integralMapper;
 
 	@Override
-	public Integer addIntegral(Integer studentId) {
-		return integralMapper.addIntegral(studentId);
+	public Integer addIntegral(Integer studentId, Integer integralNum) {
+		return integralMapper.addIntegral(studentId, integralNum);
 	}
 
 	@Override
-	public Integer updateIntegral(Integer studentId) {
-		return integralMapper.updateIntegral(studentId);
+	public Integer updateIntegral(Integer studentId, Integer giftPoints) {
+		return integralMapper.updateIntegral(studentId, giftPoints);
 	}
 
 }

@@ -9,11 +9,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into attendance(studentSign,studentId) values (#{studentSign},#{studentId})
 	</insert>
 	<!-- 根据学生id签退 -->
-	<update id="updatestudentOut" parameterType="Integer">
+	<update id="updatestudentOut" >
 		 update attendance set studentOut=#{studentOut} where studentId=#{studentId}
 	</update>
 	<!-- 老师通过输入学生id查询该学生的考勤信息 -->
-	<select id="findbyStudentNameAndStuClass" resultType="Attendance">
+	<select id="findbyStudentId" resultType="Attendance">
 		select * from attendance where studentId=#{studentId}
 	</select>
 </mapper>
