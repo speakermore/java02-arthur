@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import arthur.dao.fabulous.FabulousMapper;
 import arthur.service.FabulousService;
 
+/**
+ * 
+ * @auther 代益铨 2017年7月19日下午5:19:45
+ */
 @Service
 public class FabulousServiceImpl implements FabulousService {
 	@Resource
