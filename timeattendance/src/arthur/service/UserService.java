@@ -1,7 +1,5 @@
 package arthur.service;
 
-import org.apache.ibatis.annotations.Param;
-
 import arthur.entity.Student;
 import arthur.entity.Teacher;
 
@@ -9,7 +7,7 @@ public interface UserService {
 	/**
 	 * 老师登录
 	 */
-	
+
 	public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId);
 
 	/**
@@ -35,6 +33,6 @@ public interface UserService {
 	/**
 	 * 根据studentId查询用户（显示学生信息）
 	 */
-	public Student selectStudentById(@Param("studentId") Integer studentId);
+	public Student selectStudentById(Integer studentId);
 
 }

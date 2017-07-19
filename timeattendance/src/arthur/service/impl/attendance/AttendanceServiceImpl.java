@@ -1,5 +1,6 @@
 package arthur.service.impl.attendance;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -17,11 +18,11 @@ public class AttendanceServiceImpl implements AttendanceService {
 
 	@Override
 	public Integer addStudentSign(Integer studentId) {
-		return attendanceMapper.addStudentSign(studentId);
+		return attendanceMapper.addStudentSign(studentId, new Timestamp(System.currentTimeMillis()));
 	}
 
 	@Override
-	public Integer updatestudentOutByStudentName(Integer studentId) {
+	public Timestamp updatestudentOutByStudentName(Integer studentId) {
 		return attendanceMapper.updatestudentOutByStudentName(studentId);
 	}
 
