@@ -5,12 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.journal.JournalMapper">
 	<!-- 学生根据自己的id添加日志 -->
-	<insert id="addJournal" parameterType="Integer">
-		insert into journal(journalContent,journalTime,studentName,stuClass) values (#{journalContent},#{journalTime},#{studentName},#{stuClass})
+	<insert id="addJournal" >
+		insert into journal(journalContent,journalTime) values (#{journalContent},#{journalTime})
 	</insert>
 	
 	<!-- 学生根据自己的id修改日志 -->
-	<update id="updateJournal" parameterType="Integer">
+	<update id="updateJournal">
 		update journal set journalContent=#{journalContent} where studentId=#{studentId}
 	</update>
 	

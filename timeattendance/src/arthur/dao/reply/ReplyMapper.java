@@ -9,11 +9,11 @@ import arthur.entity.Student;
 
 public interface ReplyMapper {
 	// 根据提问者Id显示他的姓名
-	public Student selectReplyHelpName(@Param("studentId") String studentId);
+	public Student selectReplyHelpName(@Param("studentId") Integer studentId);
 
 	// 添加提问的问题
 	public List<Reply> addReply(@Param("studentId") Integer studentId);
 
 	// 根据回答问题显示回答问题的姓名
-	public Student selectReplyAnswerName(@Param("answer") String studentId);
+	public Student selectReplyAnswerName(@Param("answer") Integer studentId);
 }

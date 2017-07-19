@@ -18,7 +18,7 @@ public class ReplyServiceImpl implements ReplyService {
 	public ReplyMapper replyMapper;
 
 	@Override
-	public Student selectReplyHelpName(String studentId) {
+	public Student selectReplyHelpName(Integer studentId) {
 		return replyMapper.selectReplyHelpName(studentId);
 	}
 
@@ -28,7 +28,7 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public Student selectReplyAnswerName(String studentId) {
+	public Student selectReplyAnswerName(Integer studentId) {
 		return replyMapper.selectReplyAnswerName(studentId);
 	}
 

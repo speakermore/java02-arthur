@@ -1,5 +1,6 @@
 package arthur.service.impl.journal;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -12,18 +13,18 @@ import arthur.service.JournalService;
 
 @Service
 public class JournalServiceImpl implements JournalService {
-	
+
 	@Resource
 	public JournalMapper journalMapper;
-	
+
 	@Override
-	public Integer addJournal(Integer studentId) {
-		return journalMapper.addJournal(studentId);
+	public Integer addJournal(Integer studentId, String journalContent) {
+		return journalMapper.addJournal(studentId, journalContent, new Timestamp(System.currentTimeMillis()));
 	}
 
 	@Override
-	public Integer updateJournal(Integer studentId) {
-		return journalMapper.updateJournal(studentId);
+	public Integer updateJournal(Integer studentId, String journalContent) {
+		return journalMapper.updateJournal(studentId, journalContent);
 	}
 
 	@Override

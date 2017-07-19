@@ -16,6 +16,6 @@ public class AttendanceController {
 	@RequestMapping
 	public String addStudentSign(Integer studentId) {
 		attendanceService.addStudentSign(studentId);
-		return student;
+		return null;
 	}
 }
