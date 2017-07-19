@@ -17,6 +17,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<!-- 此处1分，可能有两条 -->
 		<mapper resource="dao/UserMapper.xml" />
+		<mapper resource="dao/AttendanceMapper.xml" />
+		<mapper resource="dao/FabulousMapper.xml" />
+		<mapper resource="dao/IntegralMapper.xml" />
+		<mapper resource="dao/JournalMapper.xml" />
+		<mapper resource="dao/ReplyMapper.xml" />
+		<mapper resource="dao/StuClassMapper.xml" />
 	</mappers>
 
 </configuration>
