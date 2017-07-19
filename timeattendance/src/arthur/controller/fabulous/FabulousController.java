@@ -9,6 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import arthur.service.FabulousService;
 
+/**
+ * 
+ * @auther 代益铨 2017年7月19日下午5:19:45
+ */
 @Controller
 @RequestMapping("/arthur/fabulous")
 public class FabulousController {
