@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
  *
  *         2017年7月24日
  */
-public interface QuestionMpper {
+public interface QuestionMapper {
 	// 提问者:提问者给出提问的内容和时间
 	public Integer addQuestionContentQuestionTime(@Param("questionContent") String questionContent,
 			@Param("QuestionTime") Timestamp questionTime);

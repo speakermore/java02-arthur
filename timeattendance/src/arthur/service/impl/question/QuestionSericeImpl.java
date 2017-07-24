@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 import javax.annotation.Resource;
 
-import arthur.dao.question.QuestionMpper;
+import arthur.dao.question.QuestionMapper;
 import arthur.service.QuestionService;
 
 /**
@@ -15,7 +15,7 @@ import arthur.service.QuestionService;
  */
 public class QuestionSericeImpl implements QuestionService {
 	@Resource
-	QuestionMpper questionMpper;
+	QuestionMapper questionMpper;
 
 	@Override
 	public Integer addQuestionContent(String questionContent) {
