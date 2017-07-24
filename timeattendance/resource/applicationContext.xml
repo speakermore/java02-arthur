@@ -28,7 +28,7 @@
 
 	<!-- Dao -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="arthur.dao"></property>
+		<property name="basePackage" value="arthur.dao.user"></property>
 	</bean>
 	<!-- Service -->
 	<!-- 扫描注解定义 -->
