@@ -28,7 +28,7 @@
 
 	<!-- Dao -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="arthur.dao.user"></property>
+		<property name="basePackage" value="arthur.dao"></property>
 	</bean>
 	<!-- Service -->
 	<!-- 扫描注解定义 -->
@@ -55,7 +55,7 @@
 	</tx:advice>
 	<!-- 配置切面 -->
 	<aop:config>
-		<aop:advisor pointcut="execution(* service.impl.*.*(..))"
+		<aop:advisor pointcut="execution(* arthur.service.impl.*.*(..))"
 			advice-ref="txAdvice" />
 	</aop:config>
 </beans>
