@@ -5,12 +5,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.question.QuestionMpper">
 	<!-- 提问者:提问者给出提问的内容和时间 -->
-	<insert id="addQuestionContentQuestionTime" >
+	<insert id="addQuestionContentQuestionTime"  parameterType="String">
 		insert into question(questionContent,questionTime) values (#{questionContent},#{questionTime})
 	</insert>
 	
 	<!-- 提问者可以根据自己的id修改问题内容 -->
-	<update id="updateStudentIdQuestionContent">
+	<update id="updateStudentIdQuestionContent"  parameterType="String">
 		update question set questionContent=#{questionContent} where studentId=#{studentId}
 	</update>
 	
