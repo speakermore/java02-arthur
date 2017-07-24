@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import arthur.dao.question.QuestionMapper;
 import arthur.service.QuestionService;
 
@@ -13,6 +15,7 @@ import arthur.service.QuestionService;
  *
  *         2017年7月24日
  */
+@Service
 public class QuestionSericeImpl implements QuestionService {
 	@Resource
 	QuestionMapper questionMpper;

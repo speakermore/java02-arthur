@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -12,7 +14,7 @@
   </head>
   <body>
   	<article class="container">
-	  	<form action="message/add" role="form" class="form-horizontal " style="margin-top: 100px;">
+	  	<form action="arthur/user/findByTeacherNameAndTeacherPwd" role="form" class="form-horizontal " style="margin-top: 100px;">
 	  		<div class="form-group">
 	  			<label for="uName" class="control-label col-xs-4">姓名:</label>
 	  			<div class="col-xs-3">
