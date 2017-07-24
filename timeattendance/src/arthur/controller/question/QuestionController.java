@@ -1,7 +1,5 @@
 package arthur.controller.question;
 
-import java.sql.Timestamp;
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -22,10 +20,10 @@ public class QuestionController {
 	@Resource
 	QuestionService questionService;
 
-	// 提问者:提问者给出提问的内容和时间
+	// 提问者:提问者给出提问的内容
 	@RequestMapping(value = "/addQuestion", method = RequestMethod.POST)
-	public Integer addQuestionContentQuestionTime(String questionContent, Timestamp questionTime) {
-		questionService.addQuestionContentQuestionTime(questionContent, questionTime);
+	public Integer addQuestionContentQuestionTime(String questionContent) {
+		questionService.addQuestionContent(questionContent);
 		return null;
 	}
 

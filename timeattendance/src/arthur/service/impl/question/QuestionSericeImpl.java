@@ -18,9 +18,9 @@ public class QuestionSericeImpl implements QuestionService {
 	QuestionMpper questionMpper;
 
 	@Override
-	public Integer addQuestionContentQuestionTime(String questionContent, Timestamp questionTime) {
+	public Integer addQuestionContent(String questionContent) {
 		// TODO Auto-generated method stub
-		return questionMpper.addQuestionContentQuestionTime(questionContent, questionTime);
+		return questionMpper.addQuestionContentQuestionTime(questionContent, new Timestamp(System.currentTimeMillis()));
 	}
 
 	@Override
