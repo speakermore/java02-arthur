@@ -5,11 +5,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.integral.IntegralMapper">
 	<!-- 通过学生id添加积分 -->
-	<insert id="addIntegral"  parameterType="Integral">
+	<insert id="addIntegral"  parameterType="Integer">
 		insert into integral(integralNum,studentId) values(#{integralNum},#{studentId})
 	</insert>
 	<!-- 通过回答者id给积分奖励 -->
-	<update id="updateIntegral" >
+	<update id="updateIntegral" parameterMap="Integer" >
 		update integral set giftPoints=#{giftPoints} integralNum=(integralNum-figtPoints) where studentId=#{studentId}
 	</update>
 </mapper>

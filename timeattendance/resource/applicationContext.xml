@@ -55,6 +55,7 @@
 	</tx:advice>
 	<!-- 配置切面 -->
 	<aop:config>
+
 		<aop:advisor pointcut="execution(* arthur.service.impl.*.*(..))" 
 			advice-ref="txAdvice" />
 	</aop:config>
