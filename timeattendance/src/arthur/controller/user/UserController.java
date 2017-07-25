@@ -14,11 +14,12 @@ import arthur.service.UserService;
  * @author 谭夏男
  *
  */
+
 @Controller
 @RequestMapping("/arthur/user")
 public class UserController {
 	@Resource
-	UserService userService;
+	private UserService userService;
 
 	/**
 	 * 老师登录
