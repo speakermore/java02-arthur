@@ -13,7 +13,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select helpName from reply where id=#{studentId}
 	</select>
 	<!-- 根据回答问题显示回答问题的用户姓名 -->
-	<select id="selectReply" resultType="String">
-		select studentName,teacherName Time from reply where id=#{studentId}
+	<select id="selectReplyAnswerName" resultType="String">
+		<if test="studentId ge 10000">
+		select studentName from reply,student where reply.?=student.id id=#{studentId}
+		</if>
+		<if test="studentId lt 10000">
+		select teacherName from reply,teacher where reply.?=teacher.id id=#{studentId}
+		</if>
 	</select>
 </mapper>

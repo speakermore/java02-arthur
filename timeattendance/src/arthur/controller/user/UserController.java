@@ -33,6 +33,10 @@ public class UserController {
 		userService.findByStudentNameAndStudentPwd(studentId);
 		return null;
 	}
+	@RequestMapping("/findByTeacherNameAndTeacherPwd")
+	public String findByTeacherNameAndTeacherPwd() {
+		return "/pages/success";
+	}
 	
 	/**
 	 * 学生注册
