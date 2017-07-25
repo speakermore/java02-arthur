@@ -34,16 +34,16 @@ public class UserController {
 		return "studentLogin";
 	}
 
-	@RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
-	public String findByTeacherNameAndTeacherPwd(@RequestParam("teacherId") String teacherId) {
-
-		return "teacherLogin";
-	}
-
-	@RequestMapping(value = "/studentLogin", method = RequestMethod.POST)
-	public String findByStudentNameAndSPwd(@RequestParam("studentId") String studentId) {
-		return "teacherLogin";
-	}
+//	@RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
+//	public String findByTeacherNameAndTeacherPwd(@RequestParam("teacherId") String teacherId) {
+//
+//		return "teacherLogin";
+//	}
+//
+//	@RequestMapping(value = "/studentLogin", method = RequestMethod.POST)
+//	public String findByStudentNameAndSPwd(@RequestParam("studentId") String studentId) {
+//		return "teacherLogin";
+//	}
 
 	// @RequestMapping(value = "/findByStudentNameAndStudentPwd", method =
 	// RequestMethod.POST)
