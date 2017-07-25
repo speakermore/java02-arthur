@@ -14,14 +14,17 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	 	<package name="arthur.entity"/>
 	</typeAliases>
 	<!-- 将mapper文件加入到配置文件中 -->
- 	<mappers>
- 		<mapper resource="arthur/dao/user/UserMapper.xml" />
+
+	<mappers>
+		<!--  -->
+		<mapper resource="arthur/dao/user/UserMapper.xml" />
 		<mapper resource="arthur/dao/attendance/AttendanceMapper.xml" />
 		<mapper resource="arthur/dao/fabulous/FabulousMapper.xml" />
 		<mapper resource="arthur/dao/integral/IntegralMapper.xml" />
 		<mapper resource="arthur/dao/journal/JournalMapper.xml" />
-		<mapper resource="arthur/dao/reply/ReplyMapper.xml" />
+		<mapper resource="arthur/dao/question/QuestionMapper.xml" />
 		<mapper resource="arthur/dao/stuclass/StuClassMapper.xml" />
- 	</mappers>
+		<mapper resource="arthur/dao/answer/AnswerMapper.xml" />
+	</mappers>
 
 </configuration>
