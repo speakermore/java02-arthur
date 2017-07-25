@@ -5,11 +5,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.attendance.AttendanceMapper">
 	<!-- 根据学生id签到 -->
-	<insert id="addstudentSign" >
+	<insert id="addstudentSign" parameterMap="Attendance" >
 		insert into attendance(studentSign,studentId) values (#{studentSign},#{studentId})
 	</insert>
 	<!-- 根据学生id签退 -->
-	<update id="updatestudentOut" >
+	<update id="updatestudentOut" parameterMap="Attendance" >
 		 update attendance set studentOut=#{studentOut} where studentId=#{studentId}
 	</update>
 	<!-- 老师通过输入学生id查询该学生的考勤信息 -->
