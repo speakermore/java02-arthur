@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="arthur.dao.attendance.AttendanceMapper">
 	<!-- 回答问题，给出答复内容，答复时间，答复者的id -->
-	<insert id="addAnswer" >
+	<insert id="addAnswer"  parameterMap="Answer">
 		insert into answer(answerContent,answerTime,answerId) values (#{answerContent},#{answerTime},#{answerId})
 	</insert>
 </mapper>
