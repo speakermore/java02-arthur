@@ -21,6 +21,7 @@ public class UserController {
 	UserService userService;
 
 	/**
+
 	 * 老师登录
 	 */
 	@RequestMapping(value = "/teacherLogin", method = RequestMethod.GET)
