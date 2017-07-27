@@ -51,8 +51,9 @@
 								</div>
 								<div class="form-group">
 									<div class="col-xs-offset-5">
-										<input type="submit" value="登录"
-											class="btn btn-primary col-xs-4" />
+										<a href="home">
+											<input type="submit" value="登录" class="btn btn-primary col-xs-4" />
+										</a>
 									</div>
 								</div>
 							</form>
