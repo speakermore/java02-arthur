@@ -9,18 +9,18 @@ import arthur.entity.Teacher;
  * 
  * @author 谭夏男
  *
- * 2017年7月19日
+ *         2017年7月19日
  */
 public interface UserMapper {
 	/**
 	 * 老师登录
 	 */
-	public Teacher findByTeacherNameAndTeacherPwd(@Param("techerId")Integer teacherId);
+	public Teacher findByTeacherNameAndTeacherPwd(@Param("techerId") Integer teacherId);
 
 	/**
 	 * 学生登录
 	 */
-	public Student findByStudentNameAndStudentPwd(Integer studentId);
+	public Student findByStudentNameAndStudentPwd(@Param("stuname") String stuname);
 
 	/**
 	 * 学生注册

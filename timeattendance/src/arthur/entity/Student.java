@@ -91,4 +91,16 @@ public class Student implements Serializable {
 				+ studentSex + ", studentNo=" + studentNo + ", classId=" + classId + ", stuClass=" + stuClass + "]";
 	}
 
+	public String getStudentPwd() {
+		return studentPwd;
+	}
+
+	public void setStudentPwd(String studentPwd) {
+		this.studentPwd = studentPwd;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 }
