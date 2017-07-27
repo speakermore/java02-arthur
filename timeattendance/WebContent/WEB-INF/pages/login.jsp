@@ -19,23 +19,17 @@
 					<h2 style="text-align: center;"><strong>登录</strong></h2>
 				</div>
 				<div class="panel-body">
-					<form action="" role="form" class="form-horizontal">
+					<form action="arthur/user/login" role="form" class="form-horizontal"  method="post">
 						<div class="form-group">
-							<label for="oldPwd" class="control-label col-xs-4">姓名：</label>
+							<label for="stuname" class="control-label col-xs-4">用户名：</label>
 							<div class="col-xs-6">
-								<input type="text" id="oldPwd" class="form-control" />
+								<input type="text" id="stuname" class="form-control" name="stuname"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="newPwd" class=" control-label col-xs-4">密码：</label>
 							<div class="col-xs-6">
-								<input type="password" id="newPwd" class="form-control" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="confirmPwd" class=" control-label col-xs-4">确认密码：</label>
-							<div class="col-xs-6">
-								<input type="password" id="confirmPwd" class="form-control" />
+								<input type="password" id="newPwd" class="form-control" name="newPwd"/>
 							</div>
 						</div>
 						<div class="form-group">

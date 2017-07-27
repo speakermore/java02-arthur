@@ -31,6 +31,7 @@ public class AnswerController {
 	 */
 	@RequestMapping(value = "/answerindex", method = RequestMethod.GET)
 	public String answer() {
+
 		return "answer";
 	}
 

@@ -1,11 +1,14 @@
 package arthur.controller.user;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import arthur.entity.Student;
 import arthur.service.UserService;
 
 /***
@@ -24,18 +27,34 @@ public class UserController {
 	 * 
 	 * 登录
 	 */
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login() {
-		return "login";
+	/*
+	 * @RequestMapping(value = "/login", method = RequestMethod.GET) public
+	 * String login() { return "login"; }
+	 */
+
+	/**
+	 * 
+	 * 登录
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView login(String stuname, String newPwd, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		Student stu = userService.findByStudentNameAndStudentPwd(stuname);
+		if (stu.getStudentPwd().equals(newPwd)) {
+			session.setAttribute("user", stu);
+			mv.setViewName("home");
+		}
+
+		return mv;
 	}
 
 	/**
 	 * 
 	 * 首页
 	 */
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home() {
-		return "home";
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		return "login";
 	}
 
 	/**

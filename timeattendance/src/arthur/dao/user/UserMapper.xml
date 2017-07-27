@@ -4,30 +4,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="arthur.dao.user.UserMapper">
-	<!-- 登录 :用户名和用户密码 -->
-	<select id="findByTeacherNameAndTeacherPwd"  resultType="Teacher">
-        select * from  teacher where (teacherName=#{teacherName} and teacherPwd=#{teacherPwd}
-    </select>
-	<select id="findByStudentNameAndStudentPwd"  resultType="Student">
-        select * from  student where (studentName=#{studentName} and studentPwd=#{studentPwd})
-    </select>
-	<!-- 修改学生密码  -->
+	<select id="findByTeacherNameAndTeacherPwd" resultType="arthur.entity.Teacher">
+		select *
+		from teacher where (teacherName=#{teacherName} and
+		teacherPwd=#{teacherPwd}
+	</select>
+	<select id="findByStudentNameAndStudentPwd" resultType="arthur.entity.Student"
+		parameterType="String">
+		select * from student where studentName=#{stuname}
+	</select>
 	<update id="updateUser" parameterType="Integer">
-		 update student set studentPwd=#{studentPwd} where studentName=#{studentName}
+		update student set
+		studentPwd=#{studentPwd} where studentName=#{studentName}
 	</update>
-	<!-- 修改老师密码  -->
 	<update id="updateTeacher" parameterType="Integer">
-		 update teacher set teacherPwd=#{teacherPwd} where teacherName=#{teacherName}
+		update teacher set
+		teacherPwd=#{teacherPwd} where teacherName=#{teacherName}
 	</update>
-	<!-- 注册  -->
 	<insert id="addStudent" parameterType="Integer">
-		insert into student(studentPwd,studentName,studentSex,studentNo,classId)
+		insert into
+		student(studentPwd,studentName,studentSex,studentNo,classId)
 		values(#{studentPwd},#{studentName},#{studentSex},#{studentNo},#{classId})
 	</insert>
-	<!-- 根据id查询学生（显示学生信息） -->
-	<select id="selectStudentById" resultType="Student" parameterType="Integer">
-	    select * from student where (id=#{id} and classId=#{classId}) 
+	<select id="selectStudentById" resultType="Student"
+		parameterType="Integer">
+		select * from student where (id=#{id} and
+		classId=#{classId})
 	</select>
-	
-	
+
+
 </mapper>
