@@ -18,7 +18,7 @@
 			<div class="row clearfix">
 				<div class="col-md-3 column">
 					<span>
-						<a href="home"><h1>返回首页</h1></a>
+						<a href="home.jsp"><h1>返回首页</h1></a>
 					</span>
 					<div class="row">
 						<div class="column">
@@ -132,25 +132,52 @@
 									</p>
 								</div>
 								<div class="tab-pane" id="panel-345344">
-									<p class="col-md-2">
-										<div class="container"  style="margin-top: 50px;">
+									<p>
+										<div class="container">
 											<div class="row clearfix">
-												<span class="wocao">
-													<div class="btn-group btn-group-lg">
+												<div class="row">
+													<div class="container">
+														<div class="row">
+															<div class="column col-md-6">
+																<table class="table table-bordered">
+																	<thead>
+																		<tr>
+																			<th>
+																				签到时间
+																			</th>
+																			<th>
+																				签退时间
+																			</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>
+																				1
+																			</td>
+																			<td>
+																				TB - Monthly
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div style="margin-left: 170px;">
+													<span class="wocao">
 														<button type="button" class="btn btn-default">点击签到</button>
-													</div>
-												</span>
-												<span class="wocao">
-													<div class="btn-group btn-group-lg" style="margin-left:60px">
-									    				<button type="button" class="btn btn-default">点击签退</button>
-													</div>
-												</span>
+													</span>
+													<span class="wocao">
+										    			<button type="button" class="btn btn-default">点击签退</button>
+													</span>
+												</div>
 											</div>
 										</div>
 									</p>
 								</div>
 							</div>
-			
 					</div>
 				</div>
 		</div>
