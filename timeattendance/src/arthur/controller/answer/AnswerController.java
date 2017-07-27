@@ -26,4 +26,12 @@ public class AnswerController {
 		return null;
 	}
 
+	/**
+	 * 回答页面
+	 */
+	@RequestMapping(value = "/answerindex", method = RequestMethod.GET)
+	public String answer() {
+		return "answer";
+	}
+
 }

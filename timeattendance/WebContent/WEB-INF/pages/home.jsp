@@ -175,7 +175,7 @@
 														sd
 													</td>
 													<td>
-														<a href="answer">点击回答</a>
+														<a href="../answer/answerindex">点击回答</a>
 													</td>
 												</tr>
 												<tr>
@@ -189,7 +189,7 @@
 														sd
 													</td>
 													<td>
-														<a href="answer">点击回答</a>
+														<a href="../answer/answerindex">点击回答</a>
 													</td>
 												</tr>
 												<tr>
@@ -203,7 +203,7 @@
 														sd
 													</td>
 													<td>
-														<a href="answer">点击回答</a>
+														<a href="../answer/answerindex">点击回答</a>
 													</td>
 												</tr>
 												<tr>
@@ -217,7 +217,7 @@
 														sd
 													</td>
 													<td>
-														<a href="answer">点击回答</a>
+														<a href="../answer/answerindex">点击回答</a>
 													</td>
 												</tr>
 												<tr>
@@ -231,7 +231,7 @@
 														sd
 													</td>
 													<td>
-														<a href="answer">点击回答</a>
+														<a href="../answer/answerindex">点击回答</a>
 													</td>
 												</tr>
 											</tbody>
