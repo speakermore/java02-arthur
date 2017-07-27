@@ -5,7 +5,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import arthur.service.UserService;
 
@@ -22,29 +21,69 @@ public class UserController {
 	private UserService userService;
 
 	/**
-
-	 * 老师登录
+	 * 
+	 * 登录
 	 */
-	@RequestMapping(value = "/teacherLogin", method = RequestMethod.GET)
-	public String findByTeacherNameAndTeacherPwd() {
-		return "teacherLogin";
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		return "login";
 	}
 
-	@RequestMapping(value = "/studentLogin", method = RequestMethod.GET)
-	public String findByStudentNameAndSPwd() {
-		return "studentLogin";
+	/**
+	 * 
+	 * 首页
+	 */
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home() {
+		return "home";
 	}
 
-//	@RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
-//	public String findByTeacherNameAndTeacherPwd(@RequestParam("teacherId") String teacherId) {
-//
-//		return "teacherLogin";
-//	}
-//
-//	@RequestMapping(value = "/studentLogin", method = RequestMethod.POST)
-//	public String findByStudentNameAndSPwd(@RequestParam("studentId") String studentId) {
-//		return "teacherLogin";
-//	}
+	/**
+	 * 学生个人信息
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/student", method = RequestMethod.GET)
+	public String personalInformation() {
+		return "student";
+	}
+
+	/**
+	 * 回答页面
+	 */
+	@RequestMapping(value = "/answer", method = RequestMethod.GET)
+	public String answer() {
+		return "answer";
+	}
+
+	/**
+	 * 老师查看学生信息页面
+	 */
+	@RequestMapping(value = "/teacherattendance", method = RequestMethod.GET)
+	public String teacheratendance() {
+		return "teacherattendance";
+	}
+
+	/**
+	 * 修改密码页面
+	 */
+	@RequestMapping(value = "/studentUpdatePwd", method = RequestMethod.GET)
+	public String studentUpdatePwd() {
+		return "studentUpdatePwd";
+	}
+
+	// @RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
+	// public String findByTeacherNameAndTeacherPwd(@RequestParam("teacherId")
+	// String teacherId) {
+	//
+	// return "teacherLogin";
+	// }
+	//
+	// @RequestMapping(value = "/studentLogin", method = RequestMethod.POST)
+	// public String findByStudentNameAndSPwd(@RequestParam("studentId") String
+	// studentId) {
+	// return "teacherLogin";
+	// }
 
 	// @RequestMapping(value = "/findByStudentNameAndStudentPwd", method =
 	// RequestMethod.POST)
