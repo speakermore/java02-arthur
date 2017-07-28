@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="arthur.dao.user.UserMapper">
-	<select id="findByTeacherNameAndTeacherPwd" resultType="arthur.entity.Teacher">
-		select *
-		from teacher where (teacherName=#{teacherName} and
-		teacherPwd=#{teacherPwd}
-	</select>
-	<select id="findByStudentNameAndStudentPwd" resultType="arthur.entity.Student"
-		parameterType="String">
-		select * from student where studentName=#{stuname}
-	</select>
-	<update id="updateUser" parameterType="Integer">
-		update student set
-		studentPwd=#{studentPwd} where studentName=#{studentName}
-	</update>
-	<update id="updateTeacher" parameterType="Integer">
-		update teacher set
-		teacherPwd=#{teacherPwd} where teacherName=#{teacherName}
-	</update>
-	<insert id="addStudent" parameterType="Integer">
-		insert into
-		student(studentPwd,studentName,studentSex,studentNo,classId)
-		values(#{studentPwd},#{studentName},#{studentSex},#{studentNo},#{classId})
-	</insert>
-	<select id="selectStudentById" resultType="Student" parameterType="Integer">
-		select * from student where (id=#{id} and
-		classId=#{classId})
+	<select id="findByStuName"  resultType="Student">
+		select * from student where studentName=#{studentName}
 	</select>
 </mapper>

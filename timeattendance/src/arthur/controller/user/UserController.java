@@ -3,10 +3,11 @@ package arthur.controller.user;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import arthur.entity.Student;
 import arthur.service.UserService;
@@ -21,27 +22,12 @@ import arthur.service.UserService;
 @RequestMapping("/arthur/user")
 public class UserController {
 	@Resource
-	private UserService userService;
+
+	UserService userService;
 
 	/**
 	 * 
 	 * 登录
-	 */
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(String stuname, String newPwd, HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		Student stu = userService.findByStudentNameAndStudentPwd(stuname);
-		if (stu.getStudentPwd().equals(newPwd)) {
-			session.setAttribute("user", stu);
-			mv.setViewName("home");
-		}
-
-		return mv;
-	}
-
-	/**
-	 * 
-	 * 首页
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
@@ -49,38 +35,63 @@ public class UserController {
 	}
 
 	/**
+	 * 
+	 * 登录
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(@Param("studentName") String studentName, String newPwd, Model model, HttpSession session) {
+		Student stu = userService.findByStuName(studentName);
+		if (stu != null) {
+			if (stu.getStudentPwd().equals(newPwd)) {
+				session.setAttribute("user", stu);
+				model.addAttribute("home");
+			}
+		}
+		return "home";
+	}
+
+	/**
+	 * 
+	 * 首页
+	 */
+	// @RequestMapping(value = "/login", method = RequestMethod.GET)
+	// public String login() {
+	// return "login";
+	// }
+
+	/**
 	 * 学生个人信息
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/student", method = RequestMethod.GET)
-	public String personalInformation() {
-		return "student";
-	}
+	// @RequestMapping(value = "/student", method = RequestMethod.GET)
+	// public String personalInformation() {
+	// return "student";
+	// }
 
 	/**
 	 * 回答页面
 	 */
-	@RequestMapping(value = "/answer", method = RequestMethod.GET)
-	public String answer() {
-		return "answer";
-	}
+	// @RequestMapping(value = "/answer", method = RequestMethod.GET)
+	// public String answer() {
+	// return "answer";
+	// }
 
 	/**
 	 * 老师查看学生信息页面
 	 */
-	@RequestMapping(value = "/teacherattendance", method = RequestMethod.GET)
-	public String teacheratendance() {
-		return "teacherattendance";
-	}
+	// @RequestMapping(value = "/teacherattendance", method = RequestMethod.GET)
+	// public String teacheratendance() {
+	// return "teacherattendance";
+	// }
 
 	/**
 	 * 修改密码页面
 	 */
-	@RequestMapping(value = "/studentUpdatePwd", method = RequestMethod.GET)
-	public String studentUpdatePwd() {
-		return "studentUpdatePwd";
-	}
+	// @RequestMapping(value = "/studentUpdatePwd", method = RequestMethod.GET)
+	// public String studentUpdatePwd() {
+	// return "studentUpdatePwd";
+	// }
 
 	// @RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
 	// public String findByTeacherNameAndTeacherPwd(@RequestParam("teacherId")

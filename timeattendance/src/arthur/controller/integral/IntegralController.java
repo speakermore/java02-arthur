@@ -1,35 +1,26 @@
 package arthur.controller.integral;
 
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-
-import arthur.service.IntegralService;
-
 /**
  * 
  * @auther 代益铨 2017年7月19日下午5:19:45
  */
-@Controller
-@RequestMapping("/arthur/integral")
+
 public class IntegralController {
-	@Resource
-	IntegralService integralService;
-
-	// 通过学生id添加积分
-	@RequestMapping(value = "/addIntegral", method = RequestMethod.POST)
-	public ModelAndView addIntegral(Integer studentId, Integer integralNum) {
-		integralService.addIntegral(studentId, integralNum);
-		return null;
-	}
-
-	// 通过提问给回答者id积分奖励
-	@RequestMapping(value = "/updateIntegral", method = RequestMethod.POST)
-	public ModelAndView updateIntegral(Integer studentId, Integer giftPoints) {
-		integralService.updateIntegral(studentId, giftPoints);
-		return null;
-	}
+	// @Resource
+	// IntegralService integralService;
+	//
+	// // 通过学生id添加积分
+	// @RequestMapping(value = "/addIntegral", method = RequestMethod.POST)
+	// public ModelAndView addIntegral(Integer studentId, Integer integralNum) {
+	// integralService.addIntegral(studentId, integralNum);
+	// return null;
+	// }
+	//
+	// // 通过提问给回答者id积分奖励
+	// @RequestMapping(value = "/updateIntegral", method = RequestMethod.POST)
+	// public ModelAndView updateIntegral(Integer studentId, Integer giftPoints)
+	// {
+	// integralService.updateIntegral(studentId, giftPoints);
+	// return null;
+	// }
 }

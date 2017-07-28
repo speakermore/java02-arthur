@@ -6,24 +6,14 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!-- 通过这个配置文件完成mybatis与数据库的连接 -->
 <configuration>
 	<settings>
-		<!-- 配置mybatis的log实现为LOG4J -->
+		
 		<setting name="logImpl" value="LOG4J" />
 	</settings>
-	<!--类型别名-->
+	
 	<typeAliases>
 	 	<package name="arthur.entity"/>
 	</typeAliases>
-	<!-- 将mapper文件加入到配置文件中 -->
-	<mappers>
-		<!--  -->
-		<mapper resource="arthur/dao/user/UserMapper.xml" />
-		<mapper resource="arthur/dao/attendance/AttendanceMapper.xml" />
-		<mapper resource="arthur/dao/fabulous/FabulousMapper.xml" />
-		<mapper resource="arthur/dao/integral/IntegralMapper.xml" />
-		<mapper resource="arthur/dao/journal/JournalMapper.xml" />
-		<mapper resource="arthur/dao/question/QuestionMapper.xml" />
-		<mapper resource="arthur/dao/stuclass/StuClassMapper.xml" />
-		<mapper resource="arthur/dao/answer/AnswerMapper.xml" />
-	</mappers>
+	
+	
 
 </configuration>
