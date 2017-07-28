@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,15 +38,20 @@ public class UserController {
 	 * 登录
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@Param("studentName") String studentName, String newPwd, Model model, HttpSession session) {
+	public String login(@Param("studentName") String studentName, String newPwd, HttpSession session) {
 		Student stu = userService.findByStuName(studentName);
-		if (stu != null) {
-			if (stu.getStudentPwd().equals(newPwd)) {
+		String s = "login";
+		if (null != stu) {
+			if (!stu.getStudentPwd().equals(newPwd)) {
+				s = "login";
+				return s;
+			} else {
 				session.setAttribute("user", stu);
-				model.addAttribute("home");
+				s = "home";
+				return s;
 			}
 		}
-		return "home";
+		return s;
 	}
 
 	/**
