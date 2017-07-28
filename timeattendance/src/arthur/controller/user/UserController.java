@@ -27,15 +27,6 @@ public class UserController {
 	 * 
 	 * 登录
 	 */
-	/*
-	 * @RequestMapping(value = "/login", method = RequestMethod.GET) public
-	 * String login() { return "login"; }
-	 */
-
-	/**
-	 * 
-	 * 登录
-	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(String stuname, String newPwd, HttpSession session) {
 		ModelAndView mv = new ModelAndView();

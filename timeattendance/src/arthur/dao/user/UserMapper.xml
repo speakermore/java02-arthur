@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -26,11 +26,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		student(studentPwd,studentName,studentSex,studentNo,classId)
 		values(#{studentPwd},#{studentName},#{studentSex},#{studentNo},#{classId})
 	</insert>
-	<select id="selectStudentById" resultType="Student"
-		parameterType="Integer">
+	<select id="selectStudentById" resultType="Student" parameterType="Integer">
 		select * from student where (id=#{id} and
 		classId=#{classId})
 	</select>
-
-
 </mapper>

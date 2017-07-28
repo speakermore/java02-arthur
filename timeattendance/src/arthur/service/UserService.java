@@ -1,7 +1,5 @@
 package arthur.service;
 
-import org.apache.ibatis.annotations.Param;
-
 import arthur.entity.Student;
 import arthur.entity.Teacher;
 
@@ -21,7 +19,7 @@ public interface UserService {
 	/**
 	 * 学生登录
 	 */
-	public Student findByStudentNameAndStudentPwd(@Param("stuname") String stuname);
+	public Student findByStudentNameAndStudentPwd(String stuname);
 
 	/**
 	 * 老师给学生注册
