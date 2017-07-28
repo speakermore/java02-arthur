@@ -24,7 +24,7 @@
 						<div class="form-group">
 							<label for="stuname" class="control-label col-xs-4">用户名：</label>
 							<div class="col-xs-6">
-								<input type="text" id="stuname" class="form-control" name="stuname"/>
+								<input type="text" id="stuname" class="form-control" name="studentName"/>
 							</div>
 						</div>
 						<div class="form-group">
