@@ -3,10 +3,6 @@ package arthur.service.impl.journal;
 import java.sql.Timestamp;
 import java.util.List;
 
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Service;
-
 import arthur.dao.journal.JournalMapper;
 import arthur.entity.Journal;
 import arthur.service.JournalService;
@@ -17,10 +13,9 @@ import arthur.service.JournalService;
  *
  *         2017年7月19日
  */
-@Service
+
 public class JournalServiceImpl implements JournalService {
 
-	@Resource
 	public JournalMapper journalMapper;
 
 	@Override
