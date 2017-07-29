@@ -116,17 +116,18 @@
 											<div class="col-md-7">
 												<div class="column">
 													<div class="panel panel-body">
+													<form action="arthur/question/student" method="post">
 													<h3>问题填写：</h3>
 														<div class="divcss5">
-															<textarea cols="100px" rows="10px">
-															</textarea>
+															<textarea cols="100px" rows="10px" name="questionContent">${success }</textarea>
 														</div>
 													</div>
 													<span class="wocao">
 														<div class="row col-md-6" style="margin-left: 550px;">
-															<button type="button" class="btn btn-default col-md-9">提交</button>
+															<button type="submit" class="btn btn-default col-md-9">提交</button>
 														</div>
 													</span>
+													</form>
 												</div>                 
 											</div>
 										</div>
