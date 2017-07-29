@@ -39,7 +39,7 @@
 								<a href="#" data-toggle="dropdown" class="dropdown-toggle">用户信息<strong class="caret"></strong></a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="student">个人信息</a>
+										<a href="arthur/question/student">个人信息</a>
 									</li>
 									<li>
 										<a href="studentUpdatePwd">修改密码</a>

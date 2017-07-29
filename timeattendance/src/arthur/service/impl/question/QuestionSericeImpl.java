@@ -1,8 +1,11 @@
 package arthur.service.impl.question;
 
-import java.sql.Timestamp;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
 
 import arthur.dao.question.QuestionMapper;
+import arthur.entity.Question;
 import arthur.service.QuestionService;
 
 /**
@@ -11,21 +14,22 @@ import arthur.service.QuestionService;
  *
  *         2017年7月24日
  */
-
+@Service
 public class QuestionSericeImpl implements QuestionService {
-
+	@Resource
 	QuestionMapper questionMpper;
 
 	@Override
-	public Integer addQuestionContent(String questionContent) {
-		// TODO Auto-generated method stub
-		return questionMpper.addQuestionContentQuestionTime(questionContent, new Timestamp(System.currentTimeMillis()));
+	public Integer addQuestion(Question qu) {
+		return questionMpper.addQuestion(qu);
 	}
 
-	@Override
-	public Integer updateStudentIdQuestionContent(Integer studentId, String questionContent) {
-		// TODO Auto-generated method stub
-		return questionMpper.updateStudentIdQuestionContent(studentId, questionContent);
-	}
+	// @Override
+	// public Integer updateStudentIdQuestionContent(Integer studentId, String
+	// questionContent) {
+	// // TODO Auto-generated method stub
+	// return questionMpper.updateStudentIdQuestionContent(studentId,
+	// questionContent);
+	// }
 
 }
