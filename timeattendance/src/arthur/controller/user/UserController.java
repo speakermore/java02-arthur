@@ -40,7 +40,7 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@Param("studentName") String studentName, String newPwd, HttpSession session) {
 		Student stu = userService.findByStuName(studentName);
-		String s = "login";
+		String s = "/login";
 		if (null != stu) {
 			if (!stu.getStudentPwd().equals(newPwd)) {
 				s = "login";
