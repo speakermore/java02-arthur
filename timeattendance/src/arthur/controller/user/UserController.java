@@ -16,17 +16,18 @@ import arthur.service.UserService;
  * @author 谭夏男
  *
  */
+
 @Controller
 @RequestMapping("/arthur/user")
 public class UserController {
 	@Resource
+
 	UserService userService;
 
 	/**
 	 * 
 	 * 登录
 	 */
-
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "login";

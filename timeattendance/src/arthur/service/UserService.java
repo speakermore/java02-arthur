@@ -20,6 +20,7 @@ public interface UserService {
 	/**
 	 * 学生登录
 	 */
+
 	public Student findByStuName(@Param("studentName") String studentName);
 
 	/**
