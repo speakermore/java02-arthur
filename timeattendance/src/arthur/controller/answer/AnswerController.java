@@ -1,11 +1,7 @@
 package arthur.controller.answer;
 
-import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import arthur.service.AnswerService;
 
 /**
  * 
@@ -14,8 +10,8 @@ import arthur.service.AnswerService;
 @Controller
 @RequestMapping("/arthur/answer")
 public class AnswerController {
-	@Resource
-	AnswerService answerService;
+	// @Resource
+	// AnswerService answerService;
 
 	// 查询所有的提问信息
 	// @RequestMapping(value = "/question", method = RequestMapping.GET)

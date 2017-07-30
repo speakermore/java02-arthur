@@ -21,7 +21,6 @@ import arthur.service.UserService;
 @RequestMapping("/arthur/user")
 public class UserController {
 	@Resource
-
 	UserService userService;
 
 	/**

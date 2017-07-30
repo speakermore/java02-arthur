@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <base href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
 <html lang="zh-CN">
-
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,17 +71,18 @@
 											<div class="col-md-7">
 												<div class="column">
 													<div class="panel panel-body">
+													<form action="arthur/journal/student" method="post">
 													<h3>日志填写：</h3>
 														<div class="divcss5">
-															<textarea cols="100px" rows="10px">
-															</textarea>
+															<textarea cols="100px" rows="10px" name="journalContent">${success }</textarea>
 														</div>
 													</div>
 													<span class="wocao">
 														<div class="row col-md-6" style="margin-left: 550px;">
-															<button type="button" class="btn btn-default col-md-9">提交</button>
+															<button type="submit" class="btn btn-default col-md-9">提交</button>
 														</div>
 													</span>
+													</form>
 												</div>                 
 											</div>
 										</div>
@@ -96,8 +96,7 @@
 													<div class="panel panel-body">
 													<h3>日志修改：</h3>
 														<div class="divcss5">
-															<textarea cols="100px" rows="10px">
-															</textarea>
+															<textarea cols="100px" rows="10px" ></textarea>
 														</div>
 													</div>
 													<span class="wocao">
