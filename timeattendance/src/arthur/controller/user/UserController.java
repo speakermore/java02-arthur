@@ -1,15 +1,21 @@
 package arthur.controller.user;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import arthur.entity.Question;
 import arthur.entity.Student;
+import arthur.service.AnswerService;
 import arthur.service.UserService;
+import utils.PageSupport;
 
 /***
  * 
@@ -22,6 +28,8 @@ import arthur.service.UserService;
 public class UserController {
 	@Resource
 	UserService userService;
+	@Resource
+	AnswerService answerService;
 
 	/**
 	 * 
@@ -37,7 +45,7 @@ public class UserController {
 	 * 登录
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@Param("studentName") String studentName, String newPwd, HttpSession session) {
+	public String login(@Param("studentName") String studentName, String newPwd, HttpSession session, Model model) {
 		Student stu = userService.findByStuName(studentName);
 		String s = "/login";
 		if (null != stu) {
@@ -47,30 +55,63 @@ public class UserController {
 			} else {
 				session.setAttribute("user", stu);
 				s = "home";
+
+				// 页面容量
+				int pageSize = 5;
+				// 当前页码
+				String pageIndex = "0";
+				// 定义当前页码
+				Integer currentPageNo = 0;
+				if (null != pageIndex) {
+					try {
+						currentPageNo = Integer.valueOf(pageIndex);// .valueOf()把字符串转换为数字
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				// 总数量(列表)
+				int totalCount = 0;
+				try {
+					totalCount = answerService.count();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				// 总页数
+				PageSupport pages = new PageSupport();
+				pages.setCurrentPageNo(currentPageNo);
+				pages.setPageSize(pageSize);
+				pages.setTotalCount(totalCount);
+				int totalPageCount = pages.getTotalPageCount();
+				// 控制首页和尾页
+				if (currentPageNo < 0) {
+					currentPageNo = 0;
+				} else if (currentPageNo > totalPageCount) {
+					currentPageNo = totalPageCount;
+				}
+				List<Question> question = null;
+				try {
+					question = answerService.findAllQuestion(currentPageNo, pageSize);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				model.addAttribute("pages", pages);
+				model.addAttribute("question", question);
 				return s;
 			}
 		}
 		return s;
 	}
 
-	/**
-	 * 
-	 * 首页
-	 */
-	// @RequestMapping(value = "/login", method = RequestMethod.GET)
-	// public String login() {
-	// return "login";
-	// }
+	@RequestMapping(value = "/paging", method = RequestMethod.GET)
+	public String paging() {
+		return "paging";
+	}
 
-	/**
-	 * 学生个人信息
-	 * 
-	 * @return
-	 */
-	// @RequestMapping(value = "/student", method = RequestMethod.GET)
-	// public String personalInformation() {
-	// return "student";
-	// }
+	@RequestMapping(value = "/paging", method = RequestMethod.POST)
+	public String paging(int a) {
+		return "student";
+	}
 
 	/**
 	 * 回答页面

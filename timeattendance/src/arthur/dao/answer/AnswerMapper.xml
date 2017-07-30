@@ -3,7 +3,18 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="arthur.dao.answer.AnswerMapper">
-	<select id="selectQuestion">
-		select * from question
+	<resultMap type="Question" id="questionList">
+		<id column="id" property="id"/>
+		<result column="studentId" property="studentId"/>
+		<result column="questionContent" property="questionContent"/>
+		<result column="questionTime" property="questionTime"/>
+		<result column="questionGiveIntegral" property="questionGiveIntegral"/>
+		<result column="studentName" property="studentName"/>
+	</resultMap>
+	<select id="findAllQuestion" resultMap="questionList">
+		select q.*,s.studentName from question q,student s where q.studentId=s.id order by questionTime desc limit #{currentPageNo},#{pageSize}
+	</select>
+	<select id="count" resultType="Integer">
+		select COUNT(1) from question
 	</select>
 </mapper>

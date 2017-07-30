@@ -18,6 +18,7 @@ public class Question implements Serializable {
 	private String questionContent;
 	private Timestamp questionTime;
 	private Integer questionGiveIntegral;
+	private String studentName;
 
 	public Question() {
 	}
@@ -36,6 +37,14 @@ public class Question implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
 	public Integer getStudentId() {

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <base href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html lang="zh-CN">
 
 	<head>
@@ -160,88 +162,34 @@
 														提问的时间
 													</th>
 													<th>
-														点击回答
+														积分奖励
+													</th>
+													<th>
+														点击去回答
 													</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>
-														是
-													</td>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														sd
-													</td>
-													<td>
-														<a href="../answer/answerindex">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														01/04/2012
-													</td>
-													<td>
-														sd
-													</td>
-													<td>
-														<a href="../answer/answerindex">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														02/04/2012
-													</td>
-													<td>
-														sd
-													</td>
-													<td>
-														<a href="../answer/answerindex">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														03/04/2012
-													</td>
-													<td>
-														sd
-													</td>
-													<td>
-														<a href="../answer/answerindex">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														04/04/2012
-													</td>
-													<td>
-														sd
-													</td>
-													<td>
-														<a href="../answer/answerindex">点击回答</a>
-													</td>
-												</tr>
+												<c:forEach items="${question}" var="qu">
+													<tr>
+														<td>${qu.studentName }</td>
+														<td>${qu.questionContent }</td>
+														<td>${qu.questionTime }</td>
+														<td>${qu.questionGiveIntegral }</td>
+														<td>回答</td>												
+													</tr>
+												</c:forEach>
 											</tbody>
 										</table>
 										<div class="row" style="text-align: center;">
 											<ul class="pagination pagination-lg">
-												<li><a href="#">共10条记录，2/5页</a></li>
-											    <li><a href="#">首页</a></li>
+												<li><a href="#">共${pages.totalCount }条记录${pages.currentPageNo }/${pages.totalPageCount }</a></li>
+											<c:if test="${pages.currentPageNo>1}">
+												<li><a href="/arthur/user/paging?curentPage=${pages.currentPageNo}">首页</a></li>
 											    <li><a href="#">上一页</a></li>
+											</c:if>
+												<li><a href="#"></a></li>
+											    
 											    <li><a href="#">下一页</a></li>
 											    <li><a href="#">尾页</a></li>
 											</ul>
