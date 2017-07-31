@@ -13,9 +13,9 @@ public class StuClassServiceImpl implements StuClassService {
 
 	public StuClassMapper stuClassMapper;
 
-	@Override
-	public Integer addStuClass(Integer studentId) {
-		return stuClassMapper.addStuClass(studentId);
-	}
+	// @Override
+	// public Integer addStuClass(Integer studentId) {
+	// return stuClassMapper.addStuClass(studentId);
+	// }
 
 }

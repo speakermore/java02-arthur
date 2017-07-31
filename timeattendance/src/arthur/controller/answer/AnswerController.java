@@ -15,26 +15,4 @@ public class AnswerController {
 	// @Resource
 	AnswerService answerService;
 
-	// // @RequestMapping(value = "/", method = RequestMethod.POST)
-	// public ModelAndView addAnswer(Answer answer) {
-	// ModelAndView model = new ModelAndView();
-	// return model;
-	// }
-
-	// // 回答问题，给出答复内容，答复时间，答复者的id
-	// @RequestMapping(value = "/addAnswer", method = RequestMethod.POST)
-	// public ModelAndView addAnswer(String context, Integer answerId) {
-	// answerService.addAnswer(context, answerId);
-	// return null;
-	// }
-	//
-	// /**
-	// * 回答页面
-	// */
-	// @RequestMapping(value = "/answerindex", method = RequestMethod.GET)
-	// public String answer() {
-	//
-	// return "answer";
-	// }
-
 }

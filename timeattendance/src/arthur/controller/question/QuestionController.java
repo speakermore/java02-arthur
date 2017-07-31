@@ -42,12 +42,5 @@ public class QuestionController {
 		model.addAttribute("success", "添加成功！");
 		return "/student";
 	}
-	//
-	// // 提问者可以根据自己的id修改问题内容
-	// @RequestMapping(value = "/updateQuestion", method = RequestMethod.POST)
-	// public Integer updateStudentIdContent(Integer studentId, String content)
-	// {
-	// questionService.updateStudentIdQuestionContent(studentId, content);
-	// return null;
-	// }
+
 }

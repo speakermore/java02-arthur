@@ -34,17 +34,4 @@ public class AttendanceController {
 		return "student";
 	}
 
-	// // 根据学生ID签退
-	// @RequestMapping(value = "/updatestudentOut", method = RequestMethod.POST)
-	// public ModelAndView updatestudentOut(Integer studentId) {
-	// attendanceService.updatestudentOut(studentId);
-	// return null;
-	// }
-	//
-	// // 老师通过输入学生ID查询该学生的考勤信息
-	// @RequestMapping(value = "/findbyStudentId", method = RequestMethod.POST)
-	// public String findbyStudentId(Integer studentId) {
-	// attendanceService.findbyStudentId(studentId);
-	// return null;
-	// }
 }
