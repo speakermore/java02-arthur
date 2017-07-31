@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import arthur.entity.Question;
 import arthur.entity.Student;
+import arthur.entity.Teacher;
 import arthur.service.AnswerService;
 import arthur.service.UserService;
 import utils.PageSupport;
@@ -110,26 +111,25 @@ public class UserController {
 	}
 
 	// 老师登录
-	// @RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
-	// public String teacherLogin(@Param("teacherName") String teacherName,
-	// String teacherPwd, HttpSession session,
-	// Model model) {
-	// Teacher teacher = userService.findByTeacherName(teacherName);
-	// String s = "";
-	// if (null != teacher) {
-	// if (!teacher.getTeacherPwd().equals(teacherPwd)) {
-	// s = "teacherLogin";
-	// return s;
-	// } else {
-	// s = "teacherattendance";
-	// List<Question> question = answerService.findAllQuestiontea();
-	// session.setAttribute("user", teacher);
-	// model.addAttribute("question", question);
-	// return s;
-	// }
-	// }
-	// return s;
-	// }
+	@RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
+	public String teacherLogin(@Param("teacherName") String teacherName, String teacherPwd, HttpSession session,
+			Model model) {
+		Teacher teacher = userService.findByTeacherName(teacherName);
+		String s = "";
+		if (null != teacher) {
+			if (!teacher.getTeacherPwd().equals(teacherPwd)) {
+				s = "teacherLogin";
+				return s;
+			} else {
+				s = "teacherattendance";
+				List<Question> question = answerService.findAllQuestiontea();
+				session.setAttribute("user", teacher);
+				model.addAttribute("question", question);
+				return s;
+			}
+		}
+		return s;
+	}
 
 	// 老师给学生注册
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -138,22 +138,22 @@ public class UserController {
 	}
 
 	// 老师给学生注册
-	// @RequestMapping(value = "/register", method = RequestMethod.POST)
-	// public String register(Student student, Model model) {
-	// String s = "";
-	// if (student != null) {
-	// Student stu = new Student();
-	// stu.setStudentName(student.getStudentName());
-	// stu.setStudentPwd(student.getStudentPwd());
-	// stu.setStudentNo(student.getStudentNo());
-	// stu.setStuClass(student.getStuClass());
-	// stu.setStudentSex(student.getStudentSex());
-	// userService.addStudent(stu);
-	// s = "teacherattendance";
-	// return s;
-	// }
-	// return s;
-	// }
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String register(Student student, Model model) {
+		String s = "";
+		if (student != null) {
+			Student stu = new Student();
+			stu.setStudentName(student.getStudentName());
+			stu.setStudentPwd(student.getStudentPwd());
+			stu.setStudentNo(student.getStudentNo());
+			stu.setStuClass(student.getStuClass());
+			stu.setStudentSex(student.getStudentSex());
+			userService.addStudent(stu);
+			s = "teacherattendance";
+			return s;
+		}
+		return s;
+	}
 
 	@RequestMapping(value = "/paging", method = RequestMethod.GET)
 	public String paging() {
@@ -170,63 +170,6 @@ public class UserController {
 		return "answer";
 	}
 
-	// @RequestMapping(value = "/answer", method = RequestMethod.POST)
-	// public String answer(Model model) {
-	// Question question = new Question();
-	// question = answerService.findAllQuestion();
-	// return s;
-	// }
-
-	// @RequestMapping(value = "/answer", method = RequestMethod.GET)
-	// public String answer() {
-	// return "answer";
-	// }
-
-	/**
-	 * 老师查看学生信息页面
-	 */
-	// @RequestMapping(value = "/teacherattendance", method = RequestMethod.GET)
-	// public String teacheratendance() {
-	// return "teacherattendance";
-	// }
-
-	/**
-	 * 修改密码页面
-	 */
-	// @RequestMapping(value = "/studentUpdatePwd", method = RequestMethod.GET)
-	// public String studentUpdatePwd() {
-	// return "studentUpdatePwd";
-	// }
-
-	// @RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
-	// public String findByTeacherNameAndTeacherPwd(@RequestParam("teacherId")
-	// String teacherId) {
-	//
-	// return "teacherLogin";
-	// }
-	//
-	// @RequestMapping(value = "/studentLogin", method = RequestMethod.POST)
-	// public String findByStudentNameAndSPwd(@RequestParam("studentId") String
-	// studentId) {
-	// return "teacherLogin";
-	// }
-
-	// @RequestMapping(value = "/findByStudentNameAndStudentPwd", method =
-	// RequestMethod.POST)
-	// public ModelAndView findByStudentNameAndStudentPwd(Integer studentId) {
-	// userService.findByStudentNameAndStudentPwd(studentId);
-	// return null;
-	// }
-	//
-	// /**
-	// * 学生注册
-	// */
-	// @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
-	// public ModelAndView addStudent(Integer studentId) {
-	// userService.addStudent(studentId);
-	// return null;
-	// }
-	//
 	/**
 	 * 修改学生密码
 	 */
@@ -258,25 +201,5 @@ public class UserController {
 
 		return s;
 	}
-
-	// /**
-	// * 修改老师密码
-	// */
-	// @RequestMapping(value = "/updateTeacherByTeacherName", method =
-	// RequestMethod.POST)
-	// public ModelAndView updateTeacherByTeacherName(Integer teacherId) {
-	// userService.updateTeacherByTeacherName(teacherId);
-	// return null;
-	// }
-	//
-	// /**
-	// * 根据studentId查询用户（显示学生信息）
-	// */
-	// @RequestMapping(value = "/selectStudentById", method =
-	// RequestMethod.POST)
-	// public String selectStudentById(@Param("studentId") Integer studentId) {
-	// userService.selectStudentById(studentId);
-	// return null;
-	// }
 
 }

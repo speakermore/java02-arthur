@@ -11,11 +11,5 @@ import arthur.entity.Journal;
 public interface JournalMapper {
 	// 学生添加日志
 	public Integer addJournal(Journal journal);
-	// 学生根据自己的id修改日志
-	// public Integer updateJournal(@Param("studentId") Integer studentId,
-	// @Param("journalContent") String journalContent);
-	//
-	// // 老师根据学生id去查看该学生的日志
-	// public List<Journal> selectJournal(@Param("studentId") Integer
-	// studentId);
+
 }

@@ -7,13 +7,4 @@ package arthur.controller.fabulous;
 
 public class FabulousController {
 
-	// FabulousService fabulousService;
-	//
-	// // 根据被点赞学生id点赞,添加点赞时间
-	// @RequestMapping(value = "/addFabulousIdAndFabulousTime", method =
-	// RequestMethod.POST)
-	// public ModelAndView addFabulousIdAndFabulousTime(Integer studentId) {
-	// fabulousService.addFabulousIdAndFabulousTime(studentId);
-	// return null;
-	// }
 }
