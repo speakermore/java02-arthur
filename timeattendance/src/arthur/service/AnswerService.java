@@ -19,6 +19,8 @@ public interface AnswerService {
 	public List<Question> findAllQuestion(@Param("currentPageNo") Integer currentPageNo,
 			@Param("pageSize") Integer pageSize);
 
+	public List<Question> findAllQuestiontea();
+
 	// 获取提问的记录总数
 	public Integer count();
 }

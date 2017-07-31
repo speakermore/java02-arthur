@@ -27,12 +27,13 @@
 			<div class="col-md-6">
 				<div class="column">
 					<div class="panel-default panel-title">
-						<h4 class="panel-heading">提问者：<span>张三</span><span class="a">奖励的积分：<span>100</span></span></h4>
+						<h4 class="panel-heading">提问者：<span></span><span class="a">奖励的积分：<span>100</span></span></h4>
 					</div>
 					<div class="panel panel-body">
 						<h4 class="panel">提问的问题：</h4>
 						<div class="divcss5">
-							<textarea cols="85px" rows="10px" readonly="readonly">有些事，轻轻放下，未必不是轻松。有些人，深深记住，未必不是幸福。有些痛，淡淡看开，未必不是历练。坎坷路途，给身边一份温暖，风雨人生，给自己一个微笑。生活，就是体谅和理解，把快乐装在心中，静静融化，慢慢扩散！
+							<textarea cols="85px" rows="10px" readonly="readonly">
+							
 							</textarea>
 						</div>
 					</div>

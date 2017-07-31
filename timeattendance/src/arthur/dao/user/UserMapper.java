@@ -25,7 +25,7 @@ public interface UserMapper {
 	/**
 	 * 学生修改密码
 	 */
-	public Integer updatePwd(@Param("stuPwd1") String stuPwd1, @Param("id") Integer id);
+	public Integer updatePwd(@Param("studentPwd") String studentPwd, @Param("id") Integer id);
 
 	// /**
 	// * 学生注册

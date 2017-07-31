@@ -19,14 +19,18 @@ public class UserServiceImpl implements UserService {
 	@Resource
 	private UserMapper userMapper;
 
+	// 老师登录
 	// @Override
-	// public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId) {
-	// return userMapper.findByTeacherNameAndTeacherPwd(teacherId);
+	// public Teacher findByTeacherName(@Param("teacherName") String
+	// teacherName) {
+	// return userMapper.findByTeacherName(teacherName);
+	//
 	// }
 
+	// 学生注册
 	// @Override
-	// public Integer addStudent(Integer studentId) {
-	// return userMapper.addStudent(studentId);
+	// public Integer addStudent(Student student) {
+	// return userMapper.addStudent(student);
 	// }
 
 	// @Override
@@ -44,6 +48,7 @@ public class UserServiceImpl implements UserService {
 	// return userMapper.selectStudentById(studentId);
 	// }
 
+	// 学生登录
 	@Override
 	public Student findByStuName(String studentName) {
 		return userMapper.findByStuName(studentName);
