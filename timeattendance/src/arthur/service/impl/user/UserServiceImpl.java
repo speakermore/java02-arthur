@@ -40,8 +40,9 @@ public class UserServiceImpl implements UserService {
 		return userMapper.findByStuName(studentName);
 	}
 
+	// 修改密码
 	@Override
-	public Integer updatePwd(Integer id, String studentPwd) {
+	public Integer updatePwd(String studentPwd, Integer id) {
 		return userMapper.updatePwd(studentPwd, id);
 	}
 

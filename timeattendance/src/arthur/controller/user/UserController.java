@@ -34,7 +34,7 @@ public class UserController {
 
 	/**
 	 * 
-	 * 登录
+	 * 学生登录
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
@@ -43,7 +43,7 @@ public class UserController {
 
 	/**
 	 * 
-	 * 登录
+	 * 学生登录
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@Param("studentName") String studentName, String newPwd, HttpSession session, Model model) {
@@ -155,16 +155,19 @@ public class UserController {
 		return s;
 	}
 
+	// 分页
 	@RequestMapping(value = "/paging", method = RequestMethod.GET)
 	public String paging() {
 		return "paging";
 	}
 
+	// 分页
 	@RequestMapping(value = "/paging", method = RequestMethod.POST)
 	public String paging(int a) {
 		return "student";
 	}
 
+	// 查看提问的列表
 	@RequestMapping(value = "/answer", method = RequestMethod.GET)
 	public String answer() {
 		return "answer";
@@ -181,25 +184,18 @@ public class UserController {
 	/**
 	 * 修改学生密码
 	 */
-	/* 3.相等则调用更新方法更新用户密码 */
-	/* 4.成功或失败返回提示信息 */
-	/* 1.获得浏览器用户表单提交的密码 */
 	@RequestMapping(value = "/studentUpdatePwd", method = RequestMethod.POST)
 	public String updateStudentByStudentpwd(String studentPwd, @Param("stuPwd1") String stuPwd1, String stuPwd2,
 			HttpSession session, Model model) {
 		String s = "studentUpdatePwd";
 		Student stu = (Student) session.getAttribute("user");
-
-		/* 2.判断用户提交的表单里两次密码是否相等 */
 		if (stu.getStudentPwd().equals(studentPwd)) {
 			if (stuPwd1.equals(stuPwd2)) {
-				userService.updatePwd(stu.getId(), stuPwd1);
+				userService.updatePwd(stuPwd1, stu.getId());
 				s = "login";
 				return s;
 			}
 		}
-
 		return s;
 	}
-
 }

@@ -32,6 +32,6 @@ public interface UserService {
 	/**
 	 * 修改学生密码
 	 */
-	public Integer updatePwd(Integer id, String studentPwd);
+	public Integer updatePwd(@Param("studentPwd") String studentPwd, @Param("id") Integer id);
 
 }

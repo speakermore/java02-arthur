@@ -26,17 +26,10 @@ public class JournalController {
 	@Resource
 	JournalService journalService;
 
-	// 学生添加日志
-	@RequestMapping(value = "/student", method = RequestMethod.GET)
-	public String loing() {
-		return "/student";
-	}
-
-	@RequestMapping(value = "/student", method = RequestMethod.POST)
+	@RequestMapping(value = "/addjournal", method = RequestMethod.POST)
 	public String addJournal(Journal journal, Model model, HttpSession session) {
-		// Student stu = (Student) session.getAttribute("user");
-		// journal.setStudentId(stu.getId());
 		journal.setJournalTime(new Timestamp(System.currentTimeMillis()));
+		journal.setStudentId(((Student) session.getAttribute("user")).getId());
 		journal.setStuClass(((Student) session.getAttribute("user")).getStuClass());
 		journal.setStudentName(((Student) session.getAttribute("user")).getStudentName());
 		journalService.addJournal(journal);
