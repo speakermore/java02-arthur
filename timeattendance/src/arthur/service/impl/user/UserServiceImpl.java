@@ -49,6 +49,13 @@ public class UserServiceImpl implements UserService {
 		return userMapper.findByStuName(studentName);
 	}
 
+	// 学生修改密码
+	@Override
+	public Integer updatePwd(Integer id, String studentPwd) {
+		// TODO Auto-generated method stub
+		return userMapper.updatePwd(studentPwd, id);
+	}
+
 	// @Override
 	// public Teacher findByTeacherNameAndTeacherPwd(Integer teacherId) {
 	// // TODO Auto-generated method stub

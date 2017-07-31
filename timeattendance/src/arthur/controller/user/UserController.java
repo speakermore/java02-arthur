@@ -166,16 +166,38 @@ public class UserController {
 	// return null;
 	// }
 	//
-	// /**
-	// * 修改学生密码
-	// */
-	// @RequestMapping(value = "/updateStudentByStudentName", method =
-	// RequestMethod.POST)
-	// public ModelAndView updateStudentByStudentName(Integer studentId) {
-	// userService.updateStudentByStudentName(studentId);
-	// return null;
-	// }
-	//
+	/**
+	 * 修改学生密码
+	 */
+	@RequestMapping(value = "/studentUpdatePwd", method = RequestMethod.GET)
+	public String studentUpdatePwd() {
+		return "/studentUpdatePwd";
+	}
+
+	/**
+	 * 修改学生密码
+	 */
+	/* 3.相等则调用更新方法更新用户密码 */
+	/* 4.成功或失败返回提示信息 */
+	/* 1.获得浏览器用户表单提交的密码 */
+	@RequestMapping(value = "/studentUpdatePwd", method = RequestMethod.POST)
+	public String updateStudentByStudentpwd(String studentPwd, @Param("stuPwd1") String stuPwd1, String stuPwd2,
+			HttpSession session, Model model) {
+		String s = "studentUpdatePwd";
+		Student stu = (Student) session.getAttribute("user");
+
+		/* 2.判断用户提交的表单里两次密码是否相等 */
+		if (stu.getStudentPwd().equals(studentPwd)) {
+			if (stuPwd1.equals(stuPwd2)) {
+				userService.updatePwd(stu.getId(), stuPwd1);
+				s = "login";
+				return s;
+			}
+		}
+
+		return s;
+	}
+
 	// /**
 	// * 修改老师密码
 	// */

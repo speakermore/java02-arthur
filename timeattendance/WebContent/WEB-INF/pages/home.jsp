@@ -44,7 +44,7 @@
 										<a href="arthur/question/student">个人信息</a>
 									</li>
 									<li>
-										<a href="studentUpdatePwd">修改密码</a>
+										<a href="arthur/user/studentUpdatePwd">修改密码</a>
 									</li>
 								</ul>
 							</li>

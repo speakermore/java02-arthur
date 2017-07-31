@@ -6,4 +6,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findByStuName"  resultType="Student">
 		select * from student where studentName=#{studentName}
 	</select>
+	
+	<!--学生修改密码-->
+	<update id="updatePwd" parameterType="String">
+	     update student set studentPwd=#{stuPwd1} where id=#{id}
+	</update>
 </mapper>

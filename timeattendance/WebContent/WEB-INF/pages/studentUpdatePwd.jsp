@@ -26,23 +26,23 @@
 					<h3 class="panel-title">修改登录密码</h3>
 				</div>
 				<div class="panel-body">
-					<form action="" role="form" class="form-horizontal">
+					<form action="arthur/user/studentUpdatePwd" role="form" class="form-horizontal" method="post">
 						<div class="form-group">
 							<label for="oldPwd" class="control-label col-xs-4">旧密码：</label>
 							<div class="col-xs-6">
-								<input type="password" id="oldPwd" class="form-control" />
+								<input type="password" class="form-control" name="studentPwd"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="newPwd" class=" control-label col-xs-4">新密码：</label>
 							<div class="col-xs-6">
-								<input type="password" id="newPwd" class="form-control" />
+								<input type="password" class="form-control" name="stuPwd1"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="confirmPwd" class=" control-label col-xs-4">确认密码：</label>
 							<div class="col-xs-6">
-								<input type="password" id="confirmPwd" class="form-control" />
+								<input type="password" class="form-control" name="stuPwd2"/>
 							</div>
 						</div>
 						<div class="form-group">

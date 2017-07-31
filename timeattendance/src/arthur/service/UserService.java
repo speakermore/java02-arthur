@@ -31,7 +31,7 @@ public interface UserService {
 	/**
 	 * 修改学生密码
 	 */
-	// public Integer updateStudentByStudentName(Integer studentId);
+	public Integer updatePwd(Integer id, String studentPwd);
 
 	/**
 	 * 修改老师密码
