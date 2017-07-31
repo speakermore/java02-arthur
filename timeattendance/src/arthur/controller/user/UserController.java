@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import arthur.entity.Question;
 import arthur.entity.Student;
+import arthur.entity.Teacher;
 import arthur.service.AnswerService;
 import arthur.service.UserService;
 import utils.PageSupport;
@@ -103,6 +104,57 @@ public class UserController {
 		return s;
 	}
 
+	// 老师登录
+	@RequestMapping(value = "/teacherLogin", method = RequestMethod.GET)
+	public String teacherLogin() {
+		return "teacherLogin";
+	}
+
+	// 老师登录
+	@RequestMapping(value = "/teacherLogin", method = RequestMethod.POST)
+	public String teacherLogin(@Param("teacherName") String teacherName, String teacherPwd, HttpSession session,
+			Model model) {
+		Teacher teacher = userService.findByTeacherName(teacherName);
+		String s = "";
+		if (null != teacher) {
+			if (!teacher.getTeacherPwd().equals(teacherPwd)) {
+				s = "teacherLogin";
+				return s;
+			} else {
+				s = "teacherattendance";
+				List<Question> question = answerService.findAllQuestiontea();
+				session.setAttribute("user", teacher);
+				model.addAttribute("question", question);
+				return s;
+			}
+		}
+		return s;
+	}
+
+	// 老师给学生注册
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String register() {
+		return "register";
+	}
+
+	// 老师给学生注册
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String register(Student student, Model model) {
+		String s = "";
+		if (student != null) {
+			Student stu = new Student();
+			stu.setStudentName(student.getStudentName());
+			stu.setStudentPwd(student.getStudentPwd());
+			stu.setStudentNo(student.getStudentNo());
+			stu.setStuClass(student.getStuClass());
+			stu.setStudentSex(student.getStudentSex());
+			userService.addStudent(stu);
+			s = "teacherattendance";
+			return s;
+		}
+		return s;
+	}
+
 	@RequestMapping(value = "/paging", method = RequestMethod.GET)
 	public String paging() {
 		return "paging";
@@ -113,9 +165,18 @@ public class UserController {
 		return "student";
 	}
 
-	/**
-	 * 回答页面
-	 */
+	@RequestMapping(value = "/answer", method = RequestMethod.GET)
+	public String answer() {
+		return "answer";
+	}
+
+	// @RequestMapping(value = "/answer", method = RequestMethod.POST)
+	// public String answer(Model model) {
+	// Question question = new Question();
+	// question = answerService.findAllQuestion();
+	// return s;
+	// }
+
 	// @RequestMapping(value = "/answer", method = RequestMethod.GET)
 	// public String answer() {
 	// return "answer";

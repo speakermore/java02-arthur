@@ -140,39 +140,56 @@
 													<div class="container">
 														<div class="row">
 															<div class="column col-md-6">
-																<table class="table table-bordered">
+																<table class="table table-bordered" style="margin-left: 70px;margin-top: 30px;">
 																	<thead>
 																		<tr>
 																			<th>
 																				签到时间
 																			</th>
 																			<th>
+																				请点击
+																			</th>
+																		</tr>
+																		
+																	</thead>
+																	<tbody>
+																		<form action="arthur/attendance/addStudentSign" method="post">
+																			<tr>
+																				<td>
+																					<input readonly="readonly" value="${sign.studentSign }"/>
+																				</td>
+																				<td>
+																					<button type="subimt">签到</button>
+																				</td>
+																			</tr>
+																		</form>
+																	</tbody>
+																	<thead>
+																		<tr>
+																			<th>
 																				签退时间
+																			</th>
+																			<th>
+																				请点击
 																			</th>
 																		</tr>
 																	</thead>
 																	<tbody>
-																		<tr>
-																			<td>
-																				1
-																			</td>
-																			<td>
-																				TB - Monthly
-																			</td>
-																		</tr>
+																		<form action="#" method="post">
+																			<tr>
+																				<td>
+																					<input readonly="readonly" name=""/>
+																				</td>
+																				<td>
+																					<button type="button">签退</button>
+																				</td>
+																			</tr>
+																		</form>
 																	</tbody>
 																</table>
 															</div>
 														</div>
 													</div>
-												</div>
-												<div style="margin-left: 170px;">
-													<span class="wocao">
-														<button type="button" class="btn btn-default">点击签到</button>
-													</span>
-													<span class="wocao">
-										    			<button type="button" class="btn btn-default">点击签退</button>
-													</span>
 												</div>
 											</div>
 										</div>

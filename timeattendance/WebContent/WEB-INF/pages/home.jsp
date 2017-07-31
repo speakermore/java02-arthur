@@ -165,7 +165,7 @@
 														积分奖励
 													</th>
 													<th>
-														点击去回答
+														点击查看
 													</th>
 												</tr>
 											</thead>
@@ -176,7 +176,9 @@
 														<td>${qu.questionContent }</td>
 														<td>${qu.questionTime }</td>
 														<td>${qu.questionGiveIntegral }</td>
-														<td>回答</td>												
+														<td>
+															<a href="arthur/user/answer">查看</a>
+														</td>		
 													</tr>
 												</c:forEach>
 											</tbody>
@@ -185,7 +187,7 @@
 											<ul class="pagination pagination-lg">
 												<li><a href="#">共${pages.totalCount }条记录${pages.currentPageNo }/${pages.totalPageCount }</a></li>
 											<c:if test="${pages.currentPageNo>1}">
-												<li><a href="/arthur/user/paging?curentPage=${pages.currentPageNo}">首页</a></li>
+												<li><a href="/arthur/user/paging?currentPage=${pages.currentPageNo}">首页</a></li>
 											    <li><a href="#">上一页</a></li>
 											</c:if>
 												<li><a href="#"></a></li>

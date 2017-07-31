@@ -29,6 +29,11 @@ public class AnswerServiceImpl implements AnswerService {
 		return answerMapper.count();
 	}
 
+	@Override
+	public List<Question> findAllQuestiontea() {
+		return answerMapper.findAllQuestiontea();
+	}
+
 	// @Override
 	// public Integer addAnswer(String context, Integer answerId) {
 	// return answerMapper.addAnswer(context, new

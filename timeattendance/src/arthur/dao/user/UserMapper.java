@@ -3,6 +3,7 @@ package arthur.dao.user;
 import org.apache.ibatis.annotations.Param;
 
 import arthur.entity.Student;
+import arthur.entity.Teacher;
 
 /***
  * 
@@ -14,18 +15,17 @@ public interface UserMapper {
 	/**
 	 * 老师登录
 	 */
-	// public Teacher findByTeacherNameAndTeacherPwd(@Param("techerId") Integer
-	// teacherId);
+	public Teacher findByTeacherName(@Param("teacherName") String teacherName);
 
 	/**
 	 * 学生登录
 	 */
 	public Student findByStuName(@Param("studentName") String studentName);
 
-	// /**
-	// * 学生注册
-	// */
-	// public Integer addStudent(Integer studentId);
+	/**
+	 * 学生注册
+	 */
+	public Integer addStudent(Student student);
 
 	/**
 	 * 修改学生密码

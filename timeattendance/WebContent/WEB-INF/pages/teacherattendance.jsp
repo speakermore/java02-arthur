@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <base href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html lang="zh-CN">
 
 	<head>
@@ -17,8 +19,14 @@
 	<body>
 		<div class="container-fluid" style="margin-left:25px;">
 			<div class="panel-default">
-				<div class="panel-title">
-					<h2>信息列表</h2>
+				<div class="panel-title row">
+					<div class="col-lg-12">
+						<h2>
+							<span>信息列表</span>
+							<span style="margin-left: 1000px;"><a href="arthur/user/register">注册</a></span>
+						</h2>
+						
+					</div>
 				</div>
 				<div class="row col-md-12">
 					<div class="panel-group" id="accordion">
@@ -46,81 +54,21 @@
 														提问时间
 													</th>
 													<th>
-														点击回答
+														点击查看
 													</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>
-														是
-													</td>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														01/04/2012
-													</td>
-													<td>
-														<a href="answer.jsp">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														01/04/2012
-													</td>
-													<td>
-														Approved
-													</td>
-													<td>
-														<a href="answer.jsp">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														02/04/2012
-													</td>
-													<td>
-														Declined
-													</td>
-													<td>
-														<a href="answer.jsp">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														03/04/2012
-													</td>
-													<td>
-														Pending
-													</td>
-													<td>
-														<a href="answer.jsp">点击回答</a>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														TB - Monthly
-													</td>
-													<td>
-														04/04/2012
-													</td>
-													<td>
-														Call in to confirm
-													</td>
-													<td>
-														<a href="answer.jsp">点击回答</a>
-													</td>
-												</tr>
+												<c:forEach items="${question}" var="qu">
+													<tr>
+														<td>${qu.studentName }</td>
+														<td>${qu.questionContent }</td>
+														<td>${qu.questionTime }</td>
+														<td>
+															<a href="arthur/user/answer">查看</a>
+														</td>		
+													</tr>
+												</c:forEach>
 											</tbody>
 										</table>
 										<div class="row" style="text-align: center;">

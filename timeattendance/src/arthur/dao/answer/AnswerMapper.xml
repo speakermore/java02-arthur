@@ -14,6 +14,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findAllQuestion" resultMap="questionList">
 		select q.*,s.studentName from question q,student s where q.studentId=s.id order by questionTime desc limit #{currentPageNo},#{pageSize}
 	</select>
+	<select id="findAllQuestiontea" resultMap="questionList">
+		select q.*,s.studentName from question q,student s where q.studentId=s.id order by questionTime desc 
+	</select>
 	<select id="count" resultType="Integer">
 		select COUNT(1) from question
 	</select>
