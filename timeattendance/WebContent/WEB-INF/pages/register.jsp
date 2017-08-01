@@ -20,7 +20,14 @@
 	</head>
 
 	<body>
-		<div class="container col-md-5" style="margin-left: 350px;margin-top: 80px;">
+		<div class="row col-md-12">
+			<div class="col-md-2" style="margin-left: 30px;">
+				<span>
+					<a href="arthur/user/teachershow"><h1>返回首页</h1></a>
+				</span>
+			</div>
+		</div>
+		<div class="container col-md-5" style="margin-left: 380px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h2 style="text-align: center;"><strong>注册</strong></h2>

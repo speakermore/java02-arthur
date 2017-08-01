@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-	<div class="container col-md-5" style="margin-left: 350px;margin-top: 80px;">
+	<div class="container col-md-5" style="margin-left: 380px;margin-top: 120px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h2 style="text-align: center;"><strong>老师登录</strong></h2>

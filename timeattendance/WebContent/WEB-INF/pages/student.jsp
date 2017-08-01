@@ -18,7 +18,7 @@
 			<div class="row clearfix">
 				<div class="col-md-3 column">
 					<span>
-						<a href="home.jsp"><h1>返回首页</h1></a>
+						<a href="arthur/user/show"><h1>返回首页</h1></a>
 					</span>
 					<div class="row">
 						<div class="column">
