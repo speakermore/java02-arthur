@@ -18,7 +18,7 @@
 			<div class="row clearfix">
 				<div class="col-md-3 column">
 					<span>
-						<a href="home.jsp"><h1>返回首页</h1></a>
+						<a href="arthur/user/show"><h1>返回首页</h1></a>
 					</span>
 					<div class="row">
 						<div class="column">
@@ -71,7 +71,7 @@
 											<div class="col-md-7">
 												<div class="column">
 													<div class="panel panel-body">
-													<form action="arthur/journal/student" method="post">
+													<form action="arthur/journal/addjournal" method="post">
 													<h3>日志填写：</h3>
 														<div class="divcss5">
 															<textarea cols="100px" rows="10px" name="journalContent">${success }</textarea>

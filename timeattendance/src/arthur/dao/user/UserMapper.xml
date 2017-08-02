@@ -13,4 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into student(studentName,studentPwd,studentNo,studentSex,stuClass) 
 		values (#{studentName},#{studentPwd},#{studentNo},#{studentSex},#{stuClass})
 	</insert>
+	<update id="updatePwd" parameterType="Student">
+		update student set studentPwd=#{studentPwd} where id=#{id}
+	</update>
 </mapper>
