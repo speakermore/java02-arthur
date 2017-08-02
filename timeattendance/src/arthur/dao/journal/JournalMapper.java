@@ -11,5 +11,6 @@ import arthur.entity.Journal;
 public interface JournalMapper {
 	// 学生添加日志
 	public Integer addJournal(Journal journal);
+	// 学生修改日志
 
 }
