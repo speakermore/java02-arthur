@@ -1,10 +1,10 @@
-package arthur.service.impl.user;
+package arthur.service.impl;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import arthur.dao.user.UserMapper;
+import arthur.dao.UserMapper;
 import arthur.entity.Student;
 import arthur.entity.Teacher;
 import arthur.service.UserService;

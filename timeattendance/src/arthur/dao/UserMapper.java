@@ -1,4 +1,4 @@
-package arthur.dao.user;
+package arthur.dao;
 
 import org.springframework.web.bind.annotation.RequestParam;
 

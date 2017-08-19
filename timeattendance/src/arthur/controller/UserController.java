@@ -1,4 +1,4 @@
-package arthur.controller.user;
+package arthur.controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
