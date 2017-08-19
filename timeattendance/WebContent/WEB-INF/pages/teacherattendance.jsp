@@ -104,17 +104,18 @@
 							</h4>
 							</div>
 							<div id="collapseTwo" class="panel-collapse collapse">
+							<form action="arthur/journal/show">
 								<div class="panel-body">
 									<div class="col-md-4">
 										<div class="input-group">
 											请输入学生姓名：
-											<input type="text">
+											<input type="text" neme="stuName">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="row">
 											请选择学生班级：
-											<select name="mont" style="height:25px;width:150px;">
+											<select name="stuClass" style="height:25px;width:150px;">
 												<option value="0">---请选择班级---</option>
 												<option value="java01班">java01班</option>
 												<option value="java02班">java02班</option>
@@ -123,7 +124,7 @@
 									</div>
 									<div class="row clearfix">
 										<div class="btn-group btn-group-sm">
-											<button type="button" class="btn btn-default">点击查询</button>
+											<button type="subimt" class="btn btn-default">点击查询</button>
 										</div>
 									</div>
 								</div>
@@ -222,6 +223,7 @@
 										</div>
 									</div>
 								</div>
+							</form>
 							</div>
 						</div>
 					<div class="panel panel-default">
