@@ -9,4 +9,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values
 		(#{studentId},#{questionContent},#{questionTime},#{questionGiveIntegral})
 	</insert>
+	
+	<update id="updateJournal">
+	  update journal 
+	</update>
 </mapper>

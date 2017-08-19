@@ -26,6 +26,7 @@ public class JournalController {
 	@Resource
 	JournalService journalService;
 
+	// 学生添加日志
 	@RequestMapping(value = "/addjournal", method = RequestMethod.POST)
 	public String addJournal(Journal journal, Model model, HttpSession session) {
 		journal.setJournalTime(new Timestamp(System.currentTimeMillis()));
