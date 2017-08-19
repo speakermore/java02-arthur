@@ -21,20 +21,20 @@
 	<div class="container col-md-5" style="margin-left: 380px;margin-top: 120px;">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 style="text-align: center;"><strong>学生登录</strong></h2>
+					<h2 style="text-align: center;"><strong>登录</strong></h2>
 				</div>
 				<div class="panel-body">
-					<form action="arthur/user/login" role="form" class="form-horizontal"  method="post">
+					<form action="user/login" role="form" class="form-horizontal"  method="post">
 						<div class="form-group">
 							<label for="stuname" class="control-label col-xs-4">用户名：</label>
 							<div class="col-xs-6">
-								<input type="text" class="form-control" name="studentName"/>
+								<input type="text" class="form-control" name="name"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="newPwd" class=" control-label col-xs-4">密码：</label>
 							<div class="col-xs-6">
-								<input type="password" class="form-control" name="newPwd"/>
+								<input type="password" class="form-control" name="pwd"/>
 							</div>
 						</div>
 						<div class="form-group">

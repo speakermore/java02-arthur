@@ -2,7 +2,6 @@ package arthur.service.impl.user;
 
 import javax.annotation.Resource;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import arthur.dao.user.UserMapper;
@@ -21,29 +20,14 @@ public class UserServiceImpl implements UserService {
 	@Resource
 	private UserMapper userMapper;
 
-	// 老师登录
 	@Override
-	public Teacher findByTeacherName(@Param("teacherName") String teacherName) {
-		return userMapper.findByTeacherName(teacherName);
-
+	public Student sLogin(String name) {
+		return userMapper.sLogin(name);
 	}
 
-	// 学生注册
 	@Override
-	public Integer addStudent(Student student) {
-		return userMapper.addStudent(student);
-	}
-
-	// 学生登录
-	@Override
-	public Student findByStuName(String studentName) {
-		return userMapper.findByStuName(studentName);
-	}
-
-	// 修改密码
-	@Override
-	public Integer updatePwd(String studentPwd, Integer id) {
-		return userMapper.updatePwd(studentPwd, id);
+	public Teacher tLogin(String name) {
+		return userMapper.tLogin(name);
 	}
 
 }
