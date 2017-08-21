@@ -59,4 +59,9 @@ public class UserController {
 		}
 		return "login";
 	}
+
+	@RequestMapping(value = "personal", method = RequestMethod.GET)
+	public String personal() {
+		return "student";
+	}
 }
