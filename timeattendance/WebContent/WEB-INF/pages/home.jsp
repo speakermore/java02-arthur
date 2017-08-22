@@ -25,26 +25,27 @@
 		<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
 			<!--菜单-->
 			<div class="navbar-header">
-				<a class="navbar-brand"><img src="${pageContext.request.contextPath }/img/u=3212295203,1046740809&fm=26&gp=0.jpg" width="55" height="55" style="margin-top: -10px;" /></a>
+				<a class="navbar-brand"><img src="${pageContext.request.contextPath }/img/u=3212295203,1046740809&fm=26&gp=0.jpg" width="65" height="65" style="margin-top: -10px;" /></a>
 			</div>
 			<div class="container">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
 						<ul class="nav nav-tabs" style="margin-top: 20px;">
 							<li class="active">
-								<a href="#">首页</a>
+								<a href="#" style="margin-top: 20px;">首页</a>
 							</li>
 							<li>
-								<h5 style="margin-left: 400px;"><strong>北大青鸟</strong>&nbsp;&nbsp;<em>教育改变生活</em></h5>
+								<h4 style="margin-left: 400px;"><strong>北大青鸟</strong>&nbsp;&nbsp;<em>教育改变生活</em></h4>
+								<h5 style="margin-left: 800px;margin-top: -6px;">欢迎登录：${student.studentName}</h5>
 							</li>
 							<li class="dropdown pull-right">
-								<a href="#" data-toggle="dropdown" class="dropdown-toggle">用户信息<strong class="caret"></strong></a>
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle" style="margin-top: 20px;">用户信息<strong class="caret"></strong></a>
 								<ul class="dropdown-menu">
 									<li>
 										<a href="user/personal">个人信息</a>
 									</li>
 									<li>
-										<a href="arthur/user/studentUpdatePwd">修改密码</a>
+										<a href="user/updatePwd">修改密码</a>
 									</li>
 								</ul>
 							</li>

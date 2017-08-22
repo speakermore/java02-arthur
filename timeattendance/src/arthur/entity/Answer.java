@@ -15,6 +15,7 @@ public class Answer {
 	private Integer answerId;
 
 	public Answer() {
+
 	}
 
 	public Answer(Integer questionId, String answerContent, Timestamp answerTime, Integer answerId) {
@@ -63,12 +64,6 @@ public class Answer {
 
 	public void setAnswerId(Integer answerId) {
 		this.answerId = answerId;
-	}
-
-	@Override
-	public String toString() {
-		return "Answer [id=" + id + ", questionId=" + questionId + ", answerContent=" + answerContent + ", answerTime="
-				+ answerTime + ", answerId=" + answerId + "]";
 	}
 
 }

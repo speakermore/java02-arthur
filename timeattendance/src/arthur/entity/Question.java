@@ -79,10 +79,4 @@ public class Question implements Serializable {
 		this.questionGiveIntegral = questionGiveIntegral;
 	}
 
-	@Override
-	public String toString() {
-		return "Question [id=" + id + ", studentId=" + studentId + ", questionContent=" + questionContent
-				+ ", questionTime=" + questionTime + ", questionGiveIntegral=" + questionGiveIntegral + "]";
-	}
-
 }

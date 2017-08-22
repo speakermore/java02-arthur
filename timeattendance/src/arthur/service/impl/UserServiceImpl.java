@@ -30,4 +30,14 @@ public class UserServiceImpl implements UserService {
 		return userMapper.tLogin(name);
 	}
 
+	@Override
+	public Integer updatePwd(Integer id, String stuPwd1) {
+		return userMapper.updatePwd(id, stuPwd1);
+	}
+
+	@Override
+	public Integer addStudent(Student student) {
+		return userMapper.addStudent(student);
+	}
+
 }

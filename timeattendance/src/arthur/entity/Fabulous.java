@@ -21,8 +21,7 @@ public class Fabulous implements Serializable {
 	private String fabulousName;// 点赞学生
 
 	public Fabulous() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Fabulous(Integer id, Integer studentId, String studentName, Timestamp fabulousTime, String fabulousName) {
@@ -71,12 +70,6 @@ public class Fabulous implements Serializable {
 
 	public void setFabulousName(String fabulousName) {
 		this.fabulousName = fabulousName;
-	}
-
-	@Override
-	public String toString() {
-		return "Fabulous [id=" + id + ", studentId=" + studentId + ", studentName=" + studentName + ", fabulousTime="
-				+ fabulousTime + ", fabulousName=" + fabulousName + "]";
 	}
 
 }

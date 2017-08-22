@@ -16,8 +16,6 @@ public class Journal implements Serializable {
 	private String stuClass;// 班级
 
 	public Journal() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Journal(String journalContent, Timestamp journalTime, Integer studentId, String studentName,
@@ -76,12 +74,6 @@ public class Journal implements Serializable {
 
 	public void setStudentId(Integer studentId) {
 		this.studentId = studentId;
-	}
-
-	@Override
-	public String toString() {
-		return "Journal [id=" + id + ", journalContent=" + journalContent + ", journalTime=" + journalTime
-				+ ", studentId=" + studentId + ", studentName=" + studentName + ", stuClass=" + stuClass + "]";
 	}
 
 }

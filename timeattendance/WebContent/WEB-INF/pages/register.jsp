@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <base href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -23,7 +24,7 @@
 		<div class="row col-md-12">
 			<div class="col-md-2" style="margin-left: 30px;">
 				<span>
-					<a href="arthur/user/teachershow"><h1>返回首页</h1></a>
+					<a href="user/tHomePage"><h1>返回首页</h1></a>
 				</span>
 			</div>
 		</div>
@@ -33,7 +34,7 @@
 					<h2 style="text-align: center;"><strong>注册</strong></h2>
 				</div>
 				<div class="panel-body">
-					<form action="arthur/user/register" role="form" class="form-horizontal" method="post">
+					<form action="user/register" role="form" class="form-horizontal" method="post">
 						<div class="form-group">
 							<label for="studentName" class="control-label col-xs-4">姓名：</label>
 							<div class="col-xs-6">
@@ -51,8 +52,9 @@
 							<div class="col-xs-6">
 								<select name="stuClass" style="width:218px;height:35px;">
 									<option>---请选择---</option>
-									<option value="一班">一班</option>
-									<option value="二班">二班</option>
+									<c:forEach items="${stuClass }" var="st">
+									<option value="${st.className }">${st.className }</option>
+									</c:forEach>
 								</select>
 							</div>
 						</div>

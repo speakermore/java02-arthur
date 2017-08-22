@@ -18,24 +18,20 @@ public class Attendance implements Serializable {
 	private Timestamp studentOut;// 学生签退
 	private Integer studentId;// 学生表外键id
 	private String studentName;// 学生名字
+	private Timestamp date;// 判断日期
 
 	public Attendance() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Attendance(Timestamp studentSign, Timestamp studentOut, Integer studentId, String studentName) {
+	public Attendance(Integer id, Timestamp studentSign, Timestamp studentOut, Integer studentId, String studentName,
+			Timestamp date) {
 		super();
+		this.id = id;
 		this.studentSign = studentSign;
 		this.studentOut = studentOut;
 		this.studentId = studentId;
 		this.studentName = studentName;
-	}
-
-	@Override
-	public String toString() {
-		return "Attendance [id=" + id + ", studentSign=" + studentSign + ", studentOut=" + studentOut + ", studentId="
-				+ studentId + ", studentName=" + studentName + "]";
+		this.date = date;
 	}
 
 	public Integer getId() {
@@ -76,6 +72,14 @@ public class Attendance implements Serializable {
 
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
+	}
+
+	public Timestamp getData() {
+		return date;
+	}
+
+	public void setData(Timestamp date) {
+		this.date = date;
 	}
 
 }

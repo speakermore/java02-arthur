@@ -19,8 +19,6 @@ public class Integral implements Serializable {
 	private Integer studentid;// 学生id
 
 	public Integral() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integral(Integer integralNum, Integer giftPoints, Integer studentid) {
@@ -60,12 +58,6 @@ public class Integral implements Serializable {
 
 	public void setStudentid(Integer studentid) {
 		this.studentid = studentid;
-	}
-
-	@Override
-	public String toString() {
-		return "Integral [id=" + id + ", integralNum=" + integralNum + ", giftPoints=" + giftPoints + ", studentid="
-				+ studentid + "]";
 	}
 
 }

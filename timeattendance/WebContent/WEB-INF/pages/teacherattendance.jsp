@@ -23,7 +23,7 @@
 					<div class="col-lg-12">
 						<h2>
 							<span>信息列表</span>
-							<span style="margin-left: 1000px;"><a href="arthur/user/register">注册</a></span>
+							<span style="margin-left: 1000px;"><a href="user/register">注册</a></span>
 						</h2>
 						
 					</div>

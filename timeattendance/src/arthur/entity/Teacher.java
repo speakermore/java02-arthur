@@ -18,6 +18,16 @@ public class Teacher implements Serializable {
 	private String teacherName;// 老师姓名
 	private String teacherPwd;// 老师登录密码
 
+	public Teacher() {
+	}
+
+	public Teacher(Integer id, String teacherName, String teacherPwd) {
+		super();
+		this.id = id;
+		this.teacherName = teacherName;
+		this.teacherPwd = teacherPwd;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -40,22 +50,6 @@ public class Teacher implements Serializable {
 
 	public void setTeacherPwd(String teacherPwd) {
 		this.teacherPwd = teacherPwd;
-	}
-
-	public Teacher(String teacherName, String teacherPwd) {
-		super();
-		this.teacherName = teacherName;
-		this.teacherPwd = teacherPwd;
-	}
-
-	public Teacher() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "Teacher [id=" + id + ", teacherName=" + teacherName + ", teacherPwd=" + teacherPwd + "]";
 	}
 
 }

@@ -26,7 +26,7 @@
 					<h3 class="panel-title">修改登录密码</h3>
 				</div>
 				<div class="panel-body">
-					<form action="arthur/user/studentUpdatePwd" role="form" class="form-horizontal" method="post">
+					<form action="user/updatePwd" role="form" class="form-horizontal" method="post">
 						<div class="form-group">
 							<label for="oldPwd" class="control-label col-xs-4">旧密码：</label>
 							<div class="col-xs-6">
