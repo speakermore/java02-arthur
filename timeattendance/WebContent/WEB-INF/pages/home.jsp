@@ -19,6 +19,9 @@
 body {
 	padding-top: 100px;
 }
+#fixed{
+	width:500px;
+}
 </style>
 </head>
 
@@ -144,7 +147,7 @@ body {
 											<tr>
 												<td>${qu.studentName }</td>
 												<td>${qu.className }</td>
-												<td>${qu.questionContent }</td>
+												<td style="width:500px;"><div id="fixed" style="overflow: hidden;">${qu.questionContent }</div></td>
 												<td>${qu.questionTime }</td>
 												<td>${qu.questionGiveIntegral }</td>
 												<td><a href="#">查看</a></td>
