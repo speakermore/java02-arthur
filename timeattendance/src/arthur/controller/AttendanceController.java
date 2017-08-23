@@ -17,7 +17,7 @@ import arthur.service.AttendanceService;
 @RequestMapping(value = "/attendance")
 public class AttendanceController {
 	@Resource
-	AttendanceService attendance;
+	AttendanceService attendanceService;
 
 	@RequestMapping(value = "/addattendanceSign", method = RequestMethod.GET)
 	public String addAttendanceSign(Model model, HttpSession session) {
@@ -25,21 +25,13 @@ public class AttendanceController {
 		Timestamp studentSign = new Timestamp(System.currentTimeMillis());
 		Timestamp date = new Timestamp(System.currentTimeMillis());
 
-		Integer i = attendance.addAttendanceSign(studentId, studentSign, date);
+		Integer i = attendanceService.addAttendanceSign(studentId, studentSign, date);
 		if (i > 0) {
-			model.addAttribute("success", "成功！");
+			model.addAttribute("attendance", "打考勤成功！");
 			return "student";
 		}
-		model.addAttribute("success", "失败！");
+		model.addAttribute("attendance", "打考勤失败！");
 		return "student";
 	}
-
-	// @RequestMapping(value = "/addattendanceOut", method = RequestMethod.GET)
-	// public String addAttendanceOut(Model model, HttpSession session) {
-	// Integer studentId = ((Student) session.getAttribute("student")).getId();
-	// Date date = new Date();
-	// attendance.updateAttendanceOut(studentId, date);
-	// return "student";
-	// }
 
 }

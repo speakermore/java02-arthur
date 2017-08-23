@@ -13,22 +13,28 @@ public class Question implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 6724859136726367123L;
-	private Integer id;
-	private Integer studentId;
-	private String questionContent;
-	private Timestamp questionTime;
-	private Integer questionGiveIntegral;
-	private String studentName;
+	private Integer id;// 主键id
+	private Integer studentId;// 学生表外键id
+	private String questionContent;// 提问内容
+	private Timestamp questionTime;// 提问时间
+	private Integer questionGiveIntegral;// 奖励积分
+	private String studentName;// 学生姓名
+	private String className;// 班级名称
 
 	public Question() {
+
 	}
 
-	public Question(Integer studentId, String questionContent, Timestamp questionTime, Integer questionGiveIntegral) {
+	public Question(Integer id, Integer studentId, String questionContent, Timestamp questionTime,
+			Integer questionGiveIntegral, String studentName, String className) {
 		super();
+		this.id = id;
 		this.studentId = studentId;
 		this.questionContent = questionContent;
 		this.questionTime = questionTime;
 		this.questionGiveIntegral = questionGiveIntegral;
+		this.studentName = studentName;
+		this.className = className;
 	}
 
 	public Integer getId() {
@@ -37,14 +43,6 @@ public class Question implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getStudentName() {
-		return studentName;
-	}
-
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
 	}
 
 	public Integer getStudentId() {
@@ -77,6 +75,22 @@ public class Question implements Serializable {
 
 	public void setQuestionGiveIntegral(Integer questionGiveIntegral) {
 		this.questionGiveIntegral = questionGiveIntegral;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
 	}
 
 }

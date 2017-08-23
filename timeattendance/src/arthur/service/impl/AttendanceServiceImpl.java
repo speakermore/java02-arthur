@@ -12,16 +12,11 @@ import arthur.service.AttendanceService;
 @Service
 public class AttendanceServiceImpl implements AttendanceService {
 	@Resource
-	private AttendanceMapper attendance;
+	private AttendanceMapper attendanceMapper;
 
 	@Override
 	public Integer addAttendanceSign(Integer studentId, Timestamp studentSign, Timestamp date) {
-		return attendance.addAttendanceSign(studentId, studentSign, date);
+		return attendanceMapper.addAttendanceSign(studentId, studentSign, date);
 	}
-
-	// @Override
-	// public Integer updateAttendanceOut(Integer studentId, Date date) {
-	// return attendance.updateAttendanceOut(studentId, date);
-	// }
 
 }

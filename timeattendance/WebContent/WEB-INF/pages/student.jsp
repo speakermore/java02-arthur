@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<base
-	href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
+<base href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -18,20 +17,19 @@
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-3 column">
-				<span> <a href="user/stuHomePage"><h1>返回首页</h1></a>
-				</span>
+				<span><a href="user/stuHomePage"><h1>返回首页</h1></a></span>
 				<div class="row">
 					<div class="column">
 						<section class="panel panel-default">
 							<h2 class="panel-heading">个人信息</h2>
 							<ol class="list-unstyled"
 								style="margin-left: 70px; font-size: 20px;">
-								<li>姓名</li>
-								<li>性别</li>
-								<li>班级</li>
-								<li>学号</li>
-								<li>积分</li>
-								<li>点赞数</li>
+								<li>姓名:${stu.studentName }</li>
+								<li>性别:${stu.studentSex }</li>
+								<li>班级:${stu.className }</li>
+								<li>学号:${stu.studentNo }</li>
+								<li>积分:${stu.integralNum }</li>
+								<li>被点赞数:${stu.fabulousNum }</li>
 							</ol>
 						</section>
 					</div>
@@ -42,7 +40,6 @@
 					<ul class="nav nav-tabs">
 						<li class="active on"><a href="#panel-713206"
 							data-toggle="tab">填写日志</a></li>
-						<li><a href="#panel-124822" data-toggle="tab">修改日志</a></li>
 						<li><a href="#panel-387867" data-toggle="tab">提问</a></li>
 						<li><a href="#panel-345344" data-toggle="tab">打考勤</a></li>
 					</ul>
@@ -70,37 +67,18 @@
 							</div>
 							</p>
 						</div>
-						<div class="tab-pane" id="panel-124822">
-							<p>
-							<div class="row">
-								<div class="col-md-7">
-									<div class="column">
-										<div class="panel panel-body">
-											<h3>日志修改：</h3>
-											<div class="divcss5">
-												<textarea cols="100px" rows="10px"></textarea>
-											</div>
-										</div>
-										<span class="wocao">
-											<div class="row col-md-6" style="margin-left: 550px;">
-												<button type="button" class="btn btn-default col-md-9">提交</button>
-											</div>
-										</span>
-									</div>
-								</div>
-							</div>
-							</p>
-						</div>
 						<div class="tab-pane" id="panel-387867">
 							<p>
 							<div class="row">
 								<div class="col-md-7">
 									<div class="column">
+									${question}
+										<form action="question/context" method="post">
 										<div class="panel panel-body">
-											<form action="arthur/question/student" method="post">
 												<h3>问题填写：</h3>
-												<div class="divcss5">
-													<textarea cols="100px" rows="10px" name="questionContent">${success }</textarea>
+												奖励积分：<input name="questionGiveIntegral" style="width:50px;"/>
+												<div class="divcss5" style="margin-top: 10px">
+													<textarea cols="100px" rows="10px" name="questionContent"></textarea>
 												</div>
 										</div>
 										<span class="wocao">
@@ -120,7 +98,7 @@
 								<div class="row clearfix">
 									<div class="row">
 										<div class="container">
-											<div class="row">
+											<div class="row">${attendance }
 												<table class="table table-bordered"
 													style="margin-left: 60px; margin-top: 40px; width: 500px;">
 													<thead>

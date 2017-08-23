@@ -8,11 +8,11 @@ import java.sql.Timestamp;
  * @auther 代益铨 2017年7月24日上午9:23:13
  */
 public class Answer {
-	private Integer id;
-	private Integer questionId;
-	private String answerContent;
-	private Timestamp answerTime;
-	private Integer answerId;
+	private Integer id;// 主键id
+	private Integer questionId;// 提问者的id
+	private String answerContent;// 回答内容
+	private Timestamp answerTime;// 回答内容
+	private Integer answerId;// 回答者的id
 
 	public Answer() {
 

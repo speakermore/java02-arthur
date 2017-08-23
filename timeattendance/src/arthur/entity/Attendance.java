@@ -13,7 +13,6 @@ public class Attendance implements Serializable {
 
 	private static final long serialVersionUID = -3282528170033137602L;
 	private Integer id;// 主键id
-
 	private Timestamp studentSign;// 学生签到
 	private Timestamp studentOut;// 学生签退
 	private Integer studentId;// 学生表外键id

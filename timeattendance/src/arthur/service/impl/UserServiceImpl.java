@@ -40,4 +40,9 @@ public class UserServiceImpl implements UserService {
 		return userMapper.addStudent(student);
 	}
 
+	@Override
+	public Student findByStudentId(Integer studentId) {
+		return userMapper.findByStudentId(studentId);
+	}
+
 }

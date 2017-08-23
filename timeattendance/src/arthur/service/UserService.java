@@ -24,4 +24,7 @@ public interface UserService {
 
 	// 老师给学生注册
 	Integer addStudent(@Param("student") Student student);
+
+	// 查询学生信息
+	Student findByStudentId(@Param("studentId") Integer studentId);
 }

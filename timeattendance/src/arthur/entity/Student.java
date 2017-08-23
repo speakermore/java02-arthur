@@ -19,20 +19,27 @@ public class Student implements Serializable {
 	private String studentPwd;// 学生密码
 	private String studentNo;// 学生学号
 	private String studentSex;// 学生性别
-	private String stuClass;// 班级名称
+	private String className;// 班级名称
+	private Integer integralNum;// 积分
+	private Integer fabulousNum;// 被点赞次数
+	private Integer classId;// 班级表外键
 
 	public Student() {
+
 	}
 
 	public Student(Integer id, String studentName, String studentPwd, String studentNo, String studentSex,
-			String stuClass) {
+			String className, Integer integralNum, Integer fabulousNum, Integer classId) {
 		super();
 		this.id = id;
 		this.studentName = studentName;
 		this.studentPwd = studentPwd;
 		this.studentNo = studentNo;
 		this.studentSex = studentSex;
-		this.stuClass = stuClass;
+		this.className = className;
+		this.integralNum = integralNum;
+		this.fabulousNum = fabulousNum;
+		this.classId = classId;
 	}
 
 	public Integer getId() {
@@ -75,12 +82,36 @@ public class Student implements Serializable {
 		this.studentSex = studentSex;
 	}
 
-	public String getStuClass() {
-		return stuClass;
+	public String getClassName() {
+		return className;
 	}
 
-	public void setStuClass(String stuClass) {
-		this.stuClass = stuClass;
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+	public Integer getIntegralNum() {
+		return integralNum;
+	}
+
+	public void setIntegralNum(Integer integralNum) {
+		this.integralNum = integralNum;
+	}
+
+	public Integer getFabulousNum() {
+		return fabulousNum;
+	}
+
+	public void setFabulousNum(Integer fabulousNum) {
+		this.fabulousNum = fabulousNum;
+	}
+
+	public Integer getClassId() {
+		return classId;
+	}
+
+	public void setClassId(Integer classId) {
+		this.classId = classId;
 	}
 
 }

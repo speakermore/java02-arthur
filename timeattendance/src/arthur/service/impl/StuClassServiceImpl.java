@@ -13,11 +13,11 @@ import arthur.service.StuClassService;
 @Service
 public class StuClassServiceImpl implements StuClassService {
 	@Resource
-	private StuClassMapper stuClass;
+	private StuClassMapper stuClassMapper;
 
 	@Override
 	public List<StuClass> fingAll() {
-		return stuClass.fingAll();
+		return stuClassMapper.fingAll();
 	}
 
 }

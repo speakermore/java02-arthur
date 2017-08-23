@@ -1,8 +1,14 @@
 package arthur.entity;
 
-public class StuClass {
-	private Integer id;
-	private String className;
+import java.io.Serializable;
+
+public class StuClass implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2772815306889401341L;
+	private Integer id;// 主键id
+	private String className;// 班级名称
 
 	public StuClass() {
 

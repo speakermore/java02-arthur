@@ -27,6 +27,7 @@
 					<a href="user/tHomePage"><h1>返回首页</h1></a>
 				</span>
 			</div>
+			${register}
 		</div>
 		<div class="container col-md-5" style="margin-left: 380px;">
 			<div class="panel panel-primary">
@@ -50,10 +51,10 @@
 						<div class="form-group">
 							<label for="newPwd" class=" control-label col-xs-4">班级：</label>
 							<div class="col-xs-6">
-								<select name="stuClass" style="width:218px;height:35px;">
+								<select name="classId" style="width:218px;height:35px;">
 									<option>---请选择---</option>
 									<c:forEach items="${stuClass }" var="st">
-									<option value="${st.className }">${st.className }</option>
+									<option value="${st.id }">${st.className }</option>
 									</c:forEach>
 								</select>
 							</div>

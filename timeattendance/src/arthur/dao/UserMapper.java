@@ -25,4 +25,7 @@ public interface UserMapper {
 	// 老师给学生注册
 	Integer addStudent(Student student);
 
+	// 查询学生信息
+	Student findByStudentId(@Param("studentId") Integer studentId);
+
 }
