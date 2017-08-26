@@ -2,13 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="arthur.dao.QuestionMapper">
 	<resultMap type="Question" id="list">
-		<id column="id" property="id"/>
-		<result column="studentId" property="studentId"/>
-		<result column="questionContent" property="questionContent"/>
-		<result column="questionTime" property="questionTime"/>
-		<result column="questionGiveIntegral" property="questionGiveIntegral"/>
-		<result column="studentName" property="studentName"/>
-		<result column="className" property="className"/>
+		<id column="id" property="id" />
+		<result column="studentId" property="studentId" />
+		<result column="questionContent" property="questionContent" />
+		<result column="questionTime" property="questionTime" />
+		<result column="questionGiveIntegral" property="questionGiveIntegral" />
+		<result column="studentName" property="studentName" />
+		<result column="className" property="className" />
+		<result column="answerId" property="answerId" />
 	</resultMap>
 	<insert id="addQuestion" parameterType="Question">
 		insert into
@@ -16,10 +17,20 @@
 		values
 		(#{studentId},#{questionContent},#{questionTime},#{questionGiveIntegral})
 	</insert>
-	<select id="fingAll" resultMap="list">
+	<select id="findAll" resultMap="list">
 		select
-		s.studentName,c.className,q.questionContent,q.questionTime,q.questionGiveIntegral
+		q.id,s.studentName,c.className,q.questionContent,q.questionTime,q.questionGiveIntegral
 		from student s inner join question q on s.id=q.studentId inner join
 		stuclass c on c.id=s.classId
+	</select>
+	<select id="fingById" resultMap="list">
+		select
+		q.id,s.studentName,c.className,q.questionGiveIntegral,q.questionContent,q.questionTime,q.studentId
+		from question q inner join student s on q.studentId=s.id inner
+		join
+		stuclass c on s.classId=c.id where q.id=#{id}
+	</select>
+	<select id="findAllMy" resultMap="list">
+		select * from student s,question q where q.studentId=s.id and s.id=#{id} order by q.questionTime desc
 	</select>
 </mapper>

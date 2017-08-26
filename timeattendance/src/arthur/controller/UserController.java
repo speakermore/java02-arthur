@@ -1,5 +1,6 @@
 package arthur.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import arthur.entity.Answer;
 import arthur.entity.Question;
 import arthur.entity.StuClass;
 import arthur.entity.Student;
 import arthur.entity.Teacher;
+import arthur.service.AnswerService;
 import arthur.service.QuestionService;
 import arthur.service.StuClassService;
 import arthur.service.UserService;
@@ -32,6 +35,8 @@ public class UserController {
 	StuClassService stuClassService;
 	@Resource
 	QuestionService questionService;
+	@Resource
+	AnswerService answerService;
 
 	// 登录页面
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -52,6 +57,8 @@ public class UserController {
 			if (s.getStudentPwd().equals(pwd)) {
 				session.setAttribute("student", s);
 				this.findAllQuestion(model);
+				int id = ((Student) session.getAttribute("student")).getId();
+				this.find(model, id);
 				return "home";
 			}
 			if (t.getTeacherPwd().equals(pwd)) {
@@ -69,6 +76,8 @@ public class UserController {
 			if (s.getStudentPwd().equals(pwd)) {
 				session.setAttribute("student", s);
 				this.findAllQuestion(model);
+				int id = ((Student) session.getAttribute("student")).getId();
+				this.find(model, id);
 				return "home";
 			}
 		}
@@ -114,8 +123,10 @@ public class UserController {
 
 	// 学生点击返回首页跳到学生首页
 	@RequestMapping(value = "/stuHomePage", method = RequestMethod.GET)
-	public String stuHomePage(Model model) {
+	public String stuHomePage(Model model, HttpSession session) {
 		this.findAllQuestion(model);
+		int id = ((Student) session.getAttribute("student")).getId();
+		this.find(model, id);
 		return "home";
 	}
 
@@ -154,7 +165,27 @@ public class UserController {
 
 	// 查询所有提问信息
 	public void findAllQuestion(Model model) {
-		List<Question> question = questionService.fingAll();
-		model.addAttribute("question", question);
+		List<Question> question = questionService.findAll();
+		model.addAttribute("questiona", question);
+	}
+
+	// 查看自己提问和回答者的信息
+	public void find(Model model, Integer id) {
+		List<Question> qu = questionService.findAllMy(id);
+		model.addAttribute("qus", qu);
+	}
+
+	// 考到提问发表答案
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String addAdswer(Answer answer, Model model, HttpSession session) {
+		answer.setAnswerId(((Student) session.getAttribute("student")).getId());
+		answer.setAnswerTime(new Timestamp(System.currentTimeMillis()));
+		answerService.addAnswer(answer);
+		answer.setStudentId(answer.getQuestionId());
+		answerService.addQuestion(answer);
+		this.findAllQuestion(model);
+		int id = ((Student) session.getAttribute("student")).getId();
+		this.find(model, id);
+		return "home";
 	}
 }

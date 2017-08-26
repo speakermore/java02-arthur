@@ -20,13 +20,18 @@ public class Question implements Serializable {
 	private Integer questionGiveIntegral;// 奖励积分
 	private String studentName;// 学生姓名
 	private String className;// 班级名称
+	private Integer answerId;// 回答者的id
+	/*
+	 * private String answerContent;// 回答内容 private Timestamp answerTime;// 回答时间
+	 * private String ansName;// 回答者的名字
+	 */
 
 	public Question() {
 
 	}
 
 	public Question(Integer id, Integer studentId, String questionContent, Timestamp questionTime,
-			Integer questionGiveIntegral, String studentName, String className) {
+			Integer questionGiveIntegral, String studentName, String className, Integer answerId) {
 		super();
 		this.id = id;
 		this.studentId = studentId;
@@ -35,6 +40,7 @@ public class Question implements Serializable {
 		this.questionGiveIntegral = questionGiveIntegral;
 		this.studentName = studentName;
 		this.className = className;
+		this.answerId = answerId;
 	}
 
 	public Integer getId() {
@@ -91,6 +97,14 @@ public class Question implements Serializable {
 
 	public void setClassName(String className) {
 		this.className = className;
+	}
+
+	public Integer getAnswerId() {
+		return answerId;
+	}
+
+	public void setAnswerId(Integer answerId) {
+		this.answerId = answerId;
 	}
 
 }

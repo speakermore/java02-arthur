@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <base
 	href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
@@ -19,8 +21,9 @@
 body {
 	padding-top: 100px;
 }
-#fixed{
-	width:500px;
+
+#fixed {
+	width: 500px;
 }
 </style>
 </head>
@@ -82,21 +85,22 @@ body {
 										<div class="tab-content">
 											<div class="tab-pane active" id="panel-269994">
 												<p>
-												<ul class="list-unstyled">
-													<li class="text-right"><span class="col-md-1">学生姓名</span>
-														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
-													</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
-													<li class="text-right"><span class="col-md-1">学生姓名</span>
-														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
-													</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
-													<li class="text-right"><span class="col-md-1">学生姓名</span>
-														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
-													</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
-												</ul>
+													<ul class="list-unstyled">
+														<li class="text-right"><span class="col-md-1">学生姓名</span>
+															<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
+														</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
+														<li class="text-right"><span class="col-md-1">学生姓名</span>
+															<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
+														</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
+														<li class="text-right"><span class="col-md-1">学生姓名</span>
+															<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
+														</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
+													</ul>
 												</p>
 											</div>
 											<div class="tab-pane" id="panel-141635">
 												<p>
+												
 												<ul class="list-unstyled">
 													<li class="text-right"><span class="col-md-1">学生姓名</span>
 														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
@@ -143,14 +147,15 @@ body {
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach items="${question}" var="qu">
+										<c:forEach items="${questiona}" var="qu">
 											<tr>
 												<td>${qu.studentName }</td>
 												<td>${qu.className }</td>
-												<td style="width:500px;"><div id="fixed" style="overflow: hidden;">${qu.questionContent }</div></td>
+												<td style="width: 500px;"><div id="fixed"
+														style="overflow: hidden;">${qu.questionContent }</div></td>
 												<td>${qu.questionTime }</td>
 												<td>${qu.questionGiveIntegral }</td>
-												<td><a href="#">查看</a></td>
+												<td><a href="question/select?id=${qu.id }">查看</a></td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -187,7 +192,7 @@ body {
 										<tr>
 											<th>日志内容</th>
 											<th>日志时间</th>
-											<th>点击查看</th>
+											<th>操作</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -196,6 +201,59 @@ body {
 											<td>123</td>
 											<td><a href="#">查看</a></td>
 										</tr>
+									</tbody>
+								</table>
+								<div class="row" style="text-align: center;">
+									<ul class="pagination pagination-lg">
+										<li><a href="#">共条记录/</a></li>
+										<li><a href="#">首页</a></li>
+										<li><a href="#">上一页</a></li>
+										<li><a href="#">下一页</a></li>
+										<li><a href="#">尾页</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion"
+						href="#collapseFour"> 点击查看题问答复！ </a>
+				</h4>
+			</div>
+			<div id="collapseFour" class="panel-collapse collapse">
+				<div class="panel-body">
+					<div id="collapseOne" class="panel-collapse collapse in">
+						<div class="row clearfix">
+							<div class="col-md-12 column">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>我提问的内容</th>
+											<th>是否有人回答</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach items="${qus }" var="q">
+											<c:if test="${q.answerId!=0 }">
+												<tr>
+													<td style="width:500px;"><div id="fixed"
+															style="overflow: hidden;">${q.questionContent}</div></td>
+													<td>已有人回答</td>
+													<td><a href="#">查看</a></td>
+												</tr>
+											</c:if>
+											<c:if test="${q.answerId==0 }">
+												<tr>
+													<td colspan="3">亲，还没有人回答哦！请等待...</td>
+												</tr>
+											</c:if>
+										</c:forEach>
 									</tbody>
 								</table>
 								<div class="row" style="text-align: center;">

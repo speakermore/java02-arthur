@@ -50,10 +50,10 @@
 								<div class="col-md-7">
 									<div class="column">
 										<div class="panel panel-body">
-											<form action="arthur/journal/addjournal" method="post">
+											<form action="#" method="post">
 												<h3>日志填写：</h3>
 												<div class="divcss5">
-													<textarea cols="100px" rows="10px" name="journalContent">${success }</textarea>
+													<textarea name="test" class="ckeditor"></textarea>
 												</div>
 										</div>
 										<span class="wocao">
@@ -72,13 +72,13 @@
 							<div class="row">
 								<div class="col-md-7">
 									<div class="column">
-									${question}
+									${questions}
 										<form action="question/context" method="post">
 										<div class="panel panel-body">
 												<h3>问题填写：</h3>
 												奖励积分：<input name="questionGiveIntegral" style="width:50px;"/>
 												<div class="divcss5" style="margin-top: 10px">
-													<textarea cols="100px" rows="10px" name="questionContent"></textarea>
+													<textarea name="questionContent" class="ckeditor"></textarea>
 												</div>
 										</div>
 										<span class="wocao">
@@ -146,6 +146,9 @@
 				</div>
 			</div>
 		</div>
+		<script src="third/ckeditor/ckeditor.js">CKEDITOR.replace("test");</script>
+		<script src="third/ckeditor/ckeditor.js">CKEDITOR.replace("questionContent");</script>
+	
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->

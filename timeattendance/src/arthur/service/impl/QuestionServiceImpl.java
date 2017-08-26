@@ -21,8 +21,18 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 
 	@Override
-	public List<Question> fingAll() {
-		return questionMapper.fingAll();
+	public List<Question> findAll() {
+		return questionMapper.findAll();
+	}
+
+	@Override
+	public Question fingById(Integer id) {
+		return questionMapper.fingById(id);
+	}
+
+	@Override
+	public List<Question> findAllMy(Integer id) {
+		return questionMapper.findAllMy(id);
 	}
 
 }
