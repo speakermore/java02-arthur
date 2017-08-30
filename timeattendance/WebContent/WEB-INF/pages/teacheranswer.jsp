@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	<form action="user/add" method="post">
+	<form action="#" method="post">
 		<div class="container">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
