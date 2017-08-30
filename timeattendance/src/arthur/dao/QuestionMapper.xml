@@ -33,4 +33,7 @@
 	<select id="findAllMy" resultMap="list">
 		select * from student s,question q where q.studentId=s.id and s.id=#{id} order by q.questionTime desc
 	</select>
+	<select id="findAllById" resultMap="list">
+		select * from question q,student s where q.studentId=s.id and q.answerId=#{studentId}
+	</select>
 </mapper>

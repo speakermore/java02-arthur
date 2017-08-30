@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="arthur.dao.JournalMapper">
+	<insert id="addJournal" parameterType="Journal">
+		insert into journal(journalContent,journalTime,studentId,stuClass) 
+		values(#{journalContent},#{journalTime},#{studentId},#{stuClass})
+	</insert>
+	<select id="findAll" resultType="Journal">
+		select * from journal j where j.studentId=#{studentId}
+	</select>
+	<select id="findByJournalId" resultType="Journal">
+		select * from journal j where j.id=#{journalId}
+	</select>
+	<update id="updateJournalContent" parameterType="Journal">
+		update journal j set j.journalContent=#{journalContent} where j.id=#{id}
+	</update>
+</mapper>

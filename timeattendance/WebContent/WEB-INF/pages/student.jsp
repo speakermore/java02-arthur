@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<base href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
+<base
+	href="${pageContext.request.scheme }://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/" />
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -49,18 +50,17 @@
 							<div class="row">
 								<div class="col-md-7">
 									<div class="column">
-										<div class="panel panel-body">
-											<form action="#" method="post">
+										${journal}
+										<form action="user/jorunal" method="post">
+											<div class="panel panel-body">
 												<h3>日志填写：</h3>
 												<div class="divcss5">
 													<textarea name="test" class="ckeditor"></textarea>
 												</div>
-										</div>
-										<span class="wocao">
+											</div>
 											<div class="row col-md-6" style="margin-left: 550px;">
 												<button type="submit" class="btn btn-default col-md-9">提交</button>
 											</div>
-										</span>
 										</form>
 									</div>
 								</div>
@@ -72,20 +72,18 @@
 							<div class="row">
 								<div class="col-md-7">
 									<div class="column">
-									${questions}
+										${questions}
 										<form action="question/context" method="post">
-										<div class="panel panel-body">
+											<div class="panel panel-body">
 												<h3>问题填写：</h3>
-												奖励积分：<input name="questionGiveIntegral" style="width:50px;"/>
+												奖励积分：<input name="questionGiveIntegral" style="width: 50px;" />
 												<div class="divcss5" style="margin-top: 10px">
 													<textarea name="questionContent" class="ckeditor"></textarea>
 												</div>
-										</div>
-										<span class="wocao">
+											</div>
 											<div class="row col-md-6" style="margin-left: 550px;">
 												<button type="submit" class="btn btn-default col-md-9">提交</button>
 											</div>
-										</span>
 										</form>
 									</div>
 								</div>
@@ -125,15 +123,17 @@
 											</div>
 											<div style="margin-top: -130px; margin-left: 600px;">
 												<div>
-												<a href="attendance/addattendanceSign">
-													<button type="button" style="width: 150px;"
-														class="btn btn-default">点击签到</button></a>
+													<a href="attendance/addattendanceSign">
+														<button type="button" style="width: 150px;"
+															class="btn btn-default">点击签到</button>
+													</a>
 												</div>
 												<div>
-												<a href="attendance/addattendanceOut">
-													<button type="button"
-														style="width: 150px; margin-top: 20px;"
-														class="btn btn-default">点击签退</button></a>
+													<a href="attendance/addattendanceOut">
+														<button type="button"
+															style="width: 150px; margin-top: 20px;"
+															class="btn btn-default">点击签退</button>
+													</a>
 												</div>
 											</div>
 										</div>
@@ -146,9 +146,13 @@
 				</div>
 			</div>
 		</div>
-		<script src="third/ckeditor/ckeditor.js">CKEDITOR.replace("test");</script>
-		<script src="third/ckeditor/ckeditor.js">CKEDITOR.replace("questionContent");</script>
-	
+		<script src="third/ckeditor/ckeditor.js">
+			CKEDITOR.replace("test");
+		</script>
+		<script src="third/ckeditor/ckeditor.js">
+			CKEDITOR.replace("questionContent");
+		</script>
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->

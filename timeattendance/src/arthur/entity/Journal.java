@@ -13,13 +13,13 @@ public class Journal implements Serializable {
 	private Timestamp journalTime;// 发表日志时间
 	private Integer studentId;// 学生表外键id
 	private String studentName;// 学生姓名
-	private String stuClass;// 班级
+	private Integer stuClass;// 班级
 
 	public Journal() {
 	}
 
 	public Journal(String journalContent, Timestamp journalTime, Integer studentId, String studentName,
-			String stuClass) {
+			Integer stuClass) {
 		super();
 		this.journalContent = journalContent;
 		this.journalTime = journalTime;
@@ -36,11 +36,11 @@ public class Journal implements Serializable {
 		this.studentName = studentName;
 	}
 
-	public String getStuClass() {
+	public Integer getStuClass() {
 		return stuClass;
 	}
 
-	public void setStuClass(String stuClass) {
+	public void setStuClass(Integer stuClass) {
 		this.stuClass = stuClass;
 	}
 

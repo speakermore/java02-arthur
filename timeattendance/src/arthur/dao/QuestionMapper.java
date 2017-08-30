@@ -22,4 +22,7 @@ public interface QuestionMapper {
 
 	// 查看自己的提问内容和是否有答复的信息
 	List<Question> findAllMy(@Param("id") Integer id);
+
+	// 查看有答复的信息
+	Question findAllById(@Param("studentId") Integer studentId);
 }

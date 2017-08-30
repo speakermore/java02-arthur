@@ -25,13 +25,16 @@ body {
 #fixed {
 	width: 500px;
 }
+
+#fixed2 {
+	width: 800px;
+}
+ 
 </style>
 </head>
 
 <body>
-	<!--导航-->
 	<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-		<!--菜单-->
 		<div class="container">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
@@ -58,16 +61,11 @@ body {
 				</div>
 			</div>
 		</div>
-		<!--菜单结束-->
 	</nav>
-	<!--导航结束-->
-	<!--正文-->
 	<div class="container-fluid">
 		<div class="row">
 			<article class="col-sm-12">
-				<!--最新资讯-->
 				<section class="panel panel-default">
-					<!--panel面板-->
 					<div class="panel-heading">
 						<h3 class="panel-title">学生点赞</h3>
 					</div>
@@ -85,22 +83,21 @@ body {
 										<div class="tab-content">
 											<div class="tab-pane active" id="panel-269994">
 												<p>
-													<ul class="list-unstyled">
-														<li class="text-right"><span class="col-md-1">学生姓名</span>
-															<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
-														</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
-														<li class="text-right"><span class="col-md-1">学生姓名</span>
-															<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
-														</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
-														<li class="text-right"><span class="col-md-1">学生姓名</span>
-															<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
-														</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
-													</ul>
+												<ul class="list-unstyled">
+													<li class="text-right"><span class="col-md-1">学生姓名</span>
+														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
+													</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
+													<li class="text-right"><span class="col-md-1">学生姓名</span>
+														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
+													</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
+													<li class="text-right"><span class="col-md-1">学生姓名</span>
+														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
+													</span> <span class="glyphicon glyphicon-thumbs-up"></span>点赞</li>
+												</ul>
 												</p>
 											</div>
 											<div class="tab-pane" id="panel-141635">
 												<p>
-												
 												<ul class="list-unstyled">
 													<li class="text-right"><span class="col-md-1">学生姓名</span>
 														<span class="col-md-3">班级</span> <span class="col-md-5">被点赞次数：<span>23</span>次
@@ -151,7 +148,7 @@ body {
 											<tr>
 												<td>${qu.studentName }</td>
 												<td>${qu.className }</td>
-												<td style="width: 500px;"><div id="fixed"
+												<td style="width: 500px;white-space:nowrap;"><div id="fixed"
 														style="overflow: hidden;">${qu.questionContent }</div></td>
 												<td>${qu.questionTime }</td>
 												<td>${qu.questionGiveIntegral }</td>
@@ -196,11 +193,13 @@ body {
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>123</td>
-											<td>123</td>
-											<td><a href="#">查看</a></td>
-										</tr>
+										<c:forEach items="${journal }" var="jo">
+											<tr>
+												<td style="width: 800px;white-space:nowrap;"><div id="fixed2" style="overflow: hidden;">${jo.journalContent }</div></td>
+												<td><fmt:formatDate value="${jo.journalTime }" pattern="yyyy-MM-dd" /></td>
+												<td><a href="journal/select?journalId=${jo.id }">修改</a></td>
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 								<div class="row" style="text-align: center;">
@@ -242,15 +241,11 @@ body {
 										<c:forEach items="${qus }" var="q">
 											<c:if test="${q.answerId!=0 }">
 												<tr>
-													<td style="width:500px;"><div id="fixed"
+													<td style="width: 500px;white-space:nowrap;"><div id="fixed"
 															style="overflow: hidden;">${q.questionContent}</div></td>
 													<td>已有人回答</td>
-													<td><a href="#">查看</a></td>
-												</tr>
-											</c:if>
-											<c:if test="${q.answerId==0 }">
-												<tr>
-													<td colspan="3">亲，还没有人回答哦！请等待...</td>
+													<td><a
+														href="question/findAllById?studentId=${q.studentId }&answerId=${q.answerId}">查看</a></td>
 												</tr>
 											</c:if>
 										</c:forEach>

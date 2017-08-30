@@ -11,6 +11,8 @@
 		<result column="questionContent" property="questionContent"/>
 		<result column="questionTime" property="questionTime"/>
 		<result column="questionGiveIntegral" property="questionGiveIntegral"/>
+		<result column="className" property="className"/>
+		<result column="studentName" property="studentName"/>
 	</resultMap>
 	<insert id="addAnswer" parameterType="Answer">
 		insert into answer(questionId,answerContent,answerTime,answerId) 
@@ -20,4 +22,7 @@
 		insert into question(studentId,questionContent,questionTime,questionGiveIntegral,answerId)
 values(#{studentId},#{questionContent},#{questionTime},#{questionGiveIntegral},#{answerId})
 	</insert>
+	<select id="findAllById" resultMap="answer">
+		select * from answer a,student s,stuclass c where a.answerId=s.id and s.classId=c.id and a.answerId=#{answerId}
+	</select>
 </mapper>

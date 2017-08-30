@@ -1,5 +1,9 @@
 package arthur.service;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import arthur.entity.Answer;
 
 /**
@@ -12,4 +16,7 @@ public interface AnswerService {
 
 	// 回答问题后，给提问表的answerId加自己的id
 	Integer addQuestion(Answer answer);
+
+	// 查看所有答复者回答的信息
+	List<Answer> findAllById(@Param("answerId") Integer answerId);
 }

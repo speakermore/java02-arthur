@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import arthur.entity.Answer;
+import arthur.entity.Journal;
 import arthur.entity.Question;
 import arthur.entity.StuClass;
 import arthur.entity.Student;
 import arthur.entity.Teacher;
 import arthur.service.AnswerService;
+import arthur.service.JournalService;
 import arthur.service.QuestionService;
 import arthur.service.StuClassService;
 import arthur.service.UserService;
@@ -37,6 +39,8 @@ public class UserController {
 	QuestionService questionService;
 	@Resource
 	AnswerService answerService;
+	@Resource
+	JournalService journalService;
 
 	// 登录页面
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -59,6 +63,7 @@ public class UserController {
 				this.findAllQuestion(model);
 				int id = ((Student) session.getAttribute("student")).getId();
 				this.find(model, id);
+				this.selectJournal(session, model);
 				return "home";
 			}
 			if (t.getTeacherPwd().equals(pwd)) {
@@ -78,6 +83,7 @@ public class UserController {
 				this.findAllQuestion(model);
 				int id = ((Student) session.getAttribute("student")).getId();
 				this.find(model, id);
+				this.selectJournal(session, model);
 				return "home";
 			}
 		}
@@ -127,6 +133,7 @@ public class UserController {
 		this.findAllQuestion(model);
 		int id = ((Student) session.getAttribute("student")).getId();
 		this.find(model, id);
+		this.selectJournal(session, model);
 		return "home";
 	}
 
@@ -187,5 +194,25 @@ public class UserController {
 		int id = ((Student) session.getAttribute("student")).getId();
 		this.find(model, id);
 		return "home";
+	}
+
+	// 日志填写
+	@RequestMapping(value = "/jorunal", method = RequestMethod.POST)
+	public String addJournal(@RequestParam("test") String test, HttpSession session, Model model) {
+		Journal jour = new Journal();
+		jour.setJournalContent(test);
+		jour.setJournalTime(new Timestamp(System.currentTimeMillis()));
+		jour.setStuClass(((Student) session.getAttribute("student")).getClassId());
+		jour.setStudentId(((Student) session.getAttribute("student")).getId());
+		journalService.addJournal(jour);
+		model.addAttribute("journal", "填写日志成功！");
+		return "student";
+	}
+
+	// 查询自己的日志并在首页显示
+	public void selectJournal(HttpSession session, Model model) {
+		int studentId = ((Student) session.getAttribute("student")).getId();
+		List<Journal> jour = journalService.findAll(studentId);
+		model.addAttribute("journal", jour);
 	}
 }

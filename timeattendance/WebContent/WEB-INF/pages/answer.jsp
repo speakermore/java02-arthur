@@ -22,25 +22,27 @@
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<h4>
-					提问的时间：<span style="margin-left: 200px;">奖励的积分：</span>
+					提问的时间：<fmt:formatDate value="${question.questionTime }" pattern="yyyy-MM-dd"/><span style="margin-left: 200px;">奖励的积分：${question.questionGiveIntegral }</span>
 				</h4>
 				<h4>
 					我的提问内容：
 				</h4>
-				<textarea cols="100px" rows="10px" readonly="readonly"></textarea>
+				<textarea cols="100px" rows="10px" readonly="readonly">${question.questionContent }</textarea>
 			</div>
 		</div>
+		<c:forEach items="${answer }" var="an">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<h4>
-					回答者：<span style="margin-left: 200px;">班级：</span>
+					回答者：${an.studentName }<span style="margin-left: 200px;">班级：${an.className }</span>
 				</h4>
-				<h4>回答内容：</h4>
+				<h4>回答内容：<span style="margin-left: 150px;">回答时间：<fmt:formatDate value="${an.answerTime }" pattern="yyyy-MM-dd"/></span></h4>
 				<div class="divcss5">
-					<textarea cols="100px" rows="10px" readonly="readonly"></textarea>
+					<textarea cols="100px" rows="10px" readonly="readonly">${an.answerContent }</textarea>
 				</div>
 			</div>
 		</div>
+		</c:forEach>
 		<a href="user/stuHomePage"><button type="button"
 				class="btn btn-default col-md-2"
 				style="margin-left: 230px; margin-top: 20px;">返回首页</button></a>

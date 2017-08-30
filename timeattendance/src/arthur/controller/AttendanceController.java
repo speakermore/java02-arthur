@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import arthur.entity.Student;
 import arthur.service.AttendanceService;
 
+/**
+ * 
+ * @auther 代益铨 2017年8月30日上午11:43:25
+ */
 @Controller
 @RequestMapping(value = "/attendance")
 public class AttendanceController {

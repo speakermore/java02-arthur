@@ -11,19 +11,22 @@ public class Answer {
 	private Integer id;// 主键id
 	private Integer questionId;// 提问者的id
 	private String answerContent;// 回答内容
-	private Timestamp answerTime;// 回答内容
+	private Timestamp answerTime;// 回答内容时间
 	private Integer answerId;// 回答者的id
 	private Integer studentId;// 学生表外键id
 	private String questionContent;// 提问内容
 	private Timestamp questionTime;// 提问时间
 	private Integer questionGiveIntegral;// 奖励积分
+	private String className;// 班级名称
+	private String studentName;// 学生姓名
 
 	public Answer() {
 
 	}
 
 	public Answer(Integer id, Integer questionId, String answerContent, Timestamp answerTime, Integer answerId,
-			Integer studentId, String questionContent, Timestamp questionTime, Integer questionGiveIntegral) {
+			Integer studentId, String questionContent, Timestamp questionTime, Integer questionGiveIntegral,
+			String className, String studentName) {
 		super();
 		this.id = id;
 		this.questionId = questionId;
@@ -34,6 +37,8 @@ public class Answer {
 		this.questionContent = questionContent;
 		this.questionTime = questionTime;
 		this.questionGiveIntegral = questionGiveIntegral;
+		this.className = className;
+		this.studentName = studentName;
 	}
 
 	public Integer getId() {
@@ -106,6 +111,22 @@ public class Answer {
 
 	public void setQuestionGiveIntegral(Integer questionGiveIntegral) {
 		this.questionGiveIntegral = questionGiveIntegral;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
 }

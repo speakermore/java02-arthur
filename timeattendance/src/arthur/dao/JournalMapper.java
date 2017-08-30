@@ -1,4 +1,4 @@
-package arthur.service;
+package arthur.dao;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import arthur.entity.Journal;
 
 /**
  * 
- * @auther 代益铨 2017年8月30日上午11:41:23
+ * @auther 代益铨 2017年8月30日上午11:41:41
  */
-public interface JournalService {
+public interface JournalMapper {
 	// 学生填写日志
 	Integer addJournal(Journal journal);
 
