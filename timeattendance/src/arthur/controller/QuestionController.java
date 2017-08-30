@@ -61,6 +61,14 @@ public class QuestionController {
 		return "question";
 	}
 
+	// 老师根据id查看该学生的提问信息
+	@RequestMapping(value = "/sel", method = RequestMethod.GET)
+	public String findQuestion(@RequestParam("id") Integer id, Model model) {
+		Question question = questionService.fingById(id);
+		model.addAttribute("ques", question);
+		return "teacheranswer";
+	}
+
 	// 根据id查看提问后的回答信息
 	@RequestMapping(value = "/findAllById", method = RequestMethod.GET)
 	public String findAllById(@RequestParam("studentId") Integer studentId, @RequestParam("answerId") Integer answerId,

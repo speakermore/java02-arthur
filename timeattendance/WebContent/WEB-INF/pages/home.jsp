@@ -150,7 +150,7 @@ body {
 												<td>${qu.className }</td>
 												<td style="width: 500px;white-space:nowrap;"><div id="fixed"
 														style="overflow: hidden;">${qu.questionContent }</div></td>
-												<td>${qu.questionTime }</td>
+												<td><fmt:formatDate value="${qu.questionTime }" pattern="yyyy-MM-dd"/></td>
 												<td>${qu.questionGiveIntegral }</td>
 												<td><a href="question/select?id=${qu.id }">查看</a></td>
 											</tr>

@@ -42,7 +42,7 @@
 					<div class="divcss5">
 						<textarea name="answerContent" class="ckeditor"></textarea>
 					</div>
-					<a href="user/stuHomePage"><button type="button"
+					<a href="user/tHomePage"><button type="button"
 							class="btn btn-default col-md-2"
 							style="margin-left: 120px; margin-top: 20px;">返回首页</button></a>
 					<button type="submit" class="btn btn-default col-md-2"
